@@ -100,16 +100,16 @@ export function clearAuth(): void {
  * Get the minimum required access level for a route
  */
 export function getRequiredAccess(pathname: string): AccessLevel {
-  // Public routes
-  if (pathname === '/feedback' || pathname.startsWith('/feedback/submit')) {
+  // Public routes (scoring and comments pages - judges are primary users)
+  if (pathname === '/' || pathname === '/comments') {
     return 'public';
   }
-  
-  // Judge routes
-  if (pathname === '/judge' || pathname.startsWith('/judge/')) {
-    return 'judge';
+
+  // Admin routes
+  if (pathname.startsWith('/admin')) {
+    return 'admin';
   }
-  
+
   // Everything else requires admin
   return 'admin';
 }

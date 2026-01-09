@@ -30,28 +30,21 @@ export function NavigationBar() {
     };
   }, []);
 
-  // Public links - everyone sees these
+  // Public links - everyone sees these (judges are the primary users)
   const publicLinks = [
-    { href: '/feedback', label: 'Submit Feedback' },
-  ];
-
-  // Judge links - judges and admins see these
-  const judgeLinks = [
-    { href: '/judge', label: 'Judge Portal' },
+    { href: '/', label: 'Scoring' },
+    { href: '/comments', label: 'Comments' },
   ];
 
   // Admin links - only admins see these
   const adminLinks = [
-    { href: '/', label: 'Dashboard' },
-    { href: '/monitor', label: 'Monitor' },
-    { href: '/audit', label: 'Audit View' },
-    { href: '/winners', label: 'Winners' },
+    { href: '/admin', label: 'Dashboard' },
+    { href: '/admin/monitor', label: 'Monitor' },
   ];
 
   // Build nav items based on access level
   const navItems = [
     ...publicLinks,
-    ...(isJudge || isAdmin ? judgeLinks : []),
     ...(isAdmin ? adminLinks : []),
   ];
 

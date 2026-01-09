@@ -1,98 +1,41 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { 
-  CheckCircle2, 
-  ChevronDown, 
-  AlertCircle, 
+import {
+  CheckCircle2,
+  AlertCircle,
   User,
-  ClipboardList,
+  MessageSquare,
   LogOut,
-  Star
+  Send
 } from 'lucide-react';
-import { JudgeGate } from '@/components/auth-gate';
-import { loadState, saveScore, getScores } from '@/lib/storage';
+import { loadState, saveFeedback, getFeedbackForPresenter } from '@/lib/storage';
 import { getSelectedJudge, saveSelectedJudge, clearSelectedJudge } from '@/lib/auth';
-import { calculateWeightedTotal } from '@/lib/calculations';
-import { Presenter, Judge, Score, ScoreCriteria, CRITERIA_WEIGHTS } from '@/lib/types';
+import { Presenter, Judge, Feedback } from '@/lib/types';
 import { formatPresenterName, generateId } from '@/lib/utils';
 
-// Criteria labels for the form
-const CRITERIA_INFO = [
-  {
-    key: 'contentWhy' as const,
-    label: 'Content - WHY',
-    description: 'A clear research problem or hypothesis is stated, supported by strong conceptual understanding.',
-    weight: CRITERIA_WEIGHTS.contentWhy,
-  },
-  {
-    key: 'contentWhatHow' as const,
-    label: 'Content - WHAT/HOW',
-    description: 'Clear research design including methods, preliminary data, results and interpretation.',
-    weight: CRITERIA_WEIGHTS.contentWhatHow,
-  },
-  {
-    key: 'contentNextSteps' as const,
-    label: 'Content - Next Steps',
-    description: 'Results/conclusions support future research directions with clear implications.',
-    weight: CRITERIA_WEIGHTS.contentNextSteps,
-  },
-  {
-    key: 'presentationFlow' as const,
-    label: 'Logical Flow',
-    description: 'Presentation followed a logical flow (title, introduction, design, conclusion).',
-    weight: CRITERIA_WEIGHTS.presentationFlow,
-  },
-  {
-    key: 'preparedness' as const,
-    label: 'Preparedness',
-    description: 'Well-practiced and professional (minimal pauses, good eye contact, appropriate appearance).',
-    weight: CRITERIA_WEIGHTS.preparedness,
-  },
-  {
-    key: 'verbalComm' as const,
-    label: 'Verbal Communication',
-    description: 'Clear, articulate, and concise. Language appropriate for presenter\'s level.',
-    weight: CRITERIA_WEIGHTS.verbalComm,
-  },
-  {
-    key: 'visualAids' as const,
-    label: 'Visual Aids',
-    description: 'Figures and text clear, large enough to see and understand. Relevant to research.',
-    weight: CRITERIA_WEIGHTS.visualAids,
-  },
-];
-
-const SCORE_OPTIONS = [
-  { value: 5, label: '5 - Strongly Agree' },
-  { value: 4, label: '4 - Agree' },
-  { value: 3, label: '3 - Neutral' },
-  { value: 2, label: '2 - Disagree' },
-  { value: 1, label: '1 - Strongly Disagree' },
-];
-
-function JudgePortalContent() {
+export default function CommentsPage() {
   const [judges, setJudges] = useState<Judge[]>([]);
   const [presenters, setPresenters] = useState<Presenter[]>([]);
-  const [scores, setScores] = useState<Score[]>([]);
+  const [feedback, setFeedback] = useState<Feedback[]>([]);
   const [selectedJudge, setSelectedJudge] = useState<string | null>(null);
   const [selectedPresenter, setSelectedPresenter] = useState<Presenter | null>(null);
-  const [formScores, setFormScores] = useState<Partial<ScoreCriteria>>({});
-  const [isNoShow, setIsNoShow] = useState(false);
+  const [strengths, setStrengths] = useState('');
+  const [improvements, setImprovements] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const loadData = useCallback(() => {
     const state = loadState();
     setPresenters(state.presenters);
-    setScores(state.scores);
-    
+    setFeedback(state.feedback);
+
     // Extract unique judges from presenters
     const judgeMap = new Map<string, Judge>();
     for (const presenter of state.presenters) {
       const judgeNames = [presenter.judge1, presenter.judge2, presenter.judge3]
         .filter((j): j is string => j !== null && j.length > 0);
-      
+
       for (const name of judgeNames) {
         const id = name.toLowerCase().trim().replace(/\s+/g, '-');
         if (!judgeMap.has(id)) {
@@ -102,13 +45,13 @@ function JudgePortalContent() {
       }
     }
     setJudges(Array.from(judgeMap.values()).sort((a, b) => a.name.localeCompare(b.name)));
-    
+
     // Restore previously selected judge
     const savedJudge = getSelectedJudge();
     if (savedJudge) {
       setSelectedJudge(savedJudge);
     }
-    
+
     setIsLoading(false);
   }, []);
 
@@ -128,12 +71,12 @@ function JudgePortalContent() {
       })
     : [];
 
-  // Check which presenters have already been scored by this judge
-  const getScoredStatus = (presenterId: string): boolean => {
+  // Check if this judge has already submitted feedback for a presenter
+  const hasSubmittedFeedback = (presenterId: string): boolean => {
     if (!selectedJudge) return false;
-    return scores.some(
-      s => s.presenterId === presenterId && 
-           s.judgeName.toLowerCase() === selectedJudge.toLowerCase()
+    return feedback.some(
+      f => f.presenterId === presenterId &&
+           f.submitterName.toLowerCase() === selectedJudge.toLowerCase()
     );
   };
 
@@ -141,8 +84,8 @@ function JudgePortalContent() {
     setSelectedJudge(judgeName);
     saveSelectedJudge(judgeName);
     setSelectedPresenter(null);
-    setFormScores({});
-    setIsNoShow(false);
+    setStrengths('');
+    setImprovements('');
     setSubmitSuccess(false);
   };
 
@@ -150,75 +93,53 @@ function JudgePortalContent() {
     setSelectedJudge(null);
     clearSelectedJudge();
     setSelectedPresenter(null);
-    setFormScores({});
+    setStrengths('');
+    setImprovements('');
   };
 
   const handlePresenterSelect = (presenter: Presenter) => {
     setSelectedPresenter(presenter);
-    setFormScores({});
-    setIsNoShow(false);
+    setStrengths('');
+    setImprovements('');
     setSubmitSuccess(false);
-    
-    // Check if already scored and load existing scores
-    const existingScore = scores.find(
-      s => s.presenterId === presenter.id && 
-           s.judgeName.toLowerCase() === selectedJudge?.toLowerCase()
+
+    // Load existing feedback if any
+    const existingFeedback = feedback.find(
+      f => f.presenterId === presenter.id &&
+           f.submitterName.toLowerCase() === selectedJudge?.toLowerCase()
     );
-    if (existingScore) {
-      setFormScores(existingScore.criteria);
-      setIsNoShow(existingScore.isNoShow);
+    if (existingFeedback) {
+      setStrengths(existingFeedback.strengths);
+      setImprovements(existingFeedback.areasForImprovement);
     }
-  };
-
-  const handleScoreChange = (criterion: keyof ScoreCriteria, value: number) => {
-    setFormScores(prev => ({ ...prev, [criterion]: value }));
-  };
-
-  const isFormComplete = (): boolean => {
-    if (isNoShow) return true;
-    return CRITERIA_INFO.every(c => formScores[c.key] !== undefined);
   };
 
   const handleSubmit = () => {
     if (!selectedJudge || !selectedPresenter) return;
-    
-    const criteria: ScoreCriteria = isNoShow 
-      ? { contentWhy: 0, contentWhatHow: 0, contentNextSteps: 0, presentationFlow: 0, preparedness: 0, verbalComm: 0, visualAids: 0 }
-      : {
-          contentWhy: formScores.contentWhy || 0,
-          contentWhatHow: formScores.contentWhatHow || 0,
-          contentNextSteps: formScores.contentNextSteps || 0,
-          presentationFlow: formScores.presentationFlow || 0,
-          preparedness: formScores.preparedness || 0,
-          verbalComm: formScores.verbalComm || 0,
-          visualAids: formScores.visualAids || 0,
-        };
+    if (!strengths.trim() && !improvements.trim()) return;
 
-    const score: Score = {
-      id: `${selectedPresenter.id}-${selectedJudge.toLowerCase().replace(/\s+/g, '-')}`,
+    const newFeedback: Feedback = {
+      id: generateId(),
       presenterId: selectedPresenter.id,
-      judgeName: selectedJudge,
-      judgeId: selectedJudge.toLowerCase().replace(/\s+/g, '-'),
+      presenterName: formatPresenterName(selectedPresenter.firstName, selectedPresenter.lastName),
+      submitterType: 'judge',
+      submitterName: selectedJudge,
+      strengths: strengths.trim(),
+      areasForImprovement: improvements.trim(),
       timestamp: new Date().toISOString(),
-      criteria,
-      weightedTotal: isNoShow ? 0 : calculateWeightedTotal(criteria),
-      isNoShow,
     };
 
-    saveScore(score);
-    setScores(prev => {
-      const filtered = prev.filter(s => s.id !== score.id);
-      return [...filtered, score];
-    });
+    saveFeedback(newFeedback);
+    setFeedback(prev => [...prev, newFeedback]);
     setSubmitSuccess(true);
-    
-    // Auto-advance to next unscored presenter after 2 seconds
+
+    // Auto-advance to next presenter without feedback after 2 seconds
     setTimeout(() => {
-      const nextUnscored = assignedPresenters.find(p => 
-        p.id !== selectedPresenter.id && !getScoredStatus(p.id)
+      const nextWithoutFeedback = assignedPresenters.find(p =>
+        p.id !== selectedPresenter.id && !hasSubmittedFeedback(p.id)
       );
-      if (nextUnscored) {
-        handlePresenterSelect(nextUnscored);
+      if (nextWithoutFeedback) {
+        handlePresenterSelect(nextWithoutFeedback);
       } else {
         setSelectedPresenter(null);
         setSubmitSuccess(false);
@@ -251,10 +172,10 @@ function JudgePortalContent() {
     return (
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
-          <User className="mx-auto h-16 w-16 text-csu-green" />
-          <h2 className="mt-4 text-2xl font-bold text-gray-900">Welcome, Judge!</h2>
+          <MessageSquare className="mx-auto h-16 w-16 text-csu-green" />
+          <h2 className="mt-4 text-2xl font-bold text-gray-900">Judge Comments</h2>
           <p className="mt-2 text-gray-600">
-            Please select your name to see your assigned presenters.
+            Please select your name to provide feedback for your assigned presenters.
           </p>
         </div>
 
@@ -282,11 +203,11 @@ function JudgePortalContent() {
   }
 
   // Calculate progress
-  const scoredCount = assignedPresenters.filter(p => getScoredStatus(p.id)).length;
+  const feedbackCount = assignedPresenters.filter(p => hasSubmittedFeedback(p.id)).length;
   const totalCount = assignedPresenters.length;
-  const progressPercent = totalCount > 0 ? (scoredCount / totalCount) * 100 : 0;
+  const progressPercent = totalCount > 0 ? (feedbackCount / totalCount) * 100 : 0;
 
-  // Step 2: Presenter Selection (only shows assigned presenters!)
+  // Step 2: Presenter Selection
   if (!selectedPresenter) {
     return (
       <div className="max-w-3xl mx-auto">
@@ -310,18 +231,18 @@ function JudgePortalContent() {
         {/* Progress bar */}
         <div className="bg-white rounded-lg shadow-sm p-4 mb-6">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-700">Your Progress</span>
-            <span className="text-sm text-gray-500">{scoredCount} of {totalCount} complete</span>
+            <span className="text-sm font-medium text-gray-700">Comments Progress</span>
+            <span className="text-sm text-gray-500">{feedbackCount} of {totalCount} complete</span>
           </div>
           <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
-            <div 
+            <div
               className="h-full bg-csu-green transition-all duration-500"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
-          {scoredCount === totalCount && (
+          {feedbackCount === totalCount && (
             <p className="mt-2 text-sm text-green-600 font-medium">
-              🎉 All done! Thank you for judging!
+              All done! Thank you for your feedback!
             </p>
           )}
         </div>
@@ -331,20 +252,19 @@ function JudgePortalContent() {
           <div className="divide-y divide-gray-100">
             {assignedPresenters
               .sort((a, b) => {
-                // Sort by session time first, then by ID
                 if (a.presentationTime !== b.presentationTime) {
                   return a.presentationTime.localeCompare(b.presentationTime);
                 }
                 return a.id.localeCompare(b.id);
               })
               .map((presenter) => {
-                const isScored = getScoredStatus(presenter.id);
+                const hasFeedback = hasSubmittedFeedback(presenter.id);
                 return (
                   <button
                     key={presenter.id}
                     onClick={() => handlePresenterSelect(presenter)}
                     className={`w-full text-left px-6 py-4 hover:bg-gray-50 transition-colors ${
-                      isScored ? 'bg-green-50' : ''
+                      hasFeedback ? 'bg-green-50' : ''
                     }`}
                   >
                     <div className="flex items-start justify-between">
@@ -364,17 +284,17 @@ function JudgePortalContent() {
                         </div>
                         <div className="mt-2 flex items-center gap-4 text-xs text-gray-500">
                           <span>{presenter.presentationType}</span>
-                          <span>•</span>
+                          <span>*</span>
                           <span>{presenter.presentationTime}</span>
-                          <span>•</span>
+                          <span>*</span>
                           <span>{presenter.researchType}</span>
                         </div>
                       </div>
                       <div className="ml-4 flex-shrink-0">
-                        {isScored ? (
+                        {hasFeedback ? (
                           <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
                             <CheckCircle2 className="h-3 w-3 mr-1" />
-                            Scored
+                            Submitted
                           </span>
                         ) : (
                           <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
@@ -392,10 +312,10 @@ function JudgePortalContent() {
     );
   }
 
-  // Step 3: Score Entry Form
-  const existingScore = scores.find(
-    s => s.presenterId === selectedPresenter.id && 
-         s.judgeName.toLowerCase() === selectedJudge.toLowerCase()
+  // Step 3: Feedback Form
+  const existingFeedback = feedback.find(
+    f => f.presenterId === selectedPresenter.id &&
+         f.submitterName.toLowerCase() === selectedJudge.toLowerCase()
   );
 
   return (
@@ -411,7 +331,7 @@ function JudgePortalContent() {
         >
           ← Back to presenter list
         </button>
-        
+
         <div className="bg-white rounded-lg shadow-sm p-6">
           <div className="flex items-start gap-4">
             <span className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-csu-green text-white font-bold text-2xl">
@@ -424,7 +344,7 @@ function JudgePortalContent() {
               <p className="text-gray-600 mt-1">{selectedPresenter.title}</p>
               <div className="flex items-center gap-3 mt-2 text-sm text-gray-500">
                 <span>{selectedPresenter.presentationType}</span>
-                <span>•</span>
+                <span>*</span>
                 <span>{selectedPresenter.researchType}</span>
               </div>
             </div>
@@ -437,105 +357,69 @@ function JudgePortalContent() {
         <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3">
           <CheckCircle2 className="h-6 w-6 text-green-600" />
           <div>
-            <p className="font-medium text-green-800">Score submitted successfully!</p>
+            <p className="font-medium text-green-800">Comments submitted successfully!</p>
             <p className="text-sm text-green-600">Moving to next presenter...</p>
           </div>
         </div>
       )}
 
-      {/* Score Form */}
+      {/* Feedback Form */}
       {!submitSuccess && (
-        <div className="bg-white rounded-lg shadow-sm p-6">
-          {existingScore && (
-            <div className="mb-4 bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
-              You've already scored this presenter. You can update your scores below.
+        <div className="bg-white rounded-lg shadow-sm p-6 space-y-6">
+          {existingFeedback && (
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
+              You've already submitted feedback for this presenter. You can add additional comments below.
             </div>
           )}
 
-          {/* No-show toggle */}
-          <div className="mb-6 pb-6 border-b">
-            <label className="flex items-center gap-3 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={isNoShow}
-                onChange={(e) => setIsNoShow(e.target.checked)}
-                className="w-5 h-5 rounded border-gray-300 text-csu-green focus:ring-csu-green"
-              />
-              <span className="font-medium text-gray-900">Mark as No-Show</span>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Strengths <span className="text-gray-400">(What did they do well?)</span>
             </label>
-            <p className="mt-1 text-sm text-gray-500 ml-8">
-              Check this if the presenter did not appear for their presentation.
-            </p>
+            <textarea
+              value={strengths}
+              onChange={(e) => setStrengths(e.target.value)}
+              rows={4}
+              placeholder="e.g., Clear explanation of methods, engaging presentation style, well-designed visuals..."
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-csu-green focus:border-csu-green resize-none"
+            />
           </div>
 
-          {/* Criteria scoring */}
-          {!isNoShow && (
-            <div className="space-y-6">
-              <p className="text-sm text-gray-600">
-                Rate each criterion: <span className="font-medium">5 = Strongly Agree</span> to{' '}
-                <span className="font-medium">1 = Strongly Disagree</span>
-              </p>
-
-              {CRITERIA_INFO.map((criterion) => (
-                <div key={criterion.key} className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <label className="font-medium text-gray-900">
-                      {criterion.label}
-                      <span className="ml-2 text-xs text-gray-400 font-normal">
-                        (weight: {criterion.weight})
-                      </span>
-                    </label>
-                  </div>
-                  <p className="text-sm text-gray-500">{criterion.description}</p>
-                  <div className="flex gap-2">
-                    {SCORE_OPTIONS.map((option) => (
-                      <button
-                        key={option.value}
-                        onClick={() => handleScoreChange(criterion.key, option.value)}
-                        className={`flex-1 py-3 px-2 text-sm font-medium rounded-lg border-2 transition-colors ${
-                          formScores[criterion.key] === option.value
-                            ? 'border-csu-green bg-csu-green text-white'
-                            : 'border-gray-200 hover:border-gray-300 text-gray-700'
-                        }`}
-                      >
-                        {option.value}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Areas for Improvement <span className="text-gray-400">(Constructive suggestions)</span>
+            </label>
+            <textarea
+              value={improvements}
+              onChange={(e) => setImprovements(e.target.value)}
+              rows={4}
+              placeholder="e.g., Consider slowing down during complex sections, add more context for non-specialists..."
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-csu-green focus:border-csu-green resize-none"
+            />
+          </div>
 
           {/* Submit button */}
-          <div className="mt-8 pt-6 border-t">
+          <div className="pt-4 border-t">
             <button
               onClick={handleSubmit}
-              disabled={!isFormComplete()}
-              className={`w-full py-4 px-6 rounded-lg font-medium text-lg transition-colors ${
-                isFormComplete()
+              disabled={!strengths.trim() && !improvements.trim()}
+              className={`w-full py-4 px-6 rounded-lg font-medium text-lg flex items-center justify-center gap-2 transition-colors ${
+                strengths.trim() || improvements.trim()
                   ? 'bg-csu-green text-white hover:bg-csu-green/90'
                   : 'bg-gray-200 text-gray-500 cursor-not-allowed'
               }`}
             >
-              {existingScore ? 'Update Score' : 'Submit Score'}
+              <Send className="h-5 w-5" />
+              {existingFeedback ? 'Add More Feedback' : 'Submit Feedback'}
             </button>
-            {!isFormComplete() && !isNoShow && (
+            {!strengths.trim() && !improvements.trim() && (
               <p className="mt-2 text-sm text-center text-gray-500">
-                Please rate all criteria to submit.
+                Please enter at least one comment to submit.
               </p>
             )}
           </div>
         </div>
       )}
     </div>
-  );
-}
-
-export default function JudgePage() {
-  return (
-    <JudgeGate>
-      <JudgePortalContent />
-    </JudgeGate>
   );
 }

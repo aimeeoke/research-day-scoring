@@ -1,312 +1,532 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Upload, Download, RefreshCw, Users, Award, FileText, ChevronRight } from 'lucide-react';
-import { AdminGate } from '@/components/auth-gate';
-import { parsePresenterCSV } from '@/lib/csv-parser';
-import { 
-  loadState, 
-  savePresenters, 
-  saveJudges, 
-  downloadBackup,
-  getScores,
-  getPresenters,
-  getJudges,
-} from '@/lib/storage';
-import { 
-  getCategoryCompletionPercent, 
-  generateAllFinalScores,
-  getAllCategoryWinners,
-  getGoldenPipetteWinner,
-} from '@/lib/calculations';
-import { AWARD_CATEGORIES, SESSION_TIMES, Presenter, Score } from '@/lib/types';
-import { formatPercent, getProgressColor, formatPresenterName } from '@/lib/utils';
+import {
+  CheckCircle2,
+  ChevronDown,
+  AlertCircle,
+  User,
+  ClipboardList,
+  LogOut,
+  Star
+} from 'lucide-react';
+import { loadState, saveScore, getScores } from '@/lib/storage';
+import { getSelectedJudge, saveSelectedJudge, clearSelectedJudge } from '@/lib/auth';
+import { calculateWeightedTotal } from '@/lib/calculations';
+import { Presenter, Judge, Score, ScoreCriteria, CRITERIA_WEIGHTS } from '@/lib/types';
+import { formatPresenterName, generateId } from '@/lib/utils';
 
-function DashboardContent() {
+// Criteria labels for the form
+const CRITERIA_INFO = [
+  {
+    key: 'contentWhy' as const,
+    label: 'Content - WHY',
+    description: 'A clear research problem or hypothesis is stated, supported by strong conceptual understanding.',
+    weight: CRITERIA_WEIGHTS.contentWhy,
+  },
+  {
+    key: 'contentWhatHow' as const,
+    label: 'Content - WHAT/HOW',
+    description: 'Clear research design including methods, preliminary data, results and interpretation.',
+    weight: CRITERIA_WEIGHTS.contentWhatHow,
+  },
+  {
+    key: 'contentNextSteps' as const,
+    label: 'Content - Next Steps',
+    description: 'Results/conclusions support future research directions with clear implications.',
+    weight: CRITERIA_WEIGHTS.contentNextSteps,
+  },
+  {
+    key: 'presentationFlow' as const,
+    label: 'Logical Flow',
+    description: 'Presentation followed a logical flow (title, introduction, design, conclusion).',
+    weight: CRITERIA_WEIGHTS.presentationFlow,
+  },
+  {
+    key: 'preparedness' as const,
+    label: 'Preparedness',
+    description: 'Well-practiced and professional (minimal pauses, good eye contact, appropriate appearance).',
+    weight: CRITERIA_WEIGHTS.preparedness,
+  },
+  {
+    key: 'verbalComm' as const,
+    label: 'Verbal Communication',
+    description: 'Clear, articulate, and concise. Language appropriate for presenter\'s level.',
+    weight: CRITERIA_WEIGHTS.verbalComm,
+  },
+  {
+    key: 'visualAids' as const,
+    label: 'Visual Aids',
+    description: 'Figures and text clear, large enough to see and understand. Relevant to research.',
+    weight: CRITERIA_WEIGHTS.visualAids,
+  },
+];
+
+const SCORE_OPTIONS = [
+  { value: 5, label: '5 - Strongly Agree' },
+  { value: 4, label: '4 - Agree' },
+  { value: 3, label: '3 - Neutral' },
+  { value: 2, label: '2 - Disagree' },
+  { value: 1, label: '1 - Strongly Disagree' },
+];
+
+export default function ScoringPage() {
+  const [judges, setJudges] = useState<Judge[]>([]);
   const [presenters, setPresenters] = useState<Presenter[]>([]);
   const [scores, setScores] = useState<Score[]>([]);
+  const [selectedJudge, setSelectedJudge] = useState<string | null>(null);
+  const [selectedPresenter, setSelectedPresenter] = useState<Presenter | null>(null);
+  const [formScores, setFormScores] = useState<Partial<ScoreCriteria>>({});
+  const [isNoShow, setIsNoShow] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [uploadError, setUploadError] = useState<string | null>(null);
-  const [lastRefresh, setLastRefresh] = useState<Date>(new Date());
 
   const loadData = useCallback(() => {
     const state = loadState();
     setPresenters(state.presenters);
     setScores(state.scores);
+
+    // Extract unique judges from presenters
+    const judgeMap = new Map<string, Judge>();
+    for (const presenter of state.presenters) {
+      const judgeNames = [presenter.judge1, presenter.judge2, presenter.judge3]
+        .filter((j): j is string => j !== null && j.length > 0);
+
+      for (const name of judgeNames) {
+        const id = name.toLowerCase().trim().replace(/\s+/g, '-');
+        if (!judgeMap.has(id)) {
+          judgeMap.set(id, { id, name, assignedPresenters: [] });
+        }
+        judgeMap.get(id)!.assignedPresenters.push(presenter.id);
+      }
+    }
+    setJudges(Array.from(judgeMap.values()).sort((a, b) => a.name.localeCompare(b.name)));
+
+    // Restore previously selected judge
+    const savedJudge = getSelectedJudge();
+    if (savedJudge) {
+      setSelectedJudge(savedJudge);
+    }
+
     setIsLoading(false);
-    setLastRefresh(new Date());
   }, []);
 
   useEffect(() => {
     loadData();
-    // Auto-refresh every 30 seconds
-    const interval = setInterval(loadData, 30000);
-    return () => clearInterval(interval);
   }, [loadData]);
 
-  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
+  // Get presenters assigned to the selected judge
+  const assignedPresenters = selectedJudge
+    ? presenters.filter(p => {
+        const judgeLower = selectedJudge.toLowerCase();
+        return (
+          p.judge1?.toLowerCase() === judgeLower ||
+          p.judge2?.toLowerCase() === judgeLower ||
+          p.judge3?.toLowerCase() === judgeLower
+        );
+      })
+    : [];
 
-    setUploadError(null);
+  // Check which presenters have already been scored by this judge
+  const getScoredStatus = (presenterId: string): boolean => {
+    if (!selectedJudge) return false;
+    return scores.some(
+      s => s.presenterId === presenterId &&
+           s.judgeName.toLowerCase() === selectedJudge.toLowerCase()
+    );
+  };
 
-    try {
-      const text = await file.text();
-      const { presenters: parsed, judges, errors } = parsePresenterCSV(text);
+  const handleJudgeSelect = (judgeName: string) => {
+    setSelectedJudge(judgeName);
+    saveSelectedJudge(judgeName);
+    setSelectedPresenter(null);
+    setFormScores({});
+    setIsNoShow(false);
+    setSubmitSuccess(false);
+  };
 
-      if (errors.length > 0) {
-        setUploadError(`Import warnings: ${errors.slice(0, 3).join('; ')}`);
-      }
+  const handleJudgeLogout = () => {
+    setSelectedJudge(null);
+    clearSelectedJudge();
+    setSelectedPresenter(null);
+    setFormScores({});
+  };
 
-      if (parsed.length > 0) {
-        savePresenters(parsed);
-        saveJudges(judges);
-        loadData();
-      }
-    } catch (error) {
-      setUploadError('Failed to parse CSV file. Please check the format.');
+  const handlePresenterSelect = (presenter: Presenter) => {
+    setSelectedPresenter(presenter);
+    setFormScores({});
+    setIsNoShow(false);
+    setSubmitSuccess(false);
+
+    // Check if already scored and load existing scores
+    const existingScore = scores.find(
+      s => s.presenterId === presenter.id &&
+           s.judgeName.toLowerCase() === selectedJudge?.toLowerCase()
+    );
+    if (existingScore) {
+      setFormScores(existingScore.criteria);
+      setIsNoShow(existingScore.isNoShow);
     }
   };
 
-  // Calculate session progress
-  const getSessionProgress = (sessionTime: string) => {
-    const sessionPresenters = presenters.filter(p => p.presentationTime === sessionTime);
-    let totalRequired = 0;
-    let totalReceived = 0;
+  const handleScoreChange = (criterion: keyof ScoreCriteria, value: number) => {
+    setFormScores(prev => ({ ...prev, [criterion]: value }));
+  };
 
-    for (const presenter of sessionPresenters) {
-      const requiredJudges = presenter.presentationType === 'Undergrad Poster' ? 3 : 2;
-      totalRequired += requiredJudges;
-      const presenterScores = scores.filter(s => s.presenterId === presenter.id && !s.isNoShow);
-      totalReceived += Math.min(presenterScores.length, requiredJudges);
-    }
+  const isFormComplete = (): boolean => {
+    if (isNoShow) return true;
+    return CRITERIA_INFO.every(c => formScores[c.key] !== undefined);
+  };
 
-    const percent = totalRequired > 0 ? (totalReceived / totalRequired) * 100 : 0;
-    return {
-      total: sessionPresenters.length,
-      scoresReceived: totalReceived,
-      scoresRequired: totalRequired,
-      percent,
+  const handleSubmit = () => {
+    if (!selectedJudge || !selectedPresenter) return;
+
+    const criteria: ScoreCriteria = isNoShow
+      ? { contentWhy: 0, contentWhatHow: 0, contentNextSteps: 0, presentationFlow: 0, preparedness: 0, verbalComm: 0, visualAids: 0 }
+      : {
+          contentWhy: formScores.contentWhy || 0,
+          contentWhatHow: formScores.contentWhatHow || 0,
+          contentNextSteps: formScores.contentNextSteps || 0,
+          presentationFlow: formScores.presentationFlow || 0,
+          preparedness: formScores.preparedness || 0,
+          verbalComm: formScores.verbalComm || 0,
+          visualAids: formScores.visualAids || 0,
+        };
+
+    const score: Score = {
+      id: `${selectedPresenter.id}-${selectedJudge.toLowerCase().replace(/\s+/g, '-')}`,
+      presenterId: selectedPresenter.id,
+      judgeName: selectedJudge,
+      judgeId: selectedJudge.toLowerCase().replace(/\s+/g, '-'),
+      timestamp: new Date().toISOString(),
+      criteria,
+      weightedTotal: isNoShow ? 0 : calculateWeightedTotal(criteria),
+      isNoShow,
     };
+
+    saveScore(score);
+    setScores(prev => {
+      const filtered = prev.filter(s => s.id !== score.id);
+      return [...filtered, score];
+    });
+    setSubmitSuccess(true);
+
+    // Auto-advance to next unscored presenter after 2 seconds
+    setTimeout(() => {
+      const nextUnscored = assignedPresenters.find(p =>
+        p.id !== selectedPresenter.id && !getScoredStatus(p.id)
+      );
+      if (nextUnscored) {
+        handlePresenterSelect(nextUnscored);
+      } else {
+        setSelectedPresenter(null);
+        setSubmitSuccess(false);
+      }
+    }, 2000);
   };
 
-  // Get quick stats
-  const totalPresenters = presenters.length;
-  const totalScores = scores.length;
-  const uniqueJudgesScored = new Set(scores.map(s => s.judgeId)).size;
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-csu-green"></div>
+      </div>
+    );
+  }
 
-  const dataLoaded = presenters.length > 0;
+  if (presenters.length === 0) {
+    return (
+      <div className="text-center py-12">
+        <AlertCircle className="mx-auto h-12 w-12 text-gray-400" />
+        <h3 className="mt-4 text-lg font-medium text-gray-900">Event Not Set Up</h3>
+        <p className="mt-2 text-sm text-gray-500">
+          Presenter data hasn't been loaded yet. Please check back later.
+        </p>
+      </div>
+    );
+  }
 
-  return (
-    <div className="space-y-8">
-      {/* Page Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900">Scoring Dashboard</h2>
-          <p className="text-gray-600 mt-1">
-            Real-time overview of Research Day scoring progress
+  // Step 1: Judge Selection
+  if (!selectedJudge) {
+    return (
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-8">
+          <User className="mx-auto h-16 w-16 text-csu-green" />
+          <h2 className="mt-4 text-2xl font-bold text-gray-900">Welcome, Judge!</h2>
+          <p className="mt-2 text-gray-600">
+            Please select your name to see your assigned presenters.
           </p>
         </div>
-        <div className="flex items-center gap-3">
+
+        <div className="bg-white rounded-lg shadow-sm p-6">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Select Your Name
+          </label>
+          <div className="grid grid-cols-1 gap-2 max-h-96 overflow-y-auto">
+            {judges.map((judge) => (
+              <button
+                key={judge.id}
+                onClick={() => handleJudgeSelect(judge.name)}
+                className="text-left px-4 py-3 rounded-lg border border-gray-200 hover:border-csu-green hover:bg-csu-green/5 transition-colors"
+              >
+                <span className="font-medium text-gray-900">{judge.name}</span>
+                <span className="ml-2 text-sm text-gray-500">
+                  ({judge.assignedPresenters.length} presenters)
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Calculate progress
+  const scoredCount = assignedPresenters.filter(p => getScoredStatus(p.id)).length;
+  const totalCount = assignedPresenters.length;
+  const progressPercent = totalCount > 0 ? (scoredCount / totalCount) * 100 : 0;
+
+  // Step 2: Presenter Selection (only shows assigned presenters!)
+  if (!selectedPresenter) {
+    return (
+      <div className="max-w-3xl mx-auto">
+        {/* Header with judge info and logout */}
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">Your Assigned Presenters</h2>
+            <p className="text-gray-600 mt-1">
+              Logged in as: <span className="font-medium">{selectedJudge}</span>
+            </p>
+          </div>
           <button
-            onClick={loadData}
-            className="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+            onClick={handleJudgeLogout}
+            className="inline-flex items-center px-3 py-2 text-sm text-gray-600 hover:text-gray-900"
           >
-            <RefreshCw className="h-4 w-4 mr-2" />
-            Refresh
+            <LogOut className="h-4 w-4 mr-1" />
+            Switch Judge
           </button>
-          {dataLoaded && (
-            <button
-              onClick={downloadBackup}
-              className="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-            >
-              <Download className="h-4 w-4 mr-2" />
-              Export Backup
-            </button>
+        </div>
+
+        {/* Progress bar */}
+        <div className="bg-white rounded-lg shadow-sm p-4 mb-6">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-medium text-gray-700">Your Progress</span>
+            <span className="text-sm text-gray-500">{scoredCount} of {totalCount} complete</span>
+          </div>
+          <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-csu-green transition-all duration-500"
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
+          {scoredCount === totalCount && (
+            <p className="mt-2 text-sm text-green-600 font-medium">
+              All done! Thank you for judging!
+            </p>
           )}
+        </div>
+
+        {/* Presenter list */}
+        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+          <div className="divide-y divide-gray-100">
+            {assignedPresenters
+              .sort((a, b) => {
+                // Sort by session time first, then by ID
+                if (a.presentationTime !== b.presentationTime) {
+                  return a.presentationTime.localeCompare(b.presentationTime);
+                }
+                return a.id.localeCompare(b.id);
+              })
+              .map((presenter) => {
+                const isScored = getScoredStatus(presenter.id);
+                return (
+                  <button
+                    key={presenter.id}
+                    onClick={() => handlePresenterSelect(presenter)}
+                    className={`w-full text-left px-6 py-4 hover:bg-gray-50 transition-colors ${
+                      isScored ? 'bg-green-50' : ''
+                    }`}
+                  >
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-3">
+                          <span className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gray-100 text-gray-700 font-bold text-lg">
+                            {presenter.id}
+                          </span>
+                          <div>
+                            <p className="font-medium text-gray-900">
+                              {formatPresenterName(presenter.firstName, presenter.lastName)}
+                            </p>
+                            <p className="text-sm text-gray-500 truncate max-w-md">
+                              {presenter.title}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="mt-2 flex items-center gap-4 text-xs text-gray-500">
+                          <span>{presenter.presentationType}</span>
+                          <span>•</span>
+                          <span>{presenter.presentationTime}</span>
+                          <span>•</span>
+                          <span>{presenter.researchType}</span>
+                        </div>
+                      </div>
+                      <div className="ml-4 flex-shrink-0">
+                        {isScored ? (
+                          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            <CheckCircle2 className="h-3 w-3 mr-1" />
+                            Scored
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                            Pending
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Step 3: Score Entry Form
+  const existingScore = scores.find(
+    s => s.presenterId === selectedPresenter.id &&
+         s.judgeName.toLowerCase() === selectedJudge.toLowerCase()
+  );
+
+  return (
+    <div className="max-w-2xl mx-auto">
+      {/* Back button and presenter info */}
+      <div className="mb-6">
+        <button
+          onClick={() => {
+            setSelectedPresenter(null);
+            setSubmitSuccess(false);
+          }}
+          className="text-sm text-gray-600 hover:text-gray-900 mb-4 inline-flex items-center"
+        >
+          ← Back to presenter list
+        </button>
+
+        <div className="bg-white rounded-lg shadow-sm p-6">
+          <div className="flex items-start gap-4">
+            <span className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-csu-green text-white font-bold text-2xl">
+              {selectedPresenter.id}
+            </span>
+            <div>
+              <h2 className="text-xl font-bold text-gray-900">
+                {formatPresenterName(selectedPresenter.firstName, selectedPresenter.lastName)}
+              </h2>
+              <p className="text-gray-600 mt-1">{selectedPresenter.title}</p>
+              <div className="flex items-center gap-3 mt-2 text-sm text-gray-500">
+                <span>{selectedPresenter.presentationType}</span>
+                <span>•</span>
+                <span>{selectedPresenter.researchType}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Upload Section (if no data) */}
-      {!dataLoaded && (
-        <div className="bg-white rounded-lg shadow-sm border-2 border-dashed border-gray-300 p-12">
-          <div className="text-center">
-            <Upload className="mx-auto h-12 w-12 text-gray-400" />
-            <h3 className="mt-4 text-lg font-medium text-gray-900">Upload Presenter Data</h3>
-            <p className="mt-2 text-sm text-gray-500">
-              Upload your CSV file with presenter and judge assignments to get started.
-            </p>
-            <div className="mt-6">
-              <label className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-csu-green hover:bg-csu-green/90 cursor-pointer">
-                <Upload className="h-4 w-4 mr-2" />
-                Select CSV File
-                <input
-                  type="file"
-                  accept=".csv"
-                  onChange={handleFileUpload}
-                  className="hidden"
-                />
-              </label>
+      {/* Success message */}
+      {submitSuccess && (
+        <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3">
+          <CheckCircle2 className="h-6 w-6 text-green-600" />
+          <div>
+            <p className="font-medium text-green-800">Score submitted successfully!</p>
+            <p className="text-sm text-green-600">Moving to next presenter...</p>
+          </div>
+        </div>
+      )}
+
+      {/* Score Form */}
+      {!submitSuccess && (
+        <div className="bg-white rounded-lg shadow-sm p-6">
+          {existingScore && (
+            <div className="mb-4 bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
+              You've already scored this presenter. You can update your scores below.
             </div>
-            {uploadError && (
-              <p className="mt-4 text-sm text-red-600">{uploadError}</p>
+          )}
+
+          {/* No-show toggle */}
+          <div className="mb-6 pb-6 border-b">
+            <label className="flex items-center gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={isNoShow}
+                onChange={(e) => setIsNoShow(e.target.checked)}
+                className="w-5 h-5 rounded border-gray-300 text-csu-green focus:ring-csu-green"
+              />
+              <span className="font-medium text-gray-900">Mark as No-Show</span>
+            </label>
+            <p className="mt-1 text-sm text-gray-500 ml-8">
+              Check this if the presenter did not appear for their presentation.
+            </p>
+          </div>
+
+          {/* Criteria scoring */}
+          {!isNoShow && (
+            <div className="space-y-6">
+              <p className="text-sm text-gray-600">
+                Rate each criterion: <span className="font-medium">5 = Strongly Agree</span> to{' '}
+                <span className="font-medium">1 = Strongly Disagree</span>
+              </p>
+
+              {CRITERIA_INFO.map((criterion) => (
+                <div key={criterion.key} className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <label className="font-medium text-gray-900">
+                      {criterion.label}
+                      <span className="ml-2 text-xs text-gray-400 font-normal">
+                        (weight: {criterion.weight})
+                      </span>
+                    </label>
+                  </div>
+                  <p className="text-sm text-gray-500">{criterion.description}</p>
+                  <div className="flex gap-2">
+                    {SCORE_OPTIONS.map((option) => (
+                      <button
+                        key={option.value}
+                        onClick={() => handleScoreChange(criterion.key, option.value)}
+                        className={`flex-1 py-3 px-2 text-sm font-medium rounded-lg border-2 transition-colors ${
+                          formScores[criterion.key] === option.value
+                            ? 'border-csu-green bg-csu-green text-white'
+                            : 'border-gray-200 hover:border-gray-300 text-gray-700'
+                        }`}
+                      >
+                        {option.value}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Submit button */}
+          <div className="mt-8 pt-6 border-t">
+            <button
+              onClick={handleSubmit}
+              disabled={!isFormComplete()}
+              className={`w-full py-4 px-6 rounded-lg font-medium text-lg transition-colors ${
+                isFormComplete()
+                  ? 'bg-csu-green text-white hover:bg-csu-green/90'
+                  : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+              }`}
+            >
+              {existingScore ? 'Update Score' : 'Submit Score'}
+            </button>
+            {!isFormComplete() && !isNoShow && (
+              <p className="mt-2 text-sm text-center text-gray-500">
+                Please rate all criteria to submit.
+              </p>
             )}
           </div>
         </div>
       )}
-
-      {/* Dashboard Content (if data loaded) */}
-      {dataLoaded && (
-        <>
-          {/* Quick Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <div className="flex items-center">
-                <Users className="h-8 w-8 text-csu-green" />
-                <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-500">Presenters</p>
-                  <p className="text-2xl font-bold text-gray-900">{totalPresenters}</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <div className="flex items-center">
-                <FileText className="h-8 w-8 text-blue-600" />
-                <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-500">Scores Entered</p>
-                  <p className="text-2xl font-bold text-gray-900">{totalScores}</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <div className="flex items-center">
-                <Users className="h-8 w-8 text-purple-600" />
-                <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-500">Judges Scored</p>
-                  <p className="text-2xl font-bold text-gray-900">{uniqueJudgesScored}</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <div className="flex items-center">
-                <Award className="h-8 w-8 text-csu-gold" />
-                <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-500">Categories</p>
-                  <p className="text-2xl font-bold text-gray-900">{AWARD_CATEGORIES.length}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Session Progress */}
-          <div className="bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Session Progress</h3>
-            <div className="space-y-4">
-              {SESSION_TIMES.map((session) => {
-                const progress = getSessionProgress(session);
-                return (
-                  <div key={session} className="flex items-center">
-                    <div className="w-32 text-sm font-medium text-gray-700">{session}</div>
-                    <div className="flex-1 mx-4">
-                      <div className="h-4 bg-gray-200 rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-csu-green transition-all duration-500"
-                          style={{ width: `${progress.percent}%` }}
-                        />
-                      </div>
-                    </div>
-                    <div className={`w-20 text-right text-sm font-medium ${getProgressColor(progress.percent)}`}>
-                      {formatPercent(progress.percent)}
-                    </div>
-                    <div className="w-32 text-right text-sm text-gray-500">
-                      {progress.scoresReceived} / {progress.scoresRequired} scores
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Quick Actions */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <a
-              href="/judge"
-              className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow group"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Judge Portal</h3>
-                  <p className="text-sm text-gray-500 mt-1">Enter scores for assigned presenters</p>
-                </div>
-                <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-csu-green" />
-              </div>
-            </a>
-            <a
-              href="/monitor"
-              className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow group border-2 border-orange-200"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Score Monitor</h3>
-                  <p className="text-sm text-gray-500 mt-1">Track pending judge scores</p>
-                </div>
-                <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-orange-500" />
-              </div>
-            </a>
-            <a
-              href="/winners"
-              className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow group"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Live Winners</h3>
-                  <p className="text-sm text-gray-500 mt-1">View current standings by category</p>
-                </div>
-                <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-csu-green" />
-              </div>
-            </a>
-            <a
-              href="/audit"
-              className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow group"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Audit View</h3>
-                  <p className="text-sm text-gray-500 mt-1">Verify calculations and scores</p>
-                </div>
-                <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-csu-green" />
-              </div>
-            </a>
-          </div>
-
-          {/* Re-upload option */}
-          <div className="bg-gray-50 rounded-lg p-4 flex items-center justify-between">
-            <div className="text-sm text-gray-600">
-              <span className="font-medium">{totalPresenters} presenters loaded</span>
-              <span className="mx-2">•</span>
-              <span>Last refreshed: {lastRefresh.toLocaleTimeString()}</span>
-            </div>
-            <label className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 cursor-pointer">
-              <Upload className="h-4 w-4 mr-2" />
-              Update CSV
-              <input
-                type="file"
-                accept=".csv"
-                onChange={handleFileUpload}
-                className="hidden"
-              />
-            </label>
-          </div>
-        </>
-      )}
     </div>
-  );
-}
-
-export default function Dashboard() {
-  return (
-    <AdminGate>
-      <DashboardContent />
-    </AdminGate>
   );
 }

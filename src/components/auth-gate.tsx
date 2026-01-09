@@ -125,19 +125,8 @@ export function AuthGate({ children, requiredLevel }: AuthGateProps) {
           <div className="mt-6 pt-6 border-t text-center">
             <p className="text-sm text-gray-500">
               Are you a judge?{' '}
-              <a href="/judge" className="text-csu-green hover:underline">
-                Go to Judge Portal
-              </a>
-            </p>
-          </div>
-        )}
-
-        {requiredLevel === 'judge' && (
-          <div className="mt-6 pt-6 border-t text-center">
-            <p className="text-sm text-gray-500">
-              Want to submit feedback?{' '}
-              <a href="/feedback" className="text-csu-green hover:underline">
-                Feedback is open to everyone
+              <a href="/" className="text-csu-green hover:underline">
+                Go to Scoring Portal
               </a>
             </p>
           </div>

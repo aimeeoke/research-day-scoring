@@ -77,8 +77,8 @@ function MonitorContent() {
   };
 
   const pendingScores = getPendingScores();
-  const filteredPending = filterSession === 'all' 
-    ? pendingScores 
+  const filteredPending = filterSession === 'all'
+    ? pendingScores
     : pendingScores.filter(p => p.sessionTime === filterSession);
 
   // Group by judge for the summary view
@@ -111,7 +111,7 @@ function MonitorContent() {
           Upload presenter data on the Dashboard first.
         </p>
         <a
-          href="/"
+          href="/admin"
           className="mt-4 inline-flex items-center px-4 py-2 bg-csu-green text-white rounded-md hover:bg-csu-green/90"
         >
           Go to Dashboard
@@ -258,7 +258,7 @@ function MonitorContent() {
             {filterSession === 'all' ? 'All Scores Received!' : `${filterSession} Complete!`}
           </h3>
           <p className="mt-2 text-green-600">
-            {filterSession === 'all' 
+            {filterSession === 'all'
               ? 'Every judge has submitted all their scores.'
               : 'All scores for this session have been submitted.'}
           </p>
@@ -271,7 +271,7 @@ function MonitorContent() {
           <h3 className="text-lg font-semibold text-gray-900">
             Pending Scores by Judge ({Object.keys(pendingByJudge).length} judges)
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {Object.entries(pendingByJudge)
               .sort((a, b) => b[1].length - a[1].length) // Sort by most pending first
