@@ -40,6 +40,7 @@ export function NavigationBar() {
   const adminLinks = [
     { href: '/admin', label: 'Dashboard' },
     { href: '/admin/monitor', label: 'Monitor' },
+    { href: '/admin/results', label: 'Results' },
   ];
 
   // Build nav items based on access level
@@ -97,6 +98,24 @@ export function NavigationBar() {
                 {item.label}
               </a>
             ))}
+            {/* Admin login link for non-admins */}
+            {!isAdmin && (
+              <a
+                href="/admin"
+                className="px-4 py-3 text-sm hover:bg-white/10 rounded-md border-t border-white/20 mt-2 pt-4 text-csu-gold"
+                onClick={() => setIsOpen(false)}
+              >
+                Admin Login
+              </a>
+            )}
+            {/* Show current access level */}
+            {isAdmin && (
+              <div className="px-4 py-2 mt-2 border-t border-white/20">
+                <span className="text-xs bg-csu-gold text-csu-green px-2 py-1 rounded-full font-medium">
+                  Admin Access
+                </span>
+              </div>
+            )}
           </nav>
         </div>
       )}

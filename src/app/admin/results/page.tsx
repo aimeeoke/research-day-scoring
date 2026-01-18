@@ -134,27 +134,27 @@ function ResultsContent() {
   return (
     <div className="space-y-8">
       {/* Page Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h2 className="text-2xl font-bold text-gray-900">Award Results</h2>
           <p className="text-gray-600 mt-1">
             Category winners and final standings
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <button
             onClick={loadData}
             className="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
           >
-            <RefreshCw className="h-4 w-4 mr-2" />
-            Refresh
+            <RefreshCw className="h-4 w-4 sm:mr-2" />
+            <span className="hidden sm:inline">Refresh</span>
           </button>
           <button
             onClick={exportResultsCSV}
             className="inline-flex items-center px-3 py-2 border border-transparent rounded-md text-sm font-medium text-white bg-csu-green hover:bg-csu-green/90"
           >
-            <Download className="h-4 w-4 mr-2" />
-            Export CSV
+            <Download className="h-4 w-4 sm:mr-2" />
+            <span className="hidden sm:inline">Export CSV</span>
           </button>
         </div>
       </div>
@@ -181,18 +181,20 @@ function ResultsContent() {
       </div>
 
       {/* Golden Pipette Award */}
-      <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-300 rounded-lg p-6">
-        <div className="flex items-center gap-4">
-          <div className="flex-shrink-0">
-            <Trophy className="h-12 w-12 text-yellow-600" />
-          </div>
-          <div className="flex-1">
-            <h3 className="text-xl font-bold text-yellow-800">Golden Pipette Award</h3>
-            <p className="text-yellow-700 text-sm">Highest average score by department</p>
+      <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-300 rounded-lg p-4 sm:p-6">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="flex-shrink-0">
+              <Trophy className="h-10 w-10 sm:h-12 sm:w-12 text-yellow-600" />
+            </div>
+            <div>
+              <h3 className="text-lg sm:text-xl font-bold text-yellow-800">Golden Pipette Award</h3>
+              <p className="text-yellow-700 text-xs sm:text-sm">Highest average score by department</p>
+            </div>
           </div>
           {goldenPipette ? (
-            <div className="text-right">
-              <p className="text-2xl font-bold text-yellow-800">{goldenPipette.department || 'Unknown Department'}</p>
+            <div className="sm:ml-auto sm:text-right bg-yellow-100 rounded-lg p-3 sm:bg-transparent sm:p-0">
+              <p className="text-xl sm:text-2xl font-bold text-yellow-800">{goldenPipette.department || 'Unknown Department'}</p>
               <p className="text-sm text-yellow-700">
                 Avg: {goldenPipette.averageScore.toFixed(2)} ({goldenPipette.presenterCount} presenters)
               </p>
@@ -235,25 +237,34 @@ function ResultsContent() {
               {/* Category Header */}
               <button
                 onClick={() => toggleCategory(category.id)}
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                className="w-full px-4 sm:px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
-                <div className="flex items-center gap-4">
-                  <Award className={`h-6 w-6 ${isComplete ? 'text-csu-green' : 'text-gray-400'}`} />
-                  <div className="text-left">
-                    <h4 className="font-medium text-gray-900">{category.name}</h4>
-                    <p className="text-sm text-gray-500">
-                      {category.places} place{category.places > 1 ? 's' : ''} awarded
-                    </p>
+                <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                  <Award className={`h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 ${isComplete ? 'text-csu-green' : 'text-gray-400'}`} />
+                  <div className="text-left min-w-0">
+                    <h4 className="font-medium text-gray-900 text-sm sm:text-base">{category.name}</h4>
+                    <div className="flex items-center gap-2 mt-0.5">
+                      <span className="text-xs text-gray-500">
+                        {category.places} places
+                      </span>
+                      {isComplete ? (
+                        <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 sm:hidden">
+                          <CheckCircle2 className="h-3 w-3" />
+                        </span>
+                      ) : (
+                        <span className="text-xs text-gray-400 sm:hidden">{percent.toFixed(0)}%</span>
+                      )}
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
                   {isComplete ? (
-                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                    <span className="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
                       <CheckCircle2 className="h-3 w-3 mr-1" />
                       Complete
                     </span>
                   ) : (
-                    <span className="text-sm text-gray-500">{percent.toFixed(0)}% scored</span>
+                    <span className="hidden sm:inline text-sm text-gray-500">{percent.toFixed(0)}% scored</span>
                   )}
                   {isExpanded ? (
                     <ChevronUp className="h-5 w-5 text-gray-400" />
@@ -265,37 +276,39 @@ function ResultsContent() {
 
               {/* Expanded Winners */}
               {isExpanded && (
-                <div className="px-6 pb-4 border-t border-gray-100">
+                <div className="px-4 sm:px-6 pb-4 border-t border-gray-100">
                   {winners.length === 0 ? (
-                    <p className="py-4 text-gray-500 text-center">
+                    <p className="py-4 text-gray-500 text-center text-sm">
                       No complete scores yet. Winners will appear once all judges have scored.
                     </p>
                   ) : (
                     <div className="divide-y divide-gray-100">
                       {winners.map((winner) => (
-                        <div key={`${winner.presenter.id}-${winner.place}`} className="py-4 flex items-center gap-4">
-                          <span className="text-2xl">{getPlaceIcon(winner.place)}</span>
-                          <div className={`px-3 py-1 rounded-full text-sm font-medium border ${getPlaceColor(winner.place)}`}>
-                            {winner.place === 1 ? '1st Place' : winner.place === 2 ? '2nd Place' : '3rd Place'}
-                          </div>
-                          <div className="flex-1">
-                            <p className="font-medium text-gray-900">
-                              {formatPresenterName(winner.presenter.firstName, winner.presenter.lastName)}
-                            </p>
-                            <p className="text-sm text-gray-500 truncate max-w-lg">
-                              {winner.presenter.title}
-                            </p>
-                            {winner.presenter.department && (
-                              <p className="text-xs text-gray-400 mt-1">
-                                {winner.presenter.department}
+                        <div key={`${winner.presenter.id}-${winner.place}`} className="py-4">
+                          {/* Mobile layout */}
+                          <div className="flex items-start gap-3">
+                            <span className="text-2xl">{getPlaceIcon(winner.place)}</span>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 flex-wrap">
+                                <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${getPlaceColor(winner.place)}`}>
+                                  {winner.place === 1 ? '1st' : winner.place === 2 ? '2nd' : '3rd'}
+                                </span>
+                                <span className="font-mono text-sm font-bold text-gray-900">
+                                  {winner.finalScore.toFixed(2)}
+                                </span>
+                              </div>
+                              <p className="font-medium text-gray-900 mt-1">
+                                {formatPresenterName(winner.presenter.firstName, winner.presenter.lastName)}
                               </p>
-                            )}
-                          </div>
-                          <div className="text-right">
-                            <p className="font-mono text-lg font-bold text-gray-900">
-                              {winner.finalScore.toFixed(2)}
-                            </p>
-                            <p className="text-xs text-gray-500">normalized score</p>
+                              <p className="text-sm text-gray-500 line-clamp-2">
+                                {winner.presenter.title}
+                              </p>
+                              {winner.presenter.department && (
+                                <p className="text-xs text-gray-400 mt-1">
+                                  {winner.presenter.department}
+                                </p>
+                              )}
+                            </div>
                           </div>
                         </div>
                       ))}

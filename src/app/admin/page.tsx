@@ -101,28 +101,28 @@ function DashboardContent() {
   return (
     <div className="space-y-8">
       {/* Page Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h2 className="text-2xl font-bold text-gray-900">Admin Dashboard</h2>
-          <p className="text-gray-600 mt-1">
+          <p className="text-gray-600 mt-1 text-sm sm:text-base">
             Real-time overview of Research Day scoring progress
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <button
             onClick={loadData}
             className="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
           >
-            <RefreshCw className="h-4 w-4 mr-2" />
-            Refresh
+            <RefreshCw className="h-4 w-4 sm:mr-2" />
+            <span className="hidden sm:inline">Refresh</span>
           </button>
           {dataLoaded && (
             <button
               onClick={downloadBackup}
               className="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
             >
-              <Download className="h-4 w-4 mr-2" />
-              Export Backup
+              <Download className="h-4 w-4 sm:mr-2" />
+              <span className="hidden sm:inline">Export Backup</span>
             </button>
           )}
         </div>
@@ -160,40 +160,40 @@ function DashboardContent() {
       {dataLoaded && (
         <>
           {/* Quick Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="bg-white rounded-lg shadow-sm p-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
               <div className="flex items-center">
-                <Users className="h-8 w-8 text-csu-green" />
-                <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-500">Presenters</p>
-                  <p className="text-2xl font-bold text-gray-900">{totalPresenters}</p>
+                <Users className="h-6 w-6 sm:h-8 sm:w-8 text-csu-green" />
+                <div className="ml-3 sm:ml-4">
+                  <p className="text-xs sm:text-sm font-medium text-gray-500">Presenters</p>
+                  <p className="text-xl sm:text-2xl font-bold text-gray-900">{totalPresenters}</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-sm p-6">
+            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
               <div className="flex items-center">
-                <FileText className="h-8 w-8 text-blue-600" />
-                <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-500">Scores Entered</p>
-                  <p className="text-2xl font-bold text-gray-900">{totalScores}</p>
+                <FileText className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
+                <div className="ml-3 sm:ml-4">
+                  <p className="text-xs sm:text-sm font-medium text-gray-500">Scores</p>
+                  <p className="text-xl sm:text-2xl font-bold text-gray-900">{totalScores}</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-sm p-6">
+            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
               <div className="flex items-center">
-                <Users className="h-8 w-8 text-purple-600" />
-                <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-500">Judges Scored</p>
-                  <p className="text-2xl font-bold text-gray-900">{uniqueJudgesScored}</p>
+                <Users className="h-6 w-6 sm:h-8 sm:w-8 text-purple-600" />
+                <div className="ml-3 sm:ml-4">
+                  <p className="text-xs sm:text-sm font-medium text-gray-500">Judges</p>
+                  <p className="text-xl sm:text-2xl font-bold text-gray-900">{uniqueJudgesScored}</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-sm p-6">
+            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
               <div className="flex items-center">
-                <Award className="h-8 w-8 text-csu-gold" />
-                <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-500">Categories</p>
-                  <p className="text-2xl font-bold text-gray-900">{AWARD_CATEGORIES.length}</p>
+                <Award className="h-6 w-6 sm:h-8 sm:w-8 text-csu-gold" />
+                <div className="ml-3 sm:ml-4">
+                  <p className="text-xs sm:text-sm font-medium text-gray-500">Categories</p>
+                  <p className="text-xl sm:text-2xl font-bold text-gray-900">{AWARD_CATEGORIES.length}</p>
                 </div>
               </div>
             </div>
@@ -229,51 +229,51 @@ function DashboardContent() {
           </div>
 
           {/* Quick Actions */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             <a
               href="/"
-              className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow group"
+              className="bg-white rounded-lg shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow group"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Judge Scoring</h3>
-                  <p className="text-sm text-gray-500 mt-1">Enter scores for assigned presenters</p>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">Judge Scoring</h3>
+                  <p className="text-xs sm:text-sm text-gray-500 mt-1">Enter scores</p>
                 </div>
                 <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-csu-green" />
               </div>
             </a>
             <a
               href="/comments"
-              className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow group"
+              className="bg-white rounded-lg shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow group"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Judge Comments</h3>
-                  <p className="text-sm text-gray-500 mt-1">Enter feedback for presenters</p>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">Comments</h3>
+                  <p className="text-xs sm:text-sm text-gray-500 mt-1">Feedback</p>
                 </div>
                 <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-csu-green" />
               </div>
             </a>
             <a
               href="/admin/monitor"
-              className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow group border-2 border-orange-200"
+              className="bg-white rounded-lg shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow group border-2 border-orange-200"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Score Monitor</h3>
-                  <p className="text-sm text-gray-500 mt-1">Track pending judge scores</p>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">Monitor</h3>
+                  <p className="text-xs sm:text-sm text-gray-500 mt-1">Track scores</p>
                 </div>
                 <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-orange-500" />
               </div>
             </a>
             <a
               href="/admin/results"
-              className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow group border-2 border-csu-gold"
+              className="bg-white rounded-lg shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow group border-2 border-csu-gold"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900">Award Results</h3>
-                  <p className="text-sm text-gray-500 mt-1">View winners by category</p>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">Results</h3>
+                  <p className="text-xs sm:text-sm text-gray-500 mt-1">View winners</p>
                 </div>
                 <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-csu-gold" />
               </div>
@@ -281,13 +281,13 @@ function DashboardContent() {
           </div>
 
           {/* Re-upload option */}
-          <div className="bg-gray-50 rounded-lg p-4 flex items-center justify-between">
-            <div className="text-sm text-gray-600">
-              <span className="font-medium">{totalPresenters} presenters loaded</span>
+          <div className="bg-gray-50 rounded-lg p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="text-xs sm:text-sm text-gray-600">
+              <span className="font-medium">{totalPresenters} presenters</span>
               <span className="mx-2">•</span>
-              <span>Last refreshed: {lastRefresh.toLocaleTimeString()}</span>
+              <span>Refreshed: {lastRefresh.toLocaleTimeString()}</span>
             </div>
-            <label className="inline-flex items-center px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 cursor-pointer">
+            <label className="inline-flex items-center justify-center px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 cursor-pointer">
               <Upload className="h-4 w-4 mr-2" />
               Update CSV
               <input
@@ -302,11 +302,11 @@ function DashboardContent() {
           {/* Admin Actions - Clear Scores */}
           {totalScores > 0 && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div>
                   <h4 className="text-sm font-medium text-red-800">Reset Testing Data</h4>
-                  <p className="text-sm text-red-600 mt-1">
-                    Clear all {totalScores} scores and feedback. This cannot be undone.
+                  <p className="text-xs sm:text-sm text-red-600 mt-1">
+                    Clear all {totalScores} scores and feedback. Cannot be undone.
                   </p>
                 </div>
                 <button
@@ -316,10 +316,10 @@ function DashboardContent() {
                       loadData();
                     }
                   }}
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-red-700 bg-white border border-red-300 rounded-md hover:bg-red-100"
+                  className="inline-flex items-center justify-center px-3 py-2 text-sm font-medium text-red-700 bg-white border border-red-300 rounded-md hover:bg-red-100"
                 >
                   <Trash2 className="h-4 w-4 mr-2" />
-                  Clear All Scores
+                  Clear Scores
                 </button>
               </div>
             </div>
