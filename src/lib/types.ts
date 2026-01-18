@@ -167,27 +167,27 @@ export interface AwardCategory {
   researchType: ResearchType | null;
   researchStage: ResearchStage | null;
   presentationType: PresentationType;
-  places: number;                  // 2 for most, 3 for undergrad
+  places: number;                  // Number of places awarded (1st, 2nd, 3rd)
 }
 
 export const AWARD_CATEGORIES: AwardCategory[] = [
   // Oral Presentations
-  { id: "oral-found-adv", name: "Foundational Research, Advanced Stage, Oral", researchType: "Foundational Research", researchStage: "Advanced", presentationType: "Oral", places: 2 },
-  { id: "oral-found-early", name: "Foundational Research, Early Stage, Oral", researchType: "Foundational Research", researchStage: "Early", presentationType: "Oral", places: 2 },
-  { id: "oral-trans-adv", name: "Translational Research, Advanced Stage, Oral", researchType: "Translational Research", researchStage: "Advanced", presentationType: "Oral", places: 2 },
-  { id: "oral-trans-early", name: "Translational Research, Early Stage, Oral", researchType: "Translational Research", researchStage: "Early", presentationType: "Oral", places: 2 },
-  { id: "oral-clin-adv", name: "Veterinary Clinical Research, Advanced Stage, Oral", researchType: "Veterinary Clinical Research", researchStage: "Advanced", presentationType: "Oral", places: 2 },
-  { id: "oral-clin-early", name: "Veterinary Clinical Research, Early Stage, Oral", researchType: "Veterinary Clinical Research", researchStage: "Early", presentationType: "Oral", places: 2 },
-  
+  { id: "oral-found-adv", name: "Foundational Research, Advanced Stage, Oral", researchType: "Foundational Research", researchStage: "Advanced", presentationType: "Oral", places: 3 },
+  { id: "oral-found-early", name: "Foundational Research, Early Stage, Oral", researchType: "Foundational Research", researchStage: "Early", presentationType: "Oral", places: 3 },
+  { id: "oral-trans-adv", name: "Translational Research, Advanced Stage, Oral", researchType: "Translational Research", researchStage: "Advanced", presentationType: "Oral", places: 3 },
+  { id: "oral-trans-early", name: "Translational Research, Early Stage, Oral", researchType: "Translational Research", researchStage: "Early", presentationType: "Oral", places: 3 },
+  { id: "oral-clin-adv", name: "Veterinary Clinical Research, Advanced Stage, Oral", researchType: "Veterinary Clinical Research", researchStage: "Advanced", presentationType: "Oral", places: 3 },
+  { id: "oral-clin-early", name: "Veterinary Clinical Research, Early Stage, Oral", researchType: "Veterinary Clinical Research", researchStage: "Early", presentationType: "Oral", places: 3 },
+
   // Poster Presentations
-  { id: "poster-found-adv", name: "Foundational Research, Advanced Stage, Poster", researchType: "Foundational Research", researchStage: "Advanced", presentationType: "Poster", places: 2 },
-  { id: "poster-found-early", name: "Foundational Research, Early Stage, Poster", researchType: "Foundational Research", researchStage: "Early", presentationType: "Poster", places: 2 },
-  { id: "poster-trans-adv", name: "Translational Research, Advanced Stage, Poster", researchType: "Translational Research", researchStage: "Advanced", presentationType: "Poster", places: 2 },
-  { id: "poster-trans-early", name: "Translational Research, Early Stage, Poster", researchType: "Translational Research", researchStage: "Early", presentationType: "Poster", places: 2 },
-  { id: "poster-clin-adv", name: "Veterinary Clinical Research, Advanced Stage, Poster", researchType: "Veterinary Clinical Research", researchStage: "Advanced", presentationType: "Poster", places: 2 },
-  { id: "poster-clin-early", name: "Veterinary Clinical Research, Early Stage, Poster", researchType: "Veterinary Clinical Research", researchStage: "Early", presentationType: "Poster", places: 2 },
-  { id: "poster-ped", name: "Pedagogy Research, Poster", researchType: "Social Sciences/Pedagogy Research", researchStage: null, presentationType: "Poster", places: 2 },
-  
+  { id: "poster-found-adv", name: "Foundational Research, Advanced Stage, Poster", researchType: "Foundational Research", researchStage: "Advanced", presentationType: "Poster", places: 3 },
+  { id: "poster-found-early", name: "Foundational Research, Early Stage, Poster", researchType: "Foundational Research", researchStage: "Early", presentationType: "Poster", places: 3 },
+  { id: "poster-trans-adv", name: "Translational Research, Advanced Stage, Poster", researchType: "Translational Research", researchStage: "Advanced", presentationType: "Poster", places: 3 },
+  { id: "poster-trans-early", name: "Translational Research, Early Stage, Poster", researchType: "Translational Research", researchStage: "Early", presentationType: "Poster", places: 3 },
+  { id: "poster-clin-adv", name: "Veterinary Clinical Research, Advanced Stage, Poster", researchType: "Veterinary Clinical Research", researchStage: "Advanced", presentationType: "Poster", places: 3 },
+  { id: "poster-clin-early", name: "Veterinary Clinical Research, Early Stage, Poster", researchType: "Veterinary Clinical Research", researchStage: "Early", presentationType: "Poster", places: 3 },
+  { id: "poster-ped", name: "Pedagogy Research, Poster", researchType: "Social Sciences/Pedagogy Research", researchStage: null, presentationType: "Poster", places: 3 },
+
   // Undergraduate Posters (overall, no category breakdown)
   { id: "undergrad-poster", name: "Undergraduate Poster", researchType: null, researchStage: null, presentationType: "Undergrad Poster", places: 3 },
 ];

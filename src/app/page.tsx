@@ -63,11 +63,11 @@ const CRITERIA_INFO = [
 ];
 
 const SCORE_OPTIONS = [
-  { value: 5, label: '5 - Strongly Agree' },
-  { value: 4, label: '4 - Agree' },
-  { value: 3, label: '3 - Neutral' },
-  { value: 2, label: '2 - Disagree' },
   { value: 1, label: '1 - Strongly Disagree' },
+  { value: 2, label: '2 - Disagree' },
+  { value: 3, label: '3 - Neutral' },
+  { value: 4, label: '4 - Agree' },
+  { value: 5, label: '5 - Strongly Agree' },
 ];
 
 export default function ScoringPage() {

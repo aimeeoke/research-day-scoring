@@ -1,19 +1,20 @@
 // localStorage persistence layer for Research Day Scoring System
 
 import { ScoringState, Presenter, Judge, Score, Feedback } from './types';
+import { PRESENTERS, JUDGES } from './data';
 
 const STORAGE_KEY = 'research-day-scoring-2026';
 
 // =============================================================================
-// DEFAULT STATE
+// DEFAULT STATE (pre-populated from static data file)
 // =============================================================================
 
 const defaultState: ScoringState = {
-  presenters: [],
-  judges: [],
+  presenters: PRESENTERS,
+  judges: JUDGES,
   scores: [],
   feedback: [],
-  dataLoaded: false,
+  dataLoaded: true,
   lastUpdated: null,
 };
 
@@ -25,16 +26,19 @@ export function loadState(): ScoringState {
   if (typeof window === 'undefined') {
     return defaultState;
   }
-  
+
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (!stored) {
       return defaultState;
     }
-    const parsed = JSON.parse(stored) as ScoringState;
+    const parsed = JSON.parse(stored) as Partial<ScoringState>;
+    // Always use static presenter/judge data, but preserve scores and feedback from localStorage
     return {
       ...defaultState,
-      ...parsed,
+      scores: parsed.scores || [],
+      feedback: parsed.feedback || [],
+      lastUpdated: parsed.lastUpdated || null,
     };
   } catch (error) {
     console.error('Error loading state from localStorage:', error);
@@ -63,6 +67,13 @@ export function clearState(): void {
     return;
   }
   localStorage.removeItem(STORAGE_KEY);
+}
+
+export function clearScores(): void {
+  const state = loadState();
+  state.scores = [];
+  state.feedback = [];
+  saveState(state);
 }
 
 // =============================================================================

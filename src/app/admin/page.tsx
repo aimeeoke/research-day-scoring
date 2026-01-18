@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Upload, Download, RefreshCw, Users, Award, FileText, ChevronRight } from 'lucide-react';
+import { Upload, Download, RefreshCw, Users, Award, FileText, ChevronRight, Trash2 } from 'lucide-react';
 import { AdminGate } from '@/components/auth-gate';
 import { parsePresenterCSV } from '@/lib/csv-parser';
 import {
@@ -12,6 +12,7 @@ import {
   getScores,
   getPresenters,
   getJudges,
+  clearScores,
 } from '@/lib/storage';
 import {
   getCategoryCompletionPercent,
@@ -265,6 +266,18 @@ function DashboardContent() {
                 <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-orange-500" />
               </div>
             </a>
+            <a
+              href="/admin/results"
+              className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow group border-2 border-csu-gold"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900">Award Results</h3>
+                  <p className="text-sm text-gray-500 mt-1">View winners by category</p>
+                </div>
+                <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-csu-gold" />
+              </div>
+            </a>
           </div>
 
           {/* Re-upload option */}
@@ -285,6 +298,32 @@ function DashboardContent() {
               />
             </label>
           </div>
+
+          {/* Admin Actions - Clear Scores */}
+          {totalScores > 0 && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="text-sm font-medium text-red-800">Reset Testing Data</h4>
+                  <p className="text-sm text-red-600 mt-1">
+                    Clear all {totalScores} scores and feedback. This cannot be undone.
+                  </p>
+                </div>
+                <button
+                  onClick={() => {
+                    if (window.confirm(`Are you sure you want to delete all ${totalScores} scores? This cannot be undone.`)) {
+                      clearScores();
+                      loadData();
+                    }
+                  }}
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-red-700 bg-white border border-red-300 rounded-md hover:bg-red-100"
+                >
+                  <Trash2 className="h-4 w-4 mr-2" />
+                  Clear All Scores
+                </button>
+              </div>
+            </div>
+          )}
         </>
       )}
     </div>
