@@ -1590,25 +1590,9 @@ export const PRESENTERS: Presenter[] = [
   },
   {
     "id": "U24",
-    "firstName": "Emma",
-    "lastName": "Hinchliffe",
+    "firstName": "Emma & Victoria",
+    "lastName": "Hinchliffe & Aragon",
     "email": "Emma.Hinchliffe@colostate.edu",
-    "classification": "Undergraduate Student",
-    "researchStage": "Early",
-    "researchType": "Foundational Research",
-    "department": "",
-    "presentationType": "Undergrad Poster",
-    "presentationTime": "10:15 - 11:15",
-    "title": "?-catenin haploinsufficiency is sufficient to alter behaviors and glutamatergic synapses in mice",
-    "judge1": "Gamze Badakul",
-    "judge2": "Ashley Potter",
-    "judge3": "Ashley Higgins"
-  },
-  {
-    "id": "U24",
-    "firstName": "Victoria",
-    "lastName": "Aragon",
-    "email": "Victoria.Aragon@colostate.edu",
     "classification": "Undergraduate Student",
     "researchStage": "Early",
     "researchType": "Foundational Research",
@@ -2149,7 +2133,7 @@ export const PRESENTERS: Presenter[] = [
     "judge3": "Amy MacNeill"
   },
   {
-    "id": "91",
+    "id": "88",
     "firstName": "Dallas K.",
     "lastName": "Lokey",
     "email": "Dallas.Lokey@colostate.edu",
