@@ -1,0 +1,1754 @@
+[
+ {
+   "A": "presentationID",
+   "B": "presenterFirst",
+   "C": "presentetLast",
+   "D": "judge1",
+   "E": "judge2",
+   "F": "judge3"
+ },
+ {
+   "A": "1",
+   "B": "Ismaaeel",
+   "C": "Abdur-Rahmaan",
+   "D": "Marika Klowsowski",
+   "E": "Gilbert John",
+   "F": ""
+ },
+ {
+   "A": "2",
+   "B": "Samirah",
+   "C": "Alkhudaydi ",
+   "D": "Christopher Vaaga",
+   "E": "J Lucas Argueso",
+   "F": ""
+ },
+ {
+   "A": "3",
+   "B": "Kasandra",
+   "C": "Alonso",
+   "D": "Mo Salman",
+   "E": "Jenny Sones",
+   "F": ""
+ },
+ {
+   "A": "4",
+   "B": "Jean Carlos ",
+   "C": "Alvarado Colon",
+   "D": "Giovanni Tremolada",
+   "E": "Kristen Davenport",
+   "F": ""
+ },
+ {
+   "A": "5",
+   "B": "Rhea",
+   "C": "Amatya",
+   "D": "Julie Moreno",
+   "E": "Kristen Davenport",
+   "F": ""
+ },
+ {
+   "A": "6",
+   "B": "Joel",
+   "C": "Amralo",
+   "D": "Chisom Arinze",
+   "E": "Traci Kinkel",
+   "F": ""
+ },
+ {
+   "A": "7",
+   "B": "Juan",
+   "C": "Aragon",
+   "D": "Kathryn Wotman",
+   "E": "Sarah Raabis",
+   "F": ""
+ },
+ {
+   "A": "8",
+   "B": "Alexandra",
+   "C": "Ash",
+   "D": "Samantha Courtney",
+   "E": "Chisom Arinze",
+   "F": ""
+ },
+ {
+   "A": "1A-1",
+   "B": "Gamze",
+   "C": "Badakul",
+   "D": "Stu Tobet",
+   "E": "Claudia Wiese",
+   "F": ""
+ },
+ {
+   "A": "9",
+   "B": "Hannah",
+   "C": "Badenhop",
+   "D": "Phillida Charley",
+   "E": "Jairo Palomares Velosa",
+   "F": ""
+ },
+ {
+   "A": "10",
+   "B": "Sami Ullah Khan",
+   "C": "Bahadur",
+   "D": "J Lucas Argueso",
+   "E": "Rahmi Lee",
+   "F": ""
+ },
+ {
+   "A": "14",
+   "B": "Amanda",
+   "C": "Barnard",
+   "D": "Kristen Davenport",
+   "E": "Zohaib Ali",
+   "F": ""
+ },
+ {
+   "A": "12",
+   "B": "Nicole",
+   "C": "Bartz",
+   "D": "Susan Bailey",
+   "E": "Renata Comeau",
+   "F": ""
+ },
+ {
+   "A": "13",
+   "B": "Emily",
+   "C": "Belshin",
+   "D": "Anna Bracken",
+   "E": "Catriona MacPhail",
+   "F": ""
+ },
+ {
+   "A": "U01",
+   "B": "Lauren",
+   "C": "Bennett",
+   "D": "Levi Flom",
+   "E": "Natalie Wickenkamp",
+   "F": "Jason Martin"
+ },
+ {
+   "A": "1B-1",
+   "B": "Owen",
+   "C": "Bevis",
+   "D": "Kelly Debie",
+   "E": "Luke Montrose",
+   "F": ""
+ },
+ {
+   "A": "U02",
+   "B": "Abigail",
+   "C": "Bibb",
+   "D": "Alan Schenkel",
+   "E": "Seonil Kim",
+   "F": "Gamze Badakul"
+ },
+ {
+   "A": "2A-1",
+   "B": "Sean",
+   "C": "Boland",
+   "D": "Frederic Hoerndli",
+   "E": "Amanda Woerman",
+   "F": ""
+ },
+ {
+   "A": "U03",
+   "B": "George (Trey)",
+   "C": "Brauchler",
+   "D": "Emily Perkins",
+   "E": "Brandi Dunn",
+   "F": "Madison Johnson"
+ },
+ {
+   "A": "15",
+   "B": "Aidan",
+   "C": "Briggs",
+   "D": "Nathaniel Denkers",
+   "E": "Luke Schwerdtfeger",
+   "F": ""
+ },
+ {
+   "A": "16",
+   "B": "Paulina",
+   "C": "Bucaro",
+   "D": "Samantha Courtney",
+   "E": "Kristin Zersen",
+   "F": ""
+ },
+ {
+   "A": "18",
+   "B": "Kenya",
+   "C": "Campbell",
+   "D": "Chisom Arinze",
+   "E": "Marika Klowsowski",
+   "F": ""
+ },
+ {
+   "A": "19",
+   "B": "Rhyse",
+   "C": "Campion",
+   "D": "Catriona MacPhail",
+   "E": "Anna Bracken",
+   "F": ""
+ },
+ {
+   "A": "20",
+   "B": "Carmen",
+   "C": "Carrillo",
+   "D": "Rick McCosh",
+   "E": "Alyssa Kasen",
+   "F": ""
+ },
+ {
+   "A": "21",
+   "B": "Emily",
+   "C": "Castellanos",
+   "D": "Carol Wilusz",
+   "E": "Sareen Fiaz",
+   "F": ""
+ },
+ {
+   "A": "22",
+   "B": "Ana Valeria",
+   "C": "Castro Romero",
+   "D": "Christopher Vaaga",
+   "E": "Nathaniel Denkers",
+   "F": ""
+ },
+ {
+   "A": "23",
+   "B": "Sabrina",
+   "C": "Cedillos",
+   "D": "Sheryl Magzamen",
+   "E": "Sami Case",
+   "F": ""
+ },
+ {
+   "A": "24",
+   "B": "Piyawan",
+   "C": "Chailapakul",
+   "D": "Traci Kinkel",
+   "E": "Luke Schwerdtfeger",
+   "F": ""
+ },
+ {
+   "A": "25",
+   "B": "Jonathan",
+   "C": "Chau",
+   "D": "Suad Elmegerhi",
+   "E": "Zaid Abdo",
+   "F": ""
+ },
+ {
+   "A": "26",
+   "B": "Hannah",
+   "C": "Chernavsky",
+   "D": "Katie Bisazza",
+   "E": "Susan Lana",
+   "F": ""
+ },
+ {
+   "A": "27",
+   "B": "Raissa",
+   "C": "Chunko",
+   "D": "Rahmi Lee",
+   "E": "Rachel Maison",
+   "F": ""
+ },
+ {
+   "A": "28",
+   "B": "Madison",
+   "C": "Clark",
+   "D": "Jairo Palomares Velosa",
+   "E": "Phillida Charley",
+   "F": ""
+ },
+ {
+   "A": "29",
+   "B": "Jesse",
+   "C": "Cole",
+   "D": "Angela Bosco-Lauth",
+   "E": "Marika Klowsowski",
+   "F": ""
+ },
+ {
+   "A": "30",
+   "B": "Mia",
+   "C": "Collins",
+   "D": "Sareen Fiaz",
+   "E": "Jason Lombard",
+   "F": ""
+ },
+ {
+   "A": "31",
+   "B": "Julia",
+   "C": "Cook",
+   "D": "Riley Thompson-Brandhagen",
+   "E": "Sami Case",
+   "F": ""
+ },
+ {
+   "A": "U04",
+   "B": "Emerald",
+   "C": "Cordova",
+   "D": "Seonil Kim",
+   "E": "Aidan Briggs",
+   "F": "Levi Flom"
+ },
+ {
+   "A": "32",
+   "B": "Vanessa",
+   "C": "Correa",
+   "D": "J Lucas Argueso",
+   "E": "Susan Bailey",
+   "F": ""
+ },
+ {
+   "A": "U05",
+   "B": "Ian",
+   "C": "Costa",
+   "D": "Emily Perkins",
+   "E": "Morgan Miller",
+   "F": "Samirah Alkhudaydi"
+ },
+ {
+   "A": "U06",
+   "B": "Greta",
+   "C": "Coyner",
+   "D": "Kalani Williams",
+   "E": "Kelsey Martin",
+   "F": "Ashley Higgins"
+ },
+ {
+   "A": "U07",
+   "B": "Sav",
+   "C": "Crisler",
+   "D": "Seonil Kim",
+   "E": "Dawit Tesfaye",
+   "F": "Ashley Potter"
+ },
+ {
+   "A": "1A-2",
+   "B": "Taylor",
+   "C": "Crisologo",
+   "D": "Stu Tobet",
+   "E": "Claudia Wiese",
+   "F": ""
+ },
+ {
+   "A": "33",
+   "B": "Rebecca",
+   "C": "Crook",
+   "D": "Chisom Arinze",
+   "E": "J. Lucas Argueso",
+   "F": ""
+ },
+ {
+   "A": "U08",
+   "B": "Yvette",
+   "C": "Cruz",
+   "D": "Kate Tyner",
+   "E": "Michelle Savran",
+   "F": "Krystle Reagan"
+ },
+ {
+   "A": "34",
+   "B": "Gabrielle",
+   "C": "Cummings",
+   "D": "Christian Sewor",
+   "E": "Phillida Charley",
+   "F": ""
+ },
+ {
+   "A": "35",
+   "B": "Naija",
+   "C": "Cuzmar",
+   "D": "Sheryl Magzamen",
+   "E": "Renata Comeau",
+   "F": ""
+ },
+ {
+   "A": "36",
+   "B": "Natali",
+   "C": "Dallos",
+   "D": "Andres Obregon",
+   "E": "Suad Elmegerhi",
+   "F": ""
+ },
+ {
+   "A": "37",
+   "B": "David",
+   "C": "Danis",
+   "D": "Brigit Patten",
+   "E": "Charlie Talbot",
+   "F": ""
+ },
+ {
+   "A": "38",
+   "B": "Jyoti",
+   "C": "Das",
+   "D": "Luisa Nieto ",
+   "E": "Courtney Bouchet",
+   "F": ""
+ },
+ {
+   "A": "39",
+   "B": "Jenaye",
+   "C": "de Seve",
+   "D": "Michelle Staros",
+   "E": "Nathaniel Denkers",
+   "F": ""
+ },
+ {
+   "A": "1A-3",
+   "B": "Michelle",
+   "C": "Degnin",
+   "D": "Stu Tobet",
+   "E": "Claudia Wiese",
+   "F": ""
+ },
+ {
+   "A": "U10",
+   "B": "Genevieve",
+   "C": "Denison",
+   "D": "Reese Sprister ",
+   "E": "Michelle Galvan",
+   "F": "Michelle Savran"
+ },
+ {
+   "A": "40",
+   "B": "Anilu",
+   "C": "Diaz",
+   "D": "Imke Steffan",
+   "E": "Riley Thompson-Brandhagen",
+   "F": ""
+ },
+ {
+   "A": "41",
+   "B": "Maria",
+   "C": "Do",
+   "D": "Luke Schwerdtfeger",
+   "E": "Gary Mason",
+   "F": ""
+ },
+ {
+   "A": "42",
+   "B": "Kaley",
+   "C": "Dodd",
+   "D": "Luisa Nieto ",
+   "E": "Michelle Staros",
+   "F": ""
+ },
+ {
+   "A": "U11",
+   "B": "Sophie",
+   "C": "Downing",
+   "D": "Jacob Smoot",
+   "E": "Samirah Alkhudaydi",
+   "F": "Kathleen Eddy"
+ },
+ {
+   "A": "43",
+   "B": "Brandi",
+   "C": "Dunn",
+   "D": "Courtney Bouchet",
+   "E": "Carol Wilusz",
+   "F": ""
+ },
+ {
+   "A": "44",
+   "B": "Elizabeth",
+   "C": "Dykstra",
+   "D": "Chelsea Burden",
+   "E": "Treana Mayer",
+   "F": ""
+ },
+ {
+   "A": "45",
+   "B": "Ryan",
+   "C": "Eastman",
+   "D": "Rick McCosh",
+   "E": "Andres Obregon",
+   "F": ""
+ },
+ {
+   "A": "46",
+   "B": "Cheyenne",
+   "C": "Elliott",
+   "D": "Carol Wilusz",
+   "E": "Angela Bosco-Lauth",
+   "F": ""
+ },
+ {
+   "A": "47",
+   "B": "Nikki",
+   "C": "Erben",
+   "D": "Giovanni Tremolada",
+   "E": "Jenny Sones",
+   "F": ""
+ },
+ {
+   "A": "48",
+   "B": "Elizabeth",
+   "C": "Esdaile",
+   "D": "Keara Boss",
+   "E": "Katie Seabaugh",
+   "F": ""
+ },
+ {
+   "A": "1A-4",
+   "B": "Isabella",
+   "C": "Faulkner",
+   "D": "Stu Tobet",
+   "E": "Claudia Wiese",
+   "F": ""
+ },
+ {
+   "A": "50",
+   "B": "Sareen",
+   "C": "Fiaz",
+   "D": "Ahmed Gad",
+   "E": "Sareen Fiaz",
+   "F": ""
+ },
+ {
+   "A": "U12",
+   "B": "Aidan",
+   "C": "Flanagan",
+   "D": "Farzana Hossain",
+   "E": "Dawit Tesfaye",
+   "F": "Jebrail Dempsey"
+ },
+ {
+   "A": "U13",
+   "B": "Josh",
+   "C": "Flowers",
+   "D": "Gamze Badakul",
+   "E": "Ava Holzer",
+   "F": "Kelsey Martin"
+ },
+ {
+   "A": "51",
+   "B": "Kaitlyn",
+   "C": "Forrest",
+   "D": "Rahmi Lee",
+   "E": "Angela Bosco-Lauth",
+   "F": ""
+ },
+ {
+   "A": "52",
+   "B": "Lyta",
+   "C": "Foulk",
+   "D": "Elena Lian",
+   "E": "Rachel Maison",
+   "F": ""
+ },
+ {
+   "A": "53",
+   "B": "Rebecca",
+   "C": "Fultz",
+   "D": "Susan Bailey",
+   "E": "Christopher Vaaga",
+   "F": ""
+ },
+ {
+   "A": "54",
+   "B": "Javier",
+   "C": "Funes",
+   "D": "Alysa Kasen",
+   "E": "Sheryl Magzamen",
+   "F": ""
+ },
+ {
+   "A": "55",
+   "B": "Ahmed",
+   "C": "Gad",
+   "D": "Alysa Kasen",
+   "E": "Rick McCosh",
+   "F": ""
+ },
+ {
+   "A": "56",
+   "B": "Hannah",
+   "C": "Gaitan",
+   "D": "Alysa Kasen",
+   "E": "Elena Lian",
+   "F": ""
+ },
+ {
+   "A": "1B-2",
+   "B": "Santiago",
+   "C": "Galindo-GonzÃ¡lez",
+   "D": "Kelly Debie",
+   "E": "Luke Montrose",
+   "F": ""
+ },
+ {
+   "A": "U14",
+   "B": "Jessica",
+   "C": "Gamble",
+   "D": "Alan Schenkel",
+   "E": "Jebrail Dempsey",
+   "F": "Ava Holzer"
+ },
+ {
+   "A": "U15",
+   "B": "Olufunmilayo",
+   "C": "Garner",
+   "D": "Emily Perkins",
+   "E": "Charli Geer",
+   "F": "Megan Hager"
+ },
+ {
+   "A": "U16",
+   "B": "Emily",
+   "C": "Gasowski",
+   "D": "Kapahi Kawai-Puaa",
+   "E": "Placeholder 1",
+   "F": "Rosa Quiroz"
+ },
+ {
+   "A": "57",
+   "B": "Charlize",
+   "C": "Geer",
+   "D": "Kristin Zersen",
+   "E": "Rachel Maison",
+   "F": ""
+ },
+ {
+   "A": "58",
+   "B": "Ben",
+   "C": "Giese",
+   "D": "Rick McCosh",
+   "E": "Gary Mason",
+   "F": ""
+ },
+ {
+   "A": "11",
+   "B": "Gehena",
+   "C": "Girish",
+   "D": "Christian Sewor",
+   "E": "Phillida Charley",
+   "F": ""
+ },
+ {
+   "A": "2B-1",
+   "B": "Susan",
+   "C": "Gogolski",
+   "D": "Drew Koch",
+   "E": "Sangeeta Rao",
+   "F": ""
+ },
+ {
+   "A": "59",
+   "B": "Benjamin",
+   "C": "Goldblatt",
+   "D": "Mo Salman",
+   "E": "Catriona MacPhail",
+   "F": ""
+ },
+ {
+   "A": "U17",
+   "B": "Kendall",
+   "C": "Goldmann",
+   "D": "Michelle Savran",
+   "E": "Amy MacNeill",
+   "F": "Diana Lowe"
+ },
+ {
+   "A": "U18",
+   "B": "Jordi",
+   "C": "Gomez",
+   "D": "Rosa Quiroz",
+   "E": "Elizabeth Esdaile",
+   "F": "Megan Hager"
+ },
+ {
+   "A": "2B-2",
+   "B": "Raul",
+   "C": "Gonzalez-Castro",
+   "D": "Drew Koch",
+   "E": "Sangeeta Rao",
+   "F": ""
+ },
+ {
+   "A": "60",
+   "B": "Jenna",
+   "C": "Gotte",
+   "D": "Courtney Bouchet",
+   "E": "Luke Schwerdtfeger",
+   "F": ""
+ },
+ {
+   "A": "U19",
+   "B": "Jaiden ",
+   "C": "Graham",
+   "D": "Krystle Reagan",
+   "E": "Taylor Crisologo",
+   "F": "Kevin Ayala"
+ },
+ {
+   "A": "61",
+   "B": "Patrick",
+   "C": "Graham",
+   "D": "Susan Bailey",
+   "E": "Samantha Courtney",
+   "F": ""
+ },
+ {
+   "A": "62",
+   "B": "Amelia H",
+   "C": "Gray",
+   "D": "Ahmed Gad",
+   "E": "Kristin Zersen",
+   "F": ""
+ },
+ {
+   "A": "63",
+   "B": "Kelly",
+   "C": "Greenhut",
+   "D": "Christian Sewor",
+   "E": "Gary Mason",
+   "F": ""
+ },
+ {
+   "A": "64",
+   "B": "Anthony",
+   "C": "Grigsby",
+   "D": "Zohaib Ali",
+   "E": "Sami Case",
+   "F": ""
+ },
+ {
+   "A": "65",
+   "B": "Emilio",
+   "C": "Gutierrez Castillo",
+   "D": "Zaid Abdo",
+   "E": "Jason Lombard",
+   "F": ""
+ },
+ {
+   "A": "66",
+   "B": "Megan",
+   "C": "Hager",
+   "D": "Kathryn Wotman",
+   "E": "Gilbert John",
+   "F": ""
+ },
+ {
+   "A": "U21",
+   "B": "Isabella",
+   "C": "Hamner",
+   "D": "Reese Sprister ",
+   "E": "Placeholder 1",
+   "F": "Krystle Reagan"
+ },
+ {
+   "A": "U22",
+   "B": "Evan",
+   "C": "Harris",
+   "D": "Ashley Potter",
+   "E": "Jebrail Dempsey",
+   "F": "Ava Holzer"
+ },
+ {
+   "A": "67",
+   "B": "Isabella",
+   "C": "Harter",
+   "D": "Imke Steffan",
+   "E": "Ahmed Gad",
+   "F": ""
+ },
+ {
+   "A": "U23",
+   "B": "Samuel",
+   "C": "Helgerson",
+   "D": "Kapahi Kawai-Puaa",
+   "E": "Brandi Dunn",
+   "F": "Erin Simpkins"
+ },
+ {
+   "A": "68",
+   "B": "Emily",
+   "C": "Hicks",
+   "D": "Katie Seabaugh",
+   "E": "Keara Boss",
+   "F": ""
+ },
+ {
+   "A": "69",
+   "B": "Ashley",
+   "C": "Higgins",
+   "D": "Chisom Arinze",
+   "E": "Traci Kinkel",
+   "F": ""
+ },
+ {
+   "A": "2A-2",
+   "B": "Julia",
+   "C": "Hilliard",
+   "D": "Frederic Hoerndli",
+   "E": "Amanda Woerman",
+   "F": ""
+ },
+ {
+   "A": "70",
+   "B": "Fallon",
+   "C": "Hiltz",
+   "D": "Chelsea Burden",
+   "E": "Katie Bisazza",
+   "F": ""
+ },
+ {
+   "A": "U24",
+   "B": "Emma",
+   "C": "Hinchliffe",
+   "D": "Gamze Badakul",
+   "E": "Ashley Potter",
+   "F": "Ashley Higgins"
+ },
+ {
+   "A": "U24",
+   "B": "Victoria",
+   "C": "Aragon",
+   "D": "Gamze Badakul",
+   "E": "Ashley Potter",
+   "F": "Ashley Higgins"
+ },
+ {
+   "A": "U25",
+   "B": "Myah ",
+   "C": "Hinshaw",
+   "D": "Michelle Galvan",
+   "E": "Kapahi Kawai-Puaa",
+   "F": "Kate Tyner"
+ },
+ {
+   "A": "71",
+   "B": "Ava",
+   "C": "Holzer",
+   "D": "Imke Steffan",
+   "E": "Elena Lian",
+   "F": ""
+ },
+ {
+   "A": "72",
+   "B": "Jennifer",
+   "C": "Houston",
+   "D": "Sarah Raabis",
+   "E": "Tracy Webb",
+   "F": ""
+ },
+ {
+   "A": "U26",
+   "B": "Jocelyn ",
+   "C": "Howard",
+   "D": "Reese Sprister ",
+   "E": "Michelle Galvan",
+   "F": "Rosa Quiroz"
+ },
+ {
+   "A": "73",
+   "B": "Lauren",
+   "C": "Hunstad",
+   "D": "Gilbert John",
+   "E": "Tracy Webb",
+   "F": ""
+ },
+ {
+   "A": "74",
+   "B": "Evan",
+   "C": "Hurtado",
+   "D": "Brigit Patten",
+   "E": "Nathaniel Denkers",
+   "F": ""
+ },
+ {
+   "A": "75",
+   "B": "Jonathan",
+   "C": "Hygh",
+   "D": "Suad Elmegerhi",
+   "E": "Marika Klowsowski",
+   "F": ""
+ },
+ {
+   "A": "76",
+   "B": "Grace",
+   "C": "Jakes",
+   "D": "Jenny Sones",
+   "E": "Giovanni Tremolada",
+   "F": ""
+ },
+ {
+   "A": "U27",
+   "B": "Sophia",
+   "C": "Jaskolka-Brown",
+   "D": "Jacob Smoot",
+   "E": "Adam Schuller",
+   "F": "Grace Matsey"
+ },
+ {
+   "A": "U28",
+   "B": "Lydia",
+   "C": "Jenkins",
+   "D": "Alan Schenkel",
+   "E": "Aidan Briggs",
+   "F": "Farzana Hossain"
+ },
+ {
+   "A": "U29",
+   "B": "Socks",
+   "C": "Jones",
+   "D": "Placeholder 1",
+   "E": "Madison Johnson",
+   "F": "Ellison Black"
+ },
+ {
+   "A": "U30",
+   "B": "Arianna",
+   "C": "Joob",
+   "D": "Kalani Williams",
+   "E": "Taylor Crisologo",
+   "F": "Tatianna Travieso"
+ },
+ {
+   "A": "77",
+   "B": "Eri",
+   "C": "Kaburaki",
+   "D": "Giovanni Tremolada",
+   "E": "Mo Salman",
+   "F": ""
+ },
+ {
+   "A": "U31",
+   "B": "Mason",
+   "C": "Kahu",
+   "D": "Santiago Galindo González",
+   "E": "RoxAnn Karkhoff-Schweizer",
+   "F": "Michelle Staros"
+ },
+ {
+   "A": "78",
+   "B": "Kapahi",
+   "C": "Kawai-Puaa",
+   "D": "Susan Lana",
+   "E": "Treana Mayer",
+   "F": ""
+ },
+ {
+   "A": "2A-3",
+   "B": "Peter",
+   "C": "Kessinger",
+   "D": "Frederic Hoerndli",
+   "E": "Amanda Woerman",
+   "F": ""
+ },
+ {
+   "A": "79",
+   "B": "Chase",
+   "C": "Khedmatgozar",
+   "D": "Sami Case",
+   "E": "Michelle Staros",
+   "F": ""
+ },
+ {
+   "A": "80",
+   "B": "Gayeon",
+   "C": "Kim",
+   "D": "Traci Kinkel",
+   "E": "Samantha Courtney",
+   "F": ""
+ },
+ {
+   "A": "U32",
+   "B": "Kate",
+   "C": "Kimball",
+   "D": "Levi Flom",
+   "E": "Ashley Higgins",
+   "F": "Farzana Hossain"
+ },
+ {
+   "A": "81",
+   "B": "Hanna",
+   "C": "Kiryluk",
+   "D": "Dan Regan",
+   "E": "Julie Moreno",
+   "F": ""
+ },
+ {
+   "A": "U33",
+   "B": "Nathan",
+   "C": "Klepper",
+   "D": "Jacob Smoot",
+   "E": "Jason Martin",
+   "F": "Ellison Black"
+ },
+ {
+   "A": "82",
+   "B": "Victoria",
+   "C": "Klimuk",
+   "D": "Kristen Davenport",
+   "E": "Riley Thompson-Brandhagen",
+   "F": ""
+ },
+ {
+   "A": "1B-3",
+   "B": "Marika ",
+   "C": "Klosowski",
+   "D": "Kelly Debie",
+   "E": "Luke Montrose",
+   "F": ""
+ },
+ {
+   "A": "U34",
+   "B": "Olivia",
+   "C": "Kreutzer",
+   "D": "Kate Tyner",
+   "E": "Kevin Ayala",
+   "F": "Diana Lowe"
+ },
+ {
+   "A": "83",
+   "B": "EunJi",
+   "C": "Kwak",
+   "D": "Jenny Sones",
+   "E": "Anna Bracken",
+   "F": ""
+ },
+ {
+   "A": "84",
+   "B": "Jeremy",
+   "C": "Ladd",
+   "D": "Imke Steffan",
+   "E": "Andres Obregon",
+   "F": ""
+ },
+ {
+   "A": "U35",
+   "B": "Via",
+   "C": "Lawson",
+   "D": "Ellison Black",
+   "E": "Madison Johnson",
+   "F": "Grace Matsey"
+ },
+ {
+   "A": "85",
+   "B": "Rahmi",
+   "C": "Lee",
+   "D": "Jason Lombard",
+   "E": "Sheryl Magzamen",
+   "F": ""
+ },
+ {
+   "A": "86",
+   "B": "Stacey",
+   "C": "Lee",
+   "D": "Rick McCosh",
+   "E": "Ahmed Gad",
+   "F": ""
+ },
+ {
+   "A": "87",
+   "B": "Zhi Mei Maria",
+   "C": "Lee",
+   "D": "J Lucas Argueso",
+   "E": "Christopher Vaaga",
+   "F": ""
+ },
+ {
+   "A": "91",
+   "B": "Avery",
+   "C": "Lessard",
+   "D": "Sareen Fiaz",
+   "E": "Andres Obregon",
+   "F": ""
+ },
+ {
+   "A": "89",
+   "B": "Sarah",
+   "C": "Lilly",
+   "D": "Renata Comeau",
+   "E": "Nathaniel Denkers",
+   "F": ""
+ },
+ {
+   "A": "U36",
+   "B": "Tiarnan",
+   "C": "LoCascio",
+   "D": "Taylor Crisologo",
+   "E": "Brandi Dunn",
+   "F": "Amy MacNeill"
+ },
+ {
+   "A": "91",
+   "B": "Dallas K. ",
+   "C": "Lokey",
+   "D": "Sareen Fiaz",
+   "E": "Andres Obregon",
+   "F": ""
+ },
+ {
+   "A": "92",
+   "B": "Tiffini",
+   "C": "Lovell",
+   "D": "Carol Wilusz",
+   "E": "Sareen Fiaz",
+   "F": ""
+ },
+ {
+   "A": "93",
+   "B": "Taylor",
+   "C": "Lukasik",
+   "D": "Suad Elmegerhi",
+   "E": "Rahmi Lee",
+   "F": ""
+ },
+ {
+   "A": "94",
+   "B": "Miso",
+   "C": "Lunika",
+   "D": "Katie Bisazza",
+   "E": "Katie Seabaugh",
+   "F": ""
+ },
+ {
+   "A": "95",
+   "B": "Nathan",
+   "C": "Luu",
+   "D": "Angela Bosco-Lauth",
+   "E": "Tracy Webb",
+   "F": ""
+ },
+ {
+   "A": "97",
+   "B": "Iyana",
+   "C": "Malik",
+   "D": "Jairo Palomares Velosa",
+   "E": "Riley Thompson-Brandhagen",
+   "F": ""
+ },
+ {
+   "A": "98",
+   "B": "Kendall",
+   "C": "Malmstrom",
+   "D": "Elena Lian",
+   "E": "Luisa Nieto ",
+   "F": ""
+ },
+ {
+   "A": "99",
+   "B": "Emma",
+   "C": "Mangold",
+   "D": "Fiona Hollinshead",
+   "E": "Kathryn Wotman",
+   "F": ""
+ },
+ {
+   "A": "U37",
+   "B": "Emma",
+   "C": "Marshall",
+   "D": "Natalie Wickenkamp",
+   "E": "Samirah Alkhudaydi",
+   "F": "Morgan Miller"
+ },
+ {
+   "A": "2B-3",
+   "B": "Samantha",
+   "C": "Masca",
+   "D": "Drew Koch",
+   "E": "Sangeeta Rao",
+   "F": ""
+ },
+ {
+   "A": "100",
+   "B": "Hailey",
+   "C": "Matilton",
+   "D": "Keara Boss",
+   "E": "Susan Lana",
+   "F": ""
+ },
+ {
+   "A": "101",
+   "B": "Shannon",
+   "C": "McCall",
+   "D": "Julie Moreno",
+   "E": "Bridgit Patten",
+   "F": ""
+ },
+ {
+   "A": "102",
+   "B": "Katelyn",
+   "C": "McClellan",
+   "D": "Luisa Nieto ",
+   "E": "Courtney Bouchet",
+   "F": ""
+ },
+ {
+   "A": "114",
+   "B": "Keana",
+   "C": "McCosh",
+   "D": "Sarah Raabis",
+   "E": "Dan Regan",
+   "F": ""
+ },
+ {
+   "A": "1A-5",
+   "B": "Raven",
+   "C": "McGann",
+   "D": "Stu Tobet",
+   "E": "Claudia Wiese",
+   "F": ""
+ },
+ {
+   "A": "103",
+   "B": "Ellis",
+   "C": "Mobley",
+   "D": "Phillida Charley",
+   "E": "Michelle Staros",
+   "F": ""
+ },
+ {
+   "A": "2A-4",
+   "B": "Brett",
+   "C": "Moehn",
+   "D": "Frederic Hoerndli",
+   "E": "Amanda Woerman",
+   "F": ""
+ },
+ {
+   "A": "U38",
+   "B": "Ashley",
+   "C": "Morris",
+   "D": "Santiago Galindo González",
+   "E": "RoxAnn Karkhoff-Schweizer",
+   "F": "Adam Schuller"
+ },
+ {
+   "A": "1B-4",
+   "B": "Madeleine",
+   "C": "Moseley",
+   "D": "Kelly Debie",
+   "E": "Luke Montrose",
+   "F": ""
+ },
+ {
+   "A": "104",
+   "B": "Karan",
+   "C": "Nayak",
+   "D": "Jairo Palomares Velosa",
+   "E": "Christian Sewor",
+   "F": ""
+ },
+ {
+   "A": "105",
+   "B": "Victoria",
+   "C": "Newberry",
+   "D": "Sarah Raabis",
+   "E": "Charlie Talbot",
+   "F": ""
+ },
+ {
+   "A": "U39",
+   "B": "Charlotte",
+   "C": "Olszewski",
+   "D": "Santiago Galindo González",
+   "E": "RoxAnn Karkhoff-Schweizer",
+   "F": "Tatianna Travieso"
+ },
+ {
+   "A": "106",
+   "B": "Keyla",
+   "C": "Ortega-Soto",
+   "D": "Katie Seabaugh",
+   "E": "Susan Lana",
+   "F": ""
+ },
+ {
+   "A": "107",
+   "B": "Zachary",
+   "C": "Padilla",
+   "D": "Zohaib Ali",
+   "E": "Fiona Hollinshead",
+   "F": ""
+ },
+ {
+   "A": "109",
+   "B": "Kihoon",
+   "C": "Park",
+   "D": "Kristen Davenport",
+   "E": "Kathryn Wotman",
+   "F": ""
+ },
+ {
+   "A": "U40",
+   "B": "Keera",
+   "C": "Payne",
+   "D": "Jason Martin",
+   "E": "Charli Geer",
+   "F": "Megan Hager"
+ },
+ {
+   "A": "1B-5",
+   "B": "Emily",
+   "C": "Perkins",
+   "D": "Kelly Debie",
+   "E": "Luke Montrose",
+   "F": ""
+ },
+ {
+   "A": "U41",
+   "B": "Kylee",
+   "C": "Pham",
+   "D": "Kalani Williams",
+   "E": "Michelle Staros",
+   "F": "Grace Matsey"
+ },
+ {
+   "A": "U42",
+   "B": "Quinn",
+   "C": "Pogge",
+   "D": "Elizabeth Esdaile",
+   "E": "Natalie Wickenkamp",
+   "F": "Adam Schuller"
+ },
+ {
+   "A": "1B-6",
+   "B": "Ashley",
+   "C": "Potter",
+   "D": "Kelly Debie",
+   "E": "Luke Montrose",
+   "F": ""
+ },
+ {
+   "A": "2A-5",
+   "B": "Laura",
+   "C": "Pulscher",
+   "D": "Frederic Hoerndli",
+   "E": "Amanda Woerman",
+   "F": ""
+ },
+ {
+   "A": "U43",
+   "B": "Catalina",
+   "C": "Puska",
+   "D": "Kelsey Martin",
+   "E": "Dawit Tesfaye",
+   "F": "Aidan Briggs"
+ },
+ {
+   "A": "110",
+   "B": "Rosa ",
+   "C": "Quiroz",
+   "D": "Fiona Hollinshead",
+   "E": "Renata Comeau",
+   "F": ""
+ },
+ {
+   "A": "111",
+   "B": "Ashley",
+   "C": "Rahe",
+   "D": "Riley Thompson-Brandhagen",
+   "E": "Kristin Zersen",
+   "F": ""
+ },
+ {
+   "A": "112",
+   "B": "Amr",
+   "C": "Ramadan",
+   "D": "Julie Moreno",
+   "E": "Angela Bosco-Lauth",
+   "F": ""
+ },
+ {
+   "A": "113",
+   "B": "Ghyslaine",
+   "C": "Ramirez",
+   "D": "Samantha Courtney",
+   "E": "Susan Bailey",
+   "F": ""
+ },
+ {
+   "A": "2B-4",
+   "B": "Patricio",
+   "C": "Razquin",
+   "D": "Drew Koch",
+   "E": "Sangeeta Rao",
+   "F": ""
+ },
+ {
+   "A": "116",
+   "B": "Eliud",
+   "C": "Rivas",
+   "D": "Imke Steffan",
+   "E": "Ahmed Gad",
+   "F": ""
+ },
+ {
+   "A": "117",
+   "B": "Scott",
+   "C": "Roh",
+   "D": "Gilbert John",
+   "E": "Rachel Maison",
+   "F": ""
+ },
+ {
+   "A": "118",
+   "B": "Madeleine ",
+   "C": "Ross",
+   "D": "Keara Boss",
+   "E": "Chelsea Burden",
+   "F": ""
+ },
+ {
+   "A": "119",
+   "B": "Debra Ann",
+   "C": "Roussel",
+   "D": "Giovanni Tremolada",
+   "E": "Anna Bracken",
+   "F": ""
+ },
+ {
+   "A": "120",
+   "B": "Mariam",
+   "C": "Rozendal",
+   "D": "Treana Mayer",
+   "E": "Katie Bisazza",
+   "F": ""
+ },
+ {
+   "A": "121",
+   "B": "Chris",
+   "C": "Ruscher",
+   "D": "Carol Wilusz",
+   "E": "Andres Obregon",
+   "F": ""
+ },
+ {
+   "A": "122",
+   "B": "Kristen",
+   "C": "Sack",
+   "D": "Katie Seabaugh",
+   "E": "Julie Moreno",
+   "F": ""
+ },
+ {
+   "A": "123",
+   "B": "Andrea",
+   "C": "Sanchez-Hidalgo",
+   "D": "Zaid Abdo",
+   "E": "Gary Mason",
+   "F": ""
+ },
+ {
+   "A": "124",
+   "B": "Kate",
+   "C": "Schinkel",
+   "D": "Treana Mayer",
+   "E": "Zohaib Ali",
+   "F": ""
+ },
+ {
+   "A": "1B-7",
+   "B": "Adam",
+   "C": "Schuller",
+   "D": "Kelly Debie",
+   "E": "Luke Montrose",
+   "F": ""
+ },
+ {
+   "A": "U44",
+   "B": "Ella",
+   "C": "Schwindt",
+   "D": "Kevin Ayala",
+   "E": "Kathleen Eddy",
+   "F": "Elizabeth Esdaile"
+ },
+ {
+   "A": "1B-8",
+   "B": "Rui",
+   "C": "Shang",
+   "D": "Kelly Debie",
+   "E": "Luke Montrose",
+   "F": ""
+ },
+ {
+   "A": "126",
+   "B": "Kelley",
+   "C": "Sharp",
+   "D": "Susan Lana",
+   "E": "Charlie Talbot",
+   "F": ""
+ },
+ {
+   "A": "127",
+   "B": "Hikaru",
+   "C": "Shiraishi",
+   "D": "Dan Regan",
+   "E": "Sarah Raabis",
+   "F": ""
+ },
+ {
+   "A": "128",
+   "B": "Payton",
+   "C": "Shirley",
+   "D": "Alysa Kasen",
+   "E": "Elena Lian",
+   "F": ""
+ },
+ {
+   "A": "2B-5",
+   "B": "Jacob ",
+   "C": "Singer",
+   "D": "Drew Koch",
+   "E": "Sangeeta Rao",
+   "F": ""
+ },
+ {
+   "A": "2B-6",
+   "B": "Powell",
+   "C": "Slinkard",
+   "D": "Drew Koch",
+   "E": "Sangeeta Rao",
+   "F": ""
+ },
+ {
+   "A": "129",
+   "B": "Haylee",
+   "C": "Smith",
+   "D": "Catriona MacPhail",
+   "E": "Mo Salman",
+   "F": ""
+ },
+ {
+   "A": "U45",
+   "B": "Sofie ",
+   "C": "Smith",
+   "D": "Diana Lowe",
+   "E": "Erin Simpkins",
+   "F": "Michelle Staros"
+ },
+ {
+   "A": "130",
+   "B": "Lance ",
+   "C": "Sommer",
+   "D": "Keara Boss",
+   "E": "Bridgit Patten",
+   "F": ""
+ },
+ {
+   "A": "1A-6",
+   "B": "Reese",
+   "C": "Sprister ",
+   "D": "Stu Tobet",
+   "E": "Claudia Wiese",
+   "F": ""
+ },
+ {
+   "A": "132",
+   "B": "William",
+   "C": "Stephenson",
+   "D": "Charlie Talbot",
+   "E": "Jason Lombard",
+   "F": ""
+ },
+ {
+   "A": "2B-7",
+   "B": "Alex",
+   "C": "Stigall",
+   "D": "Drew Koch",
+   "E": "Sangeeta Rao",
+   "F": ""
+ },
+ {
+   "A": "133",
+   "B": "Caroline",
+   "C": "Sullivan",
+   "D": "Mo Salman",
+   "E": "Jenny Sones",
+   "F": ""
+ },
+ {
+   "A": "1A-7",
+   "B": "Emma",
+   "C": "Szegvari",
+   "D": "Stu Tobet",
+   "E": "Claudia Wiese",
+   "F": ""
+ },
+ {
+   "A": "134",
+   "B": "Charles",
+   "C": "Talbot",
+   "D": "Chelsea Burden",
+   "E": "Dan Regan",
+   "F": ""
+ },
+ {
+   "A": "135",
+   "B": "Sasha",
+   "C": "Terry",
+   "D": "Fiona Hollinshead",
+   "E": "Kathryn Wotman",
+   "F": ""
+ },
+ {
+   "A": "1A-8",
+   "B": "Tatianna",
+   "C": "Travieso",
+   "D": "Stu Tobet",
+   "E": "Claudia Wiese",
+   "F": ""
+ },
+ {
+   "A": "2A-6",
+   "B": "Leo",
+   "C": "Tyer",
+   "D": "Frederic Hoerndli",
+   "E": "Amanda Woerman",
+   "F": ""
+ },
+ {
+   "A": "136",
+   "B": "Kate",
+   "C": "Tyner",
+   "D": "Kristin Zersen",
+   "E": "Tracy Webb",
+   "F": ""
+ },
+ {
+   "A": "2A-7",
+   "B": "Mollie",
+   "C": "Uhrig",
+   "D": "Frederic Hoerndli",
+   "E": "Amanda Woerman",
+   "F": ""
+ },
+ {
+   "A": "137",
+   "B": "Colette",
+   "C": "Vavrus",
+   "D": "Luisa Nieto ",
+   "E": "Courtney Bouchet",
+   "F": ""
+ },
+ {
+   "A": "138",
+   "B": "Nadya",
+   "C": "W",
+   "D": "Katie Bisazza",
+   "E": "Dan Regan",
+   "F": ""
+ },
+ {
+   "A": "U46",
+   "B": "Alyssa",
+   "C": "Walker",
+   "D": "Tatianna Travieso",
+   "E": "Charli Geer",
+   "F": "Morgan Miller"
+ },
+ {
+   "A": "U47",
+   "B": "Kianna",
+   "C": "Walz",
+   "D": "Kathleen Eddy",
+   "E": "Amy MacNeill",
+   "F": "Erin Simpkins"
+ },
+ {
+   "A": "2B-8",
+   "B": "Caitlin",
+   "C": "Waring",
+   "D": "Drew Koch",
+   "E": "Sangeeta Rao",
+   "F": ""
+ },
+ {
+   "A": "139",
+   "B": "Elyse ",
+   "C": "Warren",
+   "D": "Luke Schwerdtfeger",
+   "E": "Zaid Abdo",
+   "F": ""
+ },
+ {
+   "A": "140",
+   "B": "Shae",
+   "C": "Wheeler",
+   "D": "Renata Comeau",
+   "E": "Jason Lombard",
+   "F": ""
+ },
+ {
+   "A": "141",
+   "B": "Rebecca",
+   "C": "Williamson",
+   "D": "Catriona MacPhail",
+   "E": "Anna Bracken",
+   "F": ""
+ },
+ {
+   "A": "142",
+   "B": "McKenna",
+   "C": "Willis",
+   "D": "Brigit Patten",
+   "E": "Zohaib Ali",
+   "F": ""
+ },
+ {
+   "A": "143",
+   "B": "Devin",
+   "C": "Winslow",
+   "D": "Gilbert John",
+   "E": "Gary Mason",
+   "F": ""
+ },
+ {
+   "A": "144",
+   "B": "Delaney",
+   "C": "Worthington",
+   "D": "Christian Sewor",
+   "E": "Jairo Palomares Velosa",
+   "F": ""
+ },
+ {
+   "A": "2A-8",
+   "B": "Omar",
+   "C": "Yanouri",
+   "D": "Frederic Hoerndli",
+   "E": "Amanda Woerman",
+   "F": ""
+ },
+ {
+   "A": "145",
+   "B": "Kristina",
+   "C": "Yepez",
+   "D": "Tracy Webb",
+   "E": "Sami Case",
+   "F": ""
+ },
+ {
+   "A": "146",
+   "B": "Paula",
+   "C": "Yoon",
+   "D": "Charlie Talbot",
+   "E": "Fiona Hollinshead",
+   "F": ""
+ },
+ {
+   "A": "131",
+   "B": "Lauren ",
+   "C": "Young",
+   "D": "Christopher Vaaga",
+   "E": "Traci Kinkel",
+   "F": ""
+ },
+ {
+   "A": "96",
+   "B": "Peihao",
+   "C": "Zhang",
+   "D": "Chelsea Burden",
+   "E": "Treana Mayer",
+   "F": ""
+ }
+]

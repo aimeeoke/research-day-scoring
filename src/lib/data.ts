@@ -1,5 +1,5 @@
 // Auto-generated from judge_assignments.csv
-// Generated: 2026-01-18T17:41:22.031Z
+// Updated: 2026-01-19T19:51:26.555Z
 
 import { Presenter, Judge } from './types';
 
@@ -1840,7 +1840,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Quality of generative artificial intelligence study guides in an online histology course",
-    "judge1": "Santiago Galindo Gonzlez",
+    "judge1": "Santiago Galindo González",
     "judge2": "RoxAnn Karkhoff-Schweizer",
     "judge3": "Michelle Staros"
   },
@@ -2432,7 +2432,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Long Term Social and Health Effects of the Fukushima Disaster",
-    "judge1": "Santiago Galindo Gonzlez",
+    "judge1": "Santiago Galindo González",
     "judge2": "RoxAnn Karkhoff-Schweizer",
     "judge3": "Adam Schuller"
   },
@@ -2496,7 +2496,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Scientist Highlights in the Classroom: Relationship between Scientist Relatability and Student Feelings of Belonging in STEM",
-    "judge1": "Santiago Galindo Gonzlez",
+    "judge1": "Santiago Galindo González",
     "judge2": "RoxAnn Karkhoff-Schweizer",
     "judge3": "Tatianna Travieso"
   },
@@ -4596,8 +4596,8 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "santiago-galindo-gonzlez",
-    "name": "Santiago Galindo Gonzlez",
+    "id": "santiago-galindo-gonzález",
+    "name": "Santiago Galindo González",
     "assignedPresenters": [
       "U31",
       "U38",
