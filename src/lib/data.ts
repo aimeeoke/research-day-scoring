@@ -2304,8 +2304,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Keeping pets and families together: A systematic review of return-to-owner foster and housecall programs",
-    "judge1": "Keara Boss",
-    "judge2": "Susan Lana",
+    "judge1": null,
+    "judge2": null,
     "judge3": null
   },
   {
