@@ -90,6 +90,25 @@ function MonitorContent() {
     return acc;
   }, {} as Record<string, PendingScore[]>);
 
+  // Get all judges (for showing completed judges too)
+  const allJudges = new Set<string>();
+  const filteredPresenters = filterSession === 'all'
+    ? presenters
+    : presenters.filter(p => p.presentationTime === filterSession);
+
+  for (const presenter of filteredPresenters) {
+    [presenter.judge1, presenter.judge2, presenter.judge3]
+      .filter((j): j is string => j !== null && j.length > 0)
+      .forEach(j => allJudges.add(j));
+  }
+
+  // Create complete judge list with pending scores (empty array if complete)
+  const allJudgesWithStatus = Array.from(allJudges).map(judgeName => ({
+    judgeName,
+    pending: pendingByJudge[judgeName] || [],
+    isComplete: !pendingByJudge[judgeName] || pendingByJudge[judgeName].length === 0,
+  }));
+
   // Count by session
   const countBySession = SESSION_TIMES.map(session => ({
     session,
@@ -265,50 +284,65 @@ function MonitorContent() {
         </div>
       )}
 
-      {/* Pending Scores by Judge */}
-      {filteredPending.length > 0 && (
+      {/* Scores by Judge */}
+      {allJudgesWithStatus.length > 0 && (
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-gray-900">
-            Pending Scores by Judge ({Object.keys(pendingByJudge).length} judges)
+            Scores by Judge ({allJudgesWithStatus.filter(j => !j.isComplete).length} pending, {allJudgesWithStatus.filter(j => j.isComplete).length} complete)
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {Object.entries(pendingByJudge)
-              .sort((a, b) => b[1].length - a[1].length) // Sort by most pending first
-              .map(([judgeName, pending]) => (
-                <div key={judgeName} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                  <div className="bg-red-50 px-4 py-3 border-b border-red-100">
+            {allJudgesWithStatus
+              .sort((a, b) => {
+                // Sort: pending judges first (by last name), then complete judges (by last name)
+                const getLastName = (name: string) => name.split(' ').pop() || name;
+                if (a.isComplete !== b.isComplete) {
+                  return a.isComplete ? 1 : -1; // Pending first
+                }
+                return getLastName(a.judgeName).localeCompare(getLastName(b.judgeName));
+              })
+              .map(({ judgeName, pending, isComplete }) => (
+                <div key={judgeName} className={`bg-white rounded-lg shadow-sm border overflow-hidden ${isComplete ? 'border-green-200 opacity-75' : 'border-gray-200'}`}>
+                  <div className={`px-4 py-3 border-b ${isComplete ? 'bg-green-50 border-green-100' : 'bg-red-50 border-red-100'}`}>
                     <div className="flex items-center justify-between">
                       <h4 className="font-medium text-gray-900">{judgeName}</h4>
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
-                        {pending.length} pending
-                      </span>
+                      {isComplete ? (
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                          Complete
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                          {pending.length} pending
+                        </span>
+                      )}
                     </div>
                   </div>
-                  <ul className="divide-y divide-gray-100">
-                    {pending.map((p) => (
-                      <li key={`${p.presenterId}-${p.judgeName}`} className="px-4 py-3">
-                        <div className="flex items-start justify-between">
-                          <div>
-                            <p className="text-sm font-medium text-gray-900">
-                              {p.presenterName}
-                            </p>
-                            <p className="text-xs text-gray-500">
-                              ID: {p.presenterId}
-                            </p>
+                  {!isComplete && (
+                    <ul className="divide-y divide-gray-100">
+                      {pending.map((p) => (
+                        <li key={`${p.presenterId}-${p.judgeName}`} className="px-4 py-3">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <p className="text-sm font-medium text-gray-900">
+                                {p.presenterName}
+                              </p>
+                              <p className="text-xs text-gray-500">
+                                ID: {p.presenterId}
+                              </p>
+                            </div>
+                            <div className="text-right">
+                              <span className="inline-flex items-center px-2 py-0.5 rounded text-xs bg-gray-100 text-gray-600">
+                                {p.presentationType}
+                              </span>
+                              <p className="text-xs text-gray-500 mt-1">
+                                {p.sessionTime}
+                              </p>
+                            </div>
                           </div>
-                          <div className="text-right">
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs bg-gray-100 text-gray-600">
-                              {p.presentationType}
-                            </span>
-                            <p className="text-xs text-gray-500 mt-1">
-                              {p.sessionTime}
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
           </div>
