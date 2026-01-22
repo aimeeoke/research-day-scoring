@@ -8,12 +8,13 @@ import {
   User,
   ClipboardList,
   LogOut,
-  Star
+  Star,
+  Clock
 } from 'lucide-react';
 import { loadState, saveScore, getScores } from '@/lib/storage';
 import { getSelectedJudge, saveSelectedJudge, clearSelectedJudge } from '@/lib/auth';
 import { calculateWeightedTotal } from '@/lib/calculations';
-import { Presenter, Judge, Score, ScoreCriteria, CRITERIA_WEIGHTS } from '@/lib/types';
+import { Presenter, Judge, Score, ScoreCriteria, CRITERIA_WEIGHTS, SESSION_TIMES, SessionTime } from '@/lib/types';
 import { formatPresenterName, generateId } from '@/lib/utils';
 
 // Criteria labels for the form
@@ -74,6 +75,7 @@ export default function ScoringPage() {
   const [judges, setJudges] = useState<Judge[]>([]);
   const [presenters, setPresenters] = useState<Presenter[]>([]);
   const [scores, setScores] = useState<Score[]>([]);
+  const [selectedTimeSlot, setSelectedTimeSlot] = useState<SessionTime | null>(null);
   const [selectedJudge, setSelectedJudge] = useState<string | null>(null);
   const [selectedPresenter, setSelectedPresenter] = useState<Presenter | null>(null);
   const [formScores, setFormScores] = useState<Partial<ScoreCriteria>>({});
@@ -115,9 +117,26 @@ export default function ScoringPage() {
     loadData();
   }, [loadData]);
 
-  // Get presenters assigned to the selected judge
-  const assignedPresenters = selectedJudge
+  // Get judges who have presenters in the selected time slot
+  const judgesForTimeSlot = selectedTimeSlot
+    ? judges.filter(judge => {
+        // Check if this judge has any presenters in the selected time slot
+        return presenters.some(p => {
+          if (p.presentationTime !== selectedTimeSlot) return false;
+          const judgeLower = judge.name.toLowerCase();
+          return (
+            p.judge1?.toLowerCase() === judgeLower ||
+            p.judge2?.toLowerCase() === judgeLower ||
+            p.judge3?.toLowerCase() === judgeLower
+          );
+        });
+      })
+    : [];
+
+  // Get presenters assigned to the selected judge (in the selected time slot)
+  const assignedPresenters = selectedJudge && selectedTimeSlot
     ? presenters.filter(p => {
+        if (p.presentationTime !== selectedTimeSlot) return false;
         const judgeLower = selectedJudge.toLowerCase();
         return (
           p.judge1?.toLowerCase() === judgeLower ||
@@ -134,6 +153,24 @@ export default function ScoringPage() {
       s => s.presenterId === presenterId &&
            s.judgeName.toLowerCase() === selectedJudge.toLowerCase()
     );
+  };
+
+  const handleTimeSlotSelect = (timeSlot: SessionTime) => {
+    setSelectedTimeSlot(timeSlot);
+    setSelectedJudge(null);
+    clearSelectedJudge();
+    setSelectedPresenter(null);
+    setFormScores({});
+    setIsNoShow(false);
+    setSubmitSuccess(false);
+  };
+
+  const handleTimeSlotChange = () => {
+    setSelectedTimeSlot(null);
+    setSelectedJudge(null);
+    clearSelectedJudge();
+    setSelectedPresenter(null);
+    setFormScores({});
   };
 
   const handleJudgeSelect = (judgeName: string) => {
@@ -157,16 +194,8 @@ export default function ScoringPage() {
     setFormScores({});
     setIsNoShow(false);
     setSubmitSuccess(false);
-
-    // Check if already scored and load existing scores
-    const existingScore = scores.find(
-      s => s.presenterId === presenter.id &&
-           s.judgeName.toLowerCase() === selectedJudge?.toLowerCase()
-    );
-    if (existingScore) {
-      setFormScores(existingScore.criteria);
-      setIsNoShow(existingScore.isNoShow);
-    }
+    // Note: We intentionally don't pre-fill previous scores for privacy/security
+    // This prevents presenters from seeing their own scores by impersonating their judge
   };
 
   const handleScoreChange = (criterion: keyof ScoreCriteria, value: number) => {
@@ -245,35 +274,108 @@ export default function ScoringPage() {
     );
   }
 
-  // Step 1: Judge Selection
+  // Step 1: Time Slot Selection
+  if (!selectedTimeSlot) {
+    return (
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-8">
+          <Clock className="mx-auto h-16 w-16 text-csu-green" />
+          <h2 className="mt-4 text-2xl font-bold text-gray-900">Welcome, Judge!</h2>
+          <p className="mt-2 text-gray-600">
+            Please select the time slot you are judging.
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm p-6">
+          <label className="block text-sm font-medium text-gray-700 mb-4">
+            Select Your Time Slot
+          </label>
+          <div className="grid grid-cols-1 gap-3">
+            {SESSION_TIMES.map((timeSlot) => {
+              // Count presenters in this time slot
+              const presenterCount = presenters.filter(p => p.presentationTime === timeSlot).length;
+              // Determine the session description
+              let description = '';
+              if (timeSlot === '10:15 - 11:15') description = 'Undergrad Posters';
+              else if (timeSlot === '11:30 - 1:30') description = 'Session 1';
+              else if (timeSlot === '1:45 - 3:45') description = 'Session 2';
+
+              return (
+                <button
+                  key={timeSlot}
+                  onClick={() => handleTimeSlotSelect(timeSlot)}
+                  className="text-left px-6 py-4 rounded-lg border border-gray-200 hover:border-csu-green hover:bg-csu-green/5 transition-colors"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="font-medium text-gray-900 text-lg">{timeSlot}</span>
+                      {description && (
+                        <span className="ml-3 text-sm text-gray-500">({description})</span>
+                      )}
+                    </div>
+                    <span className="text-sm text-gray-400">
+                      {presenterCount} presenters
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Step 2: Judge Selection (filtered by time slot)
   if (!selectedJudge) {
     return (
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
           <User className="mx-auto h-16 w-16 text-csu-green" />
-          <h2 className="mt-4 text-2xl font-bold text-gray-900">Welcome, Judge!</h2>
+          <h2 className="mt-4 text-2xl font-bold text-gray-900">Select Your Name</h2>
           <p className="mt-2 text-gray-600">
-            Please select your name to see your assigned presenters.
+            Judging time slot: <span className="font-medium">{selectedTimeSlot}</span>
           </p>
         </div>
 
         <div className="bg-white rounded-lg shadow-sm p-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Select Your Name
-          </label>
+          <div className="flex items-center justify-between mb-4">
+            <label className="block text-sm font-medium text-gray-700">
+              Select Your Name
+            </label>
+            <button
+              onClick={handleTimeSlotChange}
+              className="text-sm text-csu-green hover:text-csu-green/80"
+            >
+              Change Time Slot
+            </button>
+          </div>
           <div className="grid grid-cols-1 gap-2 max-h-96 overflow-y-auto">
-            {judges.map((judge) => (
-              <button
-                key={judge.id}
-                onClick={() => handleJudgeSelect(judge.name)}
-                className="text-left px-4 py-3 rounded-lg border border-gray-200 hover:border-csu-green hover:bg-csu-green/5 transition-colors"
-              >
-                <span className="font-medium text-gray-900">{judge.name}</span>
-                <span className="ml-2 text-sm text-gray-500">
-                  ({judge.assignedPresenters.length} presenters)
-                </span>
-              </button>
-            ))}
+            {judgesForTimeSlot.map((judge) => {
+              // Count only presenters in this time slot for this judge
+              const presenterCountForSlot = presenters.filter(p => {
+                if (p.presentationTime !== selectedTimeSlot) return false;
+                const judgeLower = judge.name.toLowerCase();
+                return (
+                  p.judge1?.toLowerCase() === judgeLower ||
+                  p.judge2?.toLowerCase() === judgeLower ||
+                  p.judge3?.toLowerCase() === judgeLower
+                );
+              }).length;
+
+              return (
+                <button
+                  key={judge.id}
+                  onClick={() => handleJudgeSelect(judge.name)}
+                  className="text-left px-4 py-3 rounded-lg border border-gray-200 hover:border-csu-green hover:bg-csu-green/5 transition-colors"
+                >
+                  <span className="font-medium text-gray-900">{judge.name}</span>
+                  <span className="ml-2 text-sm text-gray-500">
+                    ({presenterCountForSlot} presenters)
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -285,7 +387,7 @@ export default function ScoringPage() {
   const totalCount = assignedPresenters.length;
   const progressPercent = totalCount > 0 ? (scoredCount / totalCount) * 100 : 0;
 
-  // Step 2: Presenter Selection (only shows assigned presenters!)
+  // Step 3: Presenter Selection (only shows assigned presenters!)
   if (!selectedPresenter) {
     return (
       <div className="max-w-3xl mx-auto">
@@ -294,7 +396,9 @@ export default function ScoringPage() {
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Your Assigned Presenters</h2>
             <p className="text-gray-600 mt-1">
-              Logged in as: <span className="font-medium">{selectedJudge}</span>
+              <span className="font-medium">{selectedJudge}</span>
+              <span className="mx-2">•</span>
+              <span>{selectedTimeSlot}</span>
             </p>
           </div>
           <button
@@ -447,7 +551,8 @@ export default function ScoringPage() {
         <div className="bg-white rounded-lg shadow-sm p-6">
           {existingScore && (
             <div className="mb-4 bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-800">
-              You've already scored this presenter. You can update your scores below.
+              You've already scored this presenter. Previous scores are not displayed for privacy.
+              If you need to make a correction, enter your new scores and submit.
             </div>
           )}
 

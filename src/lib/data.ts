@@ -1365,6 +1365,22 @@ export const PRESENTERS: Presenter[] = [
     "judge3": "Kevin Ayala"
   },
   {
+    "id": "U20",
+    "firstName": "Carolyn",
+    "lastName": "Dobkins",
+    "email": "carolyn.dobkins@colostate.edu",
+    "classification": "Undergraduate Student",
+    "researchStage": "Early",
+    "researchType": "Translational Research",
+    "department": "",
+    "presentationType": "Undergrad Poster",
+    "presentationTime": "10:15 - 11:15",
+    "title": "Investigating Chronic Wasting Disease in a Cervid Fibroblast Model",
+    "judge1": "Chase Wagner",
+    "judge2": "Santiago Galindo González",
+    "judge3": "Ana Valeria Castro Romero"
+  },
+  {
     "id": "61",
     "firstName": "Patrick",
     "lastName": "Graham",
@@ -1473,7 +1489,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "Pulsed Electromagnetic Field Therapy Mitigates Endometrial Inflammation Associated with Persistent Breeding-Induced Endometritis in Horses",
     "judge1": "Reese Sprister",
-    "judge2": "Chase Wagner",
+    "judge2": "Ana Valeria Castro Romero",
     "judge3": "Krystle Reagan"
   },
   {
@@ -2480,7 +2496,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Scientist Highlights in the Classroom: Relationship between Scientist Relatability and Student Feelings of Belonging in STEM",
-    "judge1": "Santiago Galindo González",
+    "judge1": "Adam Schuller",
     "judge2": "RoxAnn Karkhoff-Schweizer",
     "judge3": "Tatianna Travieso"
   },
@@ -2594,7 +2610,7 @@ export const PRESENTERS: Presenter[] = [
     "title": "Semaglutide Attenuates Macrophage and Primary Mixed Glia Mediated Inflammatory Response in an In Vitro Murine Model",
     "judge1": "Elizabeth Esdaile",
     "judge2": "Natalie Wickenkamp",
-    "judge3": "Adam Schuller"
+    "judge3": "Ana Valeria Castro Romero"
   },
   {
     "id": "1B-6",

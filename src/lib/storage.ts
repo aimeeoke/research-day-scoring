@@ -33,9 +33,11 @@ export function loadState(): ScoringState {
       return defaultState;
     }
     const parsed = JSON.parse(stored) as Partial<ScoringState>;
-    // Always use static presenter/judge data, but preserve scores and feedback from localStorage
+    // Use stored presenters if available (for judge reassignments), otherwise use static data
+    // Scores and feedback are always preserved from localStorage
     return {
       ...defaultState,
+      presenters: parsed.presenters && parsed.presenters.length > 0 ? parsed.presenters : defaultState.presenters,
       scores: parsed.scores || [],
       feedback: parsed.feedback || [],
       lastUpdated: parsed.lastUpdated || null,
@@ -93,6 +95,15 @@ export function getPresenters(): Presenter[] {
 
 export function getPresenterById(id: string): Presenter | undefined {
   return loadState().presenters.find(p => p.id === id);
+}
+
+export function updatePresenter(updatedPresenter: Presenter): void {
+  const state = loadState();
+  const index = state.presenters.findIndex(p => p.id === updatedPresenter.id);
+  if (index >= 0) {
+    state.presenters[index] = updatedPresenter;
+    saveState(state);
+  }
 }
 
 // =============================================================================
