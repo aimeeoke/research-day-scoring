@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Upload, Download, RefreshCw, Users, Award, FileText, ChevronRight, Trash2, UserCog } from 'lucide-react';
+import { Upload, Download, RefreshCw, Users, Award, FileText, ChevronRight, Trash2 } from 'lucide-react';
 import { AdminGate } from '@/components/auth-gate';
 import { parsePresenterCSV } from '@/lib/csv-parser';
 import {
@@ -229,7 +229,7 @@ function DashboardContent() {
           </div>
 
           {/* Quick Actions */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             <a
               href="/"
               className="bg-white rounded-lg shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow group"
@@ -252,18 +252,6 @@ function DashboardContent() {
                   <p className="text-xs sm:text-sm text-gray-500 mt-1">Feedback</p>
                 </div>
                 <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-csu-green" />
-              </div>
-            </a>
-            <a
-              href="/admin/reassign"
-              className="bg-white rounded-lg shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow group border-2 border-purple-200"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">Reassign</h3>
-                  <p className="text-xs sm:text-sm text-gray-500 mt-1">Judge conflicts</p>
-                </div>
-                <UserCog className="h-5 w-5 text-gray-400 group-hover:text-purple-500" />
               </div>
             </a>
             <a
