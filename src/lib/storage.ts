@@ -33,11 +33,10 @@ export function loadState(): ScoringState {
       return defaultState;
     }
     const parsed = JSON.parse(stored) as Partial<ScoringState>;
-    // Use stored presenters if available (for judge reassignments), otherwise use static data
-    // Scores and feedback are always preserved from localStorage
+    // Always use static presenter data from data.ts as single source of truth
+    // Only scores and feedback are preserved from localStorage
     return {
       ...defaultState,
-      presenters: parsed.presenters && parsed.presenters.length > 0 ? parsed.presenters : defaultState.presenters,
       scores: parsed.scores || [],
       feedback: parsed.feedback || [],
       lastUpdated: parsed.lastUpdated || null,
