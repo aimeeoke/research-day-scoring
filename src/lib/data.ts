@@ -1,5 +1,5 @@
 // Auto-generated from judge_assignments.csv
-// Generated: 2026-01-22T19:01:24.235Z
+// Generated: 2026-01-22T20:22:19.999Z
 
 import { Presenter, Judge } from './types';
 
@@ -3045,22 +3045,6 @@ export const PRESENTERS: Presenter[] = [
     "judge3": "Michelle Staros"
   },
   {
-    "id": "130",
-    "firstName": "Lance",
-    "lastName": "Sommer",
-    "email": "lancer@colostate.edu",
-    "classification": "DVM/MPH Student",
-    "researchStage": "Advanced",
-    "researchType": "Veterinary Clinical Research",
-    "department": "",
-    "presentationType": "Poster",
-    "presentationTime": "1:45 - 3:45",
-    "title": "Prevalence and Risk Factors Associated with Cryptosporidium parvum and Giardia duodenalis in the U.S. National Goat Herd Using Logistic Regression Analysis",
-    "judge1": "Keara Boss",
-    "judge2": "Bridgit Patten",
-    "judge3": null
-  },
-  {
     "id": "1A-6",
     "firstName": "Reese",
     "lastName": "Sprister",
@@ -4347,8 +4331,7 @@ export const JUDGES: Judge[] = [
       "48",
       "68",
       "100",
-      "118",
-      "130"
+      "118"
     ]
   },
   {
@@ -4639,8 +4622,7 @@ export const JUDGES: Judge[] = [
     "id": "bridgit-patten",
     "name": "Bridgit Patten",
     "assignedPresenters": [
-      "101",
-      "130"
+      "101"
     ]
   }
 ];
