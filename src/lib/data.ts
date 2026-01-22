@@ -1,5 +1,5 @@
 // Auto-generated from judge_assignments.csv
-// Generated: 2026-01-22T20:22:19.999Z
+// Generated: 2026-01-22T21:25:00.074Z
 
 import { Presenter, Judge } from './types';
 
@@ -385,7 +385,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "1:45 - 3:45",
     "title": "Exploring clinicopathologic trends in an aging canine cohort with and without canine cognitive dysfunction",
     "judge1": "Rick McCosh",
-    "judge2": "Alyssa Kasen",
+    "judge2": "Alysa Kasen",
     "judge3": null
   },
   {
@@ -752,7 +752,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "CAD evaluation of 3D malalignment on CT after routine tibial plateau leveling osteotomy",
-    "judge1": "Brigit Patten",
+    "judge1": "Bridget Patten",
     "judge2": "Charlie Talbot",
     "judge3": null
   },
@@ -1590,25 +1590,9 @@ export const PRESENTERS: Presenter[] = [
   },
   {
     "id": "U24",
-    "firstName": "Emma",
+    "firstName": "Victoria Aragon and Emma",
     "lastName": "Hinchliffe",
     "email": "Emma.Hinchliffe@colostate.edu",
-    "classification": "Undergraduate Student",
-    "researchStage": "Early",
-    "researchType": "Foundational Research",
-    "department": "",
-    "presentationType": "Undergrad Poster",
-    "presentationTime": "10:15 - 11:15",
-    "title": "?-catenin haploinsufficiency is sufficient to alter behaviors and glutamatergic synapses in mice",
-    "judge1": "Gamze Badakul",
-    "judge2": "Ashley Potter",
-    "judge3": "Ashley Higgins"
-  },
-  {
-    "id": "U24",
-    "firstName": "Victoria",
-    "lastName": "Aragon",
-    "email": "Victoria.Aragon@colostate.edu",
     "classification": "Undergraduate Student",
     "researchStage": "Early",
     "researchType": "Foundational Research",
@@ -1712,7 +1696,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Neurons in the brainstem that express neuropeptide Y are sufficient to suppress luteinizing hormone pulses in mice.",
-    "judge1": "Brigit Patten",
+    "judge1": "Bridget Patten",
     "judge2": "Nathaniel Denkers",
     "judge3": null
   },
@@ -2337,7 +2321,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Artificial Light at Night Impairs Stress Regulation and Recovery in Postoperative Equine ICU Patients",
     "judge1": "Julie Moreno",
-    "judge2": "Bridgit Patten",
+    "judge2": "Bridget Patten",
     "judge3": null
   },
   {
@@ -3360,7 +3344,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Cidofovir for the treatment of persistent FHV-1 infections",
-    "judge1": "Brigit Patten",
+    "judge1": "Bridget Patten",
     "judge2": "Zohaib Ali",
     "judge3": null
   },
@@ -3826,7 +3810,6 @@ export const JUDGES: Judge[] = [
     "assignedPresenters": [
       "U02",
       "U13",
-      "U24",
       "U24"
     ]
   },
@@ -3930,10 +3913,14 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "alyssa-kasen",
-    "name": "Alyssa Kasen",
+    "id": "alysa-kasen",
+    "name": "Alysa Kasen",
     "assignedPresenters": [
-      "20"
+      "20",
+      "54",
+      "55",
+      "56",
+      "128"
     ]
   },
   {
@@ -4116,7 +4103,6 @@ export const JUDGES: Judge[] = [
     "assignedPresenters": [
       "U06",
       "U24",
-      "U24",
       "U32"
     ]
   },
@@ -4135,7 +4121,6 @@ export const JUDGES: Judge[] = [
     "assignedPresenters": [
       "U07",
       "U22",
-      "U24",
       "U24"
     ]
   },
@@ -4190,11 +4175,12 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "brigit-patten",
-    "name": "Brigit Patten",
+    "id": "bridget-patten",
+    "name": "Bridget Patten",
     "assignedPresenters": [
       "37",
       "74",
+      "101",
       "142"
     ]
   },
@@ -4391,16 +4377,6 @@ export const JUDGES: Judge[] = [
       "56",
       "71",
       "98",
-      "128"
-    ]
-  },
-  {
-    "id": "alysa-kasen",
-    "name": "Alysa Kasen",
-    "assignedPresenters": [
-      "54",
-      "55",
-      "56",
       "128"
     ]
   },
@@ -4616,13 +4592,6 @@ export const JUDGES: Judge[] = [
       "110",
       "135",
       "146"
-    ]
-  },
-  {
-    "id": "bridgit-patten",
-    "name": "Bridgit Patten",
-    "assignedPresenters": [
-      "101"
     ]
   }
 ];
