@@ -60,6 +60,20 @@ function mapSessionTime(input) {
   return null;
 }
 
+// Determine session time for posters based on odd/even ID
+// Odd-numbered posters → Session 1 (11:30-1:30)
+// Even-numbered posters → Session 2 (1:45-3:45)
+function getPosterSessionTime(presenterId) {
+  // Extract numeric portion from ID (e.g., "1" from "1", "23" from "23", "100" from "100")
+  const numericMatch = presenterId.match(/^(\d+)$/);
+  if (numericMatch) {
+    const num = parseInt(numericMatch[1], 10);
+    return num % 2 === 1 ? '11:30 - 1:30' : '1:45 - 3:45';
+  }
+  // If ID doesn't match simple numeric pattern, return null (use CSV value)
+  return null;
+}
+
 function parseCSVLine(line) {
   const result = [];
   let current = '';
@@ -122,10 +136,18 @@ for (let i = 1; i < lines.length; i++) {
   // Default to Early for pedagogy if missing
   if (!researchStage) researchStage = 'Early';
 
-  const presentationTime = mapSessionTime(row.presentationTime);
+  let presentationTime = mapSessionTime(row.presentationTime);
   if (!presentationTime) {
     errors.push(`Row ${rowNum}: Invalid presentationTime "${row.presentationTime}"`);
     continue;
+  }
+
+  // For regular Posters (not Undergrad Poster, not Oral), assign session based on odd/even ID
+  if (presentationType === 'Poster') {
+    const posterSession = getPosterSessionTime(cleanField(row.presentationID));
+    if (posterSession) {
+      presentationTime = posterSession;
+    }
   }
 
   const judge1 = normalizeJudgeName(row.judge1);
