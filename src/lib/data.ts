@@ -561,7 +561,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Diet Composition Shapes Estrous Cycling and the Vaginal Microbiome in Female Rats",
     "judge1": "Zohaib Ali",
-    "judge2": "Committee Member 2",
+    "judge2": "Mark Zabel",
     "judge3": null
   },
   {
@@ -1794,7 +1794,7 @@ export const PRESENTERS: Presenter[] = [
     "title": "Novel Method of Blood Pathogen Reduction Via UV Light and Riboflavin for Treatment of Whole Blood",
     "judge1": "Madison Johnson",
     "judge2": "Chase Wagner",
-    "judge3": "Committee Member 1"
+    "judge3": "Gregg Dean"
   },
   {
     "id": "U30",
@@ -1888,7 +1888,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Co-infection with two alpha-synuclein strains reveals novel synergistic interactions",
-    "judge1": "Committee Member 2",
+    "judge1": "Mark Zabel",
     "judge2": "Michelle Staros",
     "judge3": null
   },
@@ -1954,7 +1954,7 @@ export const PRESENTERS: Presenter[] = [
     "title": "Assessing the Impact of Four-Week Oral Rapamycin Treatment on Anxiety and Memory in Mice",
     "judge1": "Jason Martin",
     "judge2": "Jacob Smoot",
-    "judge3": "Committee Member 1"
+    "judge3": "Gregg Dean"
   },
   {
     "id": "82",
@@ -2050,7 +2050,7 @@ export const PRESENTERS: Presenter[] = [
     "title": "Investigating and Characterizing Half Crossover Cascades in Saccharomyces cerevisiae",
     "judge1": "Madison Johnson",
     "judge2": "Grace Matsey",
-    "judge3": "Committee Member 1"
+    "judge3": "Gregg Dean"
   },
   {
     "id": "85",
@@ -2688,7 +2688,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Sterilizing chicken embryos with busulfan injections to create surrogate hosts for primordial germ cells?",
-    "judge1": "Committee Member 2",
+    "judge1": "Mark Zabel",
     "judge2": "Kristin Zersen",
     "judge3": null
   },
@@ -3233,7 +3233,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Safety and Tolerability of a DNA Protein Kinase Inhibitor as a Radiosensitizer for Canine Head and Neck Cancer",
     "judge1": "Elena Lian",
-    "judge2": "Committee Member 2",
+    "judge2": "Mark Zabel",
     "judge3": null
   },
   {
@@ -3425,7 +3425,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Save the Pangolins! Radioactive Deterrents for Pangolin Preservation",
     "judge1": "Julie Moreno",
-    "judge2": "Committee Member 2",
+    "judge2": "Mark Zabel",
     "judge3": null
   },
   {
@@ -4124,8 +4124,8 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "committee-member-2",
-    "name": "Committee Member 2",
+    "id": "mark-zabel",
+    "name": "Mark Zabel",
     "assignedPresenters": [
       "31",
       "79",
@@ -4592,8 +4592,8 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "committee-member-1",
-    "name": "Committee Member 1",
+    "id": "gregg-dean",
+    "name": "Gregg Dean",
     "assignedPresenters": [
       "U29",
       "U33",
