@@ -1,5 +1,5 @@
 // Auto-generated from judge_assignments.csv
-// Generated: 2026-01-22T21:25:00.074Z
+// Generated: 2026-01-23T00:44:43.313Z
 
 import { Presenter, Judge } from './types';
 
@@ -16,7 +16,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Preliminary Analysis of Bloodmeal Sources of Mosquitoes Collected from Myanmar",
-    "judge1": "Marika Klowsowski",
+    "judge1": "Zohaib Ali",
     "judge2": "Gilbert John",
     "judge3": null
   },
@@ -32,8 +32,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Rapamycin Treatment Mitigates Alzheimers DiseaseAssociated Proteotoxicity in Caenorhabditis elegans",
-    "judge1": "Christopher Vaaga",
-    "judge2": "J Lucas Argueso",
+    "judge1": "J Lucas Argueso",
+    "judge2": "Imke Steffan",
     "judge3": null
   },
   {
@@ -48,7 +48,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Investigating factors associated with adrenal disease in intact domestic ferrets (Mustela putorius furo)",
-    "judge1": "Mo Salman",
+    "judge1": "Katie Seabaugh",
     "judge2": "Jenny Sones",
     "judge3": null
   },
@@ -64,8 +64,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Effects of EIDD-2801 on clinical remission and calicivirus shedding on cats with chronic gingivostomatitis",
-    "judge1": "Giovanni Tremolada",
-    "judge2": "Kristen Davenport",
+    "judge1": "Kristen Davenport",
+    "judge2": "Catriona MacPhail",
     "judge3": null
   },
   {
@@ -80,8 +80,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Incidental abdominal masses and nodules in older dogs  results of long-term follow-up in 190 dogs",
-    "judge1": "Julie Moreno",
-    "judge2": "Kristen Davenport",
+    "judge1": "Fiona Hollinshead",
+    "judge2": "Julie Moreno",
     "judge3": null
   },
   {
@@ -97,7 +97,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "1:45 - 3:45",
     "title": "Cannabidiol and trazodone suppress amyloid beta pathological features in Caenorhabditis elegans",
     "judge1": "Chisom Arinze",
-    "judge2": "Traci Kinkel",
+    "judge2": "Alysa Kasen",
     "judge3": null
   },
   {
@@ -112,8 +112,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Validating a Computer-Assisted Surgical Navigation System for Equine Cervical Spine Procedures",
-    "judge1": "Kathryn Wotman",
-    "judge2": "Sarah Raabis",
+    "judge1": "Katie Bisazza",
+    "judge2": "Kathryn Wotman",
     "judge3": null
   },
   {
@@ -128,8 +128,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Uptake of seminal plasma extracellular vesicles by frozen-thawed equine sperm",
-    "judge1": "Samantha Courtney",
-    "judge2": "Chisom Arinze",
+    "judge1": "Chisom Arinze",
+    "judge2": "Luke Schwerdtfeger",
     "judge3": null
   },
   {
@@ -161,7 +161,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Perceptions of the role of artificial intelligence in veterinary medical education and practice",
     "judge1": "Phillida Charley",
-    "judge2": "Jairo Palomares Velosa",
+    "judge2": "Kristin Zersen",
     "judge3": null
   },
   {
@@ -191,10 +191,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Evaluation of the use, performance, and clinical relevance of special stains in veterinary cytopathology",
-    "judge1": "Kristen Davenport",
-    "judge2": "Zohaib Ali",
-    "judge3": null
+    "title": "Evaluation of the use",
+    "judge1": "performance",
+    "judge2": "and clinical relevance of special stains in veterinary cytopathology",
+    "judge3": "Rachel Maison"
   },
   {
     "id": "12",
@@ -208,8 +208,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Lactobacillus supplementation mitigates late-gestational sFlt-1 elevation in the BPH/5 mouse model of preeclampsia",
-    "judge1": "Susan Bailey",
-    "judge2": "Renata Comeau",
+    "judge1": "Zaid Abdo",
+    "judge2": "Riley Thompson-Brandhagen",
     "judge3": null
   },
   {
@@ -225,7 +225,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Pharmacokinetics of subcutaneous ondansetron in healthy dogs: a crossover study",
     "judge1": "Anna Bracken",
-    "judge2": "Catriona MacPhail",
+    "judge2": "Giovanni Tremolada",
     "judge3": null
   },
   {
@@ -241,8 +241,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "Longitudinal Analysis of Chronic Wasting Disease in free-range White-tailed deer in Arkansas",
     "judge1": "Levi Flom",
-    "judge2": "Natalie Wickenkamp",
-    "judge3": "Jason Martin"
+    "judge2": "Jason Martin",
+    "judge3": "Natalie Wickenkamp"
   },
   {
     "id": "1B-1",
@@ -255,10 +255,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Oral",
     "presentationTime": "11:30 - 1:30",
-    "title": "Telomeric RNA (TERRA) is Elevated in Canine Osteosarcoma, a Hallmark of the Alternative Lengthening of Telomeres (ALT) Pathway",
-    "judge1": "Kelly Debie",
-    "judge2": "Luke Montrose",
-    "judge3": null
+    "title": "Telomeric RNA (TERRA) is Elevated in Canine Osteosarcoma",
+    "judge1": "a Hallmark of the Alternative Lengthening of Telomeres (ALT) Pathway",
+    "judge2": "Kelly Debie",
+    "judge3": "Luke Montrose"
   },
   {
     "id": "U02",
@@ -272,9 +272,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Astrocytic STING activation in primary murine cells mediates wildfire smoke-induced neurotoxicity",
-    "judge1": "Alan Schenkel",
-    "judge2": "Seonil Kim",
-    "judge3": "Gamze Badakul"
+    "judge1": "Seonil Kim",
+    "judge2": "Gamze Badakul",
+    "judge3": "Alan Schenkel"
   },
   {
     "id": "2A-1",
@@ -320,8 +320,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Intranasal infection with Western Equine Encephalitis Virus induces temporally and spatially distinct patterns of gliosis and progressive neurodegeneration in the hippocampus of C57Bl/6 mice",
-    "judge1": "Nathaniel Denkers",
-    "judge2": "Luke Schwerdtfeger",
+    "judge1": "Elena Lian",
+    "judge2": "Jason Lombard",
     "judge3": null
   },
   {
@@ -336,8 +336,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Building a better swab: refining the test for M. bovis in American bison",
-    "judge1": "Samantha Courtney",
-    "judge2": "Kristin Zersen",
+    "judge1": "Suad Elmegerhi",
+    "judge2": "Andres Obregon",
     "judge3": null
   },
   {
@@ -353,7 +353,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "1:45 - 3:45",
     "title": "Respiratory fit testing: A comparative study on the Aerofit vs the Portacount Plus+",
     "judge1": "Chisom Arinze",
-    "judge2": "Marika Klowsowski",
+    "judge2": "Courtney Bouchet",
     "judge3": null
   },
   {
@@ -368,7 +368,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Prevalence of Bovine Leukemia Virus on Front Range Dairy Operations (resubmission)",
-    "judge1": "Catriona MacPhail",
+    "judge1": "Angela Bosco-Lauth",
     "judge2": "Anna Bracken",
     "judge3": null
   },
@@ -384,8 +384,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Exploring clinicopathologic trends in an aging canine cohort with and without canine cognitive dysfunction",
-    "judge1": "Rick McCosh",
-    "judge2": "Alysa Kasen",
+    "judge1": "Rachel Maison",
+    "judge2": "Sarah Raabis",
     "judge3": null
   },
   {
@@ -400,8 +400,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Maternal immune activation alters adult offspring responses to stress and immune stimulation.",
-    "judge1": "Carol Wilusz",
-    "judge2": "Sareen Fiaz",
+    "judge1": "Sareen Fiaz",
+    "judge2": "Carol Wilusz",
     "judge3": null
   },
   {
@@ -416,8 +416,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "A tale of two columns: differential synaptic processing in the fear circuit",
-    "judge1": "Christopher Vaaga",
-    "judge2": "Nathaniel Denkers",
+    "judge1": "Nathaniel Denkers",
+    "judge2": "Bridgit Patten",
     "judge3": null
   },
   {
@@ -433,7 +433,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Evaluating the efficacy of the Butterfly iQ3TM  in diagnosing lung lesion outcomes in pre-weaned dairy calves",
     "judge1": "Sheryl Magzamen",
-    "judge2": "Sami Case",
+    "judge2": "Daniel Regan",
     "judge3": null
   },
   {
@@ -448,7 +448,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Characterization of mutant BRCA1 and BRCA2 Chinese hamster cells",
-    "judge1": "Traci Kinkel",
+    "judge1": "Zaid Abdo",
     "judge2": "Luke Schwerdtfeger",
     "judge3": null
   },
@@ -464,8 +464,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Assessment of Radiocesium (Cs-137) Dose to Freshwater Fish and Human Consumers in Fukushima",
-    "judge1": "Suad Elmegerhi",
-    "judge2": "Zaid Abdo",
+    "judge1": "Gilbert John",
+    "judge2": "Traci Kinkel",
     "judge3": null
   },
   {
@@ -479,10 +479,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Investigation of clinical, imaging, and molecular biomarkers to predict osteoarthritis severity in an acute experimentally induced equine model",
-    "judge1": "Katie Bisazza",
-    "judge2": "Susan Lana",
-    "judge3": null
+    "title": "Investigation of clinical",
+    "judge1": "imaging",
+    "judge2": "and molecular biomarkers to predict osteoarthritis severity in an acute experimentally induced equine model",
+    "judge3": "Jenn Hatzel"
   },
   {
     "id": "27",
@@ -496,8 +496,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Separations for Post-Detonation Nuclear Forensics: Effects of Major Metals Found in Asphalt on Actinide Determination",
-    "judge1": "Rahmi Lee",
-    "judge2": "Rachel Maison",
+    "judge1": "Samantha Courtney",
+    "judge2": "Rick McCosh",
     "judge3": null
   },
   {
@@ -513,7 +513,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "1:45 - 3:45",
     "title": "Veterinary Client Perspectives on Environmental Sustainability and Animal Welfare in Pet Food Choices",
     "judge1": "Jairo Palomares Velosa",
-    "judge2": "Phillida Charley",
+    "judge2": "Christian Sewor",
     "judge3": null
   },
   {
@@ -529,7 +529,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Evidence of Chronic Wasting Disease Vertical Transmission Using AMP-IHC: An Enhanced Immunohistochemical Method for High-Sensitivity Prion Detection",
     "judge1": "Angela Bosco-Lauth",
-    "judge2": "Marika Klowsowski",
+    "judge2": "Elena Lian",
     "judge3": null
   },
   {
@@ -544,8 +544,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Examining the impact of acute immune stress on estrous cyclicity in female mice following intraperitoneal lipopolysaccharide injection.",
-    "judge1": "Sareen Fiaz",
-    "judge2": "Jason Lombard",
+    "judge1": "Sami Case",
+    "judge2": "Alysa Kasen",
     "judge3": null
   },
   {
@@ -560,8 +560,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Diet Composition Shapes Estrous Cycling and the Vaginal Microbiome in Female Rats",
-    "judge1": "Riley Thompson-Brandhagen",
-    "judge2": "Sami Case",
+    "judge1": "Zohaib Ali",
+    "judge2": "Committee Member 2",
     "judge3": null
   },
   {
@@ -576,9 +576,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Gut Microbiome of Ugandan Insectivorous Bats Carrying Coronaviruses",
-    "judge1": "Seonil Kim",
-    "judge2": "Aidan Briggs",
-    "judge3": "Levi Flom"
+    "judge1": "Levi Flom",
+    "judge2": "Seonil Kim",
+    "judge3": "Aidan Briggs"
   },
   {
     "id": "32",
@@ -593,7 +593,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "1:45 - 3:45",
     "title": "The role of prefrontal autism-related ?-catenin in social behavior",
     "judge1": "J Lucas Argueso",
-    "judge2": "Susan Bailey",
+    "judge2": "Ahmed Gad",
     "judge3": null
   },
   {
@@ -609,8 +609,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "Pharmacologic targeting of MYC in canine and human osteosarcoma tumor cell lines",
     "judge1": "Emily Perkins",
-    "judge2": "Morgan Miller",
-    "judge3": "Samirah Alkhudaydi"
+    "judge2": "Samirah Alkhudaydi",
+    "judge3": "Morgan Miller"
   },
   {
     "id": "U06",
@@ -624,9 +624,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Blood-Brain Barrier Dysregulation Exhibited in Canines with Canine Cognitive Decline Syndrome",
-    "judge1": "Kalani Williams",
-    "judge2": "Kelsey Martin",
-    "judge3": "Ashley Higgins"
+    "judge1": "Kelsey Martin",
+    "judge2": "Ashley Higgins",
+    "judge3": "Kalani Williams"
   },
   {
     "id": "U07",
@@ -639,10 +639,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
-    "title": "Assessment of Harmful Algal Blooms in Urban Ponds of Fort Collins, Colorado",
-    "judge1": "Seonil Kim",
-    "judge2": "Dawit Tesfaye",
-    "judge3": "Ashley Potter"
+    "title": "Assessment of Harmful Algal Blooms in Urban Ponds of Fort Collins",
+    "judge1": "Colorado",
+    "judge2": "Seonil Kim",
+    "judge3": "Dawit Tesfaye"
   },
   {
     "id": "1A-2",
@@ -672,8 +672,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Maternal immune tolerance: Defining the development of regulatory T cells (Tregs) during early pregnancy in the horse",
-    "judge1": "Chisom Arinze",
-    "judge2": "J Lucas Argueso",
+    "judge1": "Sareen Fiaz",
+    "judge2": "Jason Lombard",
     "judge3": null
   },
   {
@@ -688,9 +688,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Rapid Inactivation of Pathogens on Microscope Slides: A Platform for Improving Mass Spectrometry for Imaging of Samples from Infected Tissue",
-    "judge1": "Kate Tyner",
-    "judge2": "Michelle Savran",
-    "judge3": "Krystle Reagan"
+    "judge1": "Michelle Savran",
+    "judge2": "Krystle Reagan",
+    "judge3": "Kate Tyner"
   },
   {
     "id": "34",
@@ -703,10 +703,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Short, Engaging, Educational Doses of Sustainability: The Creation of Mini Modules to Guide Further Sustainability Practices",
-    "judge1": "Christian Sewor",
-    "judge2": "Phillida Charley",
-    "judge3": null
+    "title": "Short",
+    "judge1": "Engaging",
+    "judge2": "Educational Doses of Sustainability: The Creation of Mini Modules to Guide Further Sustainability Practices",
+    "judge3": "Rahmi Lee"
   },
   {
     "id": "35",
@@ -720,8 +720,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Mercury Exposure in Companion Animals: A Sentinel Study for Environmental Contamination",
-    "judge1": "Sheryl Magzamen",
-    "judge2": "Renata Comeau",
+    "judge1": "Susan Bailey",
+    "judge2": "Sheryl Magzamen",
     "judge3": null
   },
   {
@@ -736,8 +736,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Examining the role of P-glycoprotein at the blood-retina barrier on opioid-induced hyperactivity in mice",
-    "judge1": "Andres Obregon",
-    "judge2": "Suad Elmegerhi",
+    "judge1": "Suad Elmegerhi",
+    "judge2": "Andres Obregon",
     "judge3": null
   },
   {
@@ -752,7 +752,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "CAD evaluation of 3D malalignment on CT after routine tibial plateau leveling osteotomy",
-    "judge1": "Bridget Patten",
+    "judge1": "Samantha Courtney",
     "judge2": "Charlie Talbot",
     "judge3": null
   },
@@ -768,8 +768,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Maternal Nutritional Modifiers of an LPG Intervention on Birth Weight",
-    "judge1": "Luisa Nieto",
-    "judge2": "Courtney Bouchet",
+    "judge1": "Courtney Bouchet",
+    "judge2": "Marika Klosowski",
     "judge3": null
   },
   {
@@ -784,8 +784,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Impact of post-traumatic osteoarthritis on equine gut microbiome community composition",
-    "judge1": "Michelle Staros",
-    "judge2": "Nathaniel Denkers",
+    "judge1": "Phillida Charley",
+    "judge2": "Michelle Staros",
     "judge3": null
   },
   {
@@ -799,10 +799,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Oral",
     "presentationTime": "11:30 - 1:30",
-    "title": "Pathogenesis and transmission routes of highly pathogenic avian influenza (H5N1, clade 2.3.4.4b) in domestic cats",
-    "judge1": "Stu Tobet",
-    "judge2": "Claudia Wiese",
-    "judge3": null
+    "title": "Pathogenesis and transmission routes of highly pathogenic avian influenza (H5N1",
+    "judge1": "clade 2.3.4.4b) in domestic cats",
+    "judge2": "Stu Tobet",
+    "judge3": "Claudia Wiese"
   },
   {
     "id": "U10",
@@ -816,9 +816,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Resveratrol Supplementation Improves Uterine Immune Resolution in Mares Susceptible to Persistent Breeding-Induced Endometritis",
-    "judge1": "Reese Sprister",
-    "judge2": "Michelle Galvan",
-    "judge3": "Michelle Savran"
+    "judge1": "Michelle Savran",
+    "judge2": "Reese Sprister",
+    "judge3": "Michelle Galvan"
   },
   {
     "id": "40",
@@ -848,7 +848,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Myo-inositol pathway regulation in murine achilles tendon explants",
-    "judge1": "Luke Schwerdtfeger",
+    "judge1": "Sheryl Magzamen",
     "judge2": "Gary Mason",
     "judge3": null
   },
@@ -864,8 +864,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Transmission of antimicrobial resistant Salmonella enterica among domestic animals in rural Guatemala",
-    "judge1": "Luisa Nieto",
-    "judge2": "Michelle Staros",
+    "judge1": "Kristen Davenport",
+    "judge2": "Luke Schwerdtfeger",
     "judge3": null
   },
   {
@@ -880,8 +880,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Development of a Quantitative PCR Assay for Lactobacillus Detection in Murine Fecal Samples as a Complement to 16S rRNA Gene Sequencing",
-    "judge1": "Jacob Smoot",
-    "judge2": "Samirah Alkhudaydi",
+    "judge1": "Samirah Alkhudaydi",
+    "judge2": "Jacob Smoot",
     "judge3": "Kathleen Eddy"
   },
   {
@@ -896,7 +896,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Trusting Natures Blueprint: Polarity-Reversed Oviductal Organoids Advancing Cross-Species Fertility Solutions",
-    "judge1": "Courtney Bouchet",
+    "judge1": "Charlie Talbot",
     "judge2": "Carol Wilusz",
     "judge3": null
   },
@@ -928,8 +928,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Leptin promotes inflammation at the fetal-maternal interface in BPH5 and C57 mice",
-    "judge1": "Rick McCosh",
-    "judge2": "Andres Obregon",
+    "judge1": "Katie Bisazza",
+    "judge2": "Rick McCosh",
     "judge3": null
   },
   {
@@ -944,8 +944,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Feeding nonstructural carbohydrates to older mares alters metabolism in the ovarian follicle",
-    "judge1": "Carol Wilusz",
-    "judge2": "Angela Bosco-Lauth",
+    "judge1": "Sami Case",
+    "judge2": "Alysa Kasen",
     "judge3": null
   },
   {
@@ -960,8 +960,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Assessment of pedicle screw placement accuracy using a computer-guided navigation system",
-    "judge1": "Giovanni Tremolada",
-    "judge2": "Jenny Sones",
+    "judge1": "Jenny Sones",
+    "judge2": "Giovanni Tremolada",
     "judge3": null
   },
   {
@@ -975,10 +975,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Association between circulating leptin levels and equine obesity measures, oocyte pick up, and variants in LEP and LEPR.",
-    "judge1": "Keara Boss",
-    "judge2": "Katie Seabaugh",
-    "judge3": null
+    "title": "Association between circulating leptin levels and equine obesity measures",
+    "judge1": "oocyte pick up",
+    "judge2": "and variants in LEP and LEPR.",
+    "judge3": "Keara Boss"
   },
   {
     "id": "1A-4",
@@ -1009,7 +1009,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "1:45 - 3:45",
     "title": "Visualizing cellular localization and dynamics of ectopic tubulin isotypes and pathogenic tubulin variants",
     "judge1": "Ahmed Gad",
-    "judge2": "Sareen Fiaz",
+    "judge2": "Bridgit Patten",
     "judge3": null
   },
   {
@@ -1024,9 +1024,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Neuropathology and Neuroinflammatory Hallmarks in Aging Felines with Cognitive Dysfunction",
-    "judge1": "Farzana Hossain",
-    "judge2": "Dawit Tesfaye",
-    "judge3": "Jebrail Dempsey"
+    "judge1": "Dawit Tesfaye",
+    "judge2": "Jebrail Dempsey",
+    "judge3": "Farzana Hossain"
   },
   {
     "id": "U13",
@@ -1041,8 +1041,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "Ketamine reverses chronic stress-induced behavioral changes via the expression of Ca2+-permeable AMPA receptors in mice",
     "judge1": "Gamze Badakul",
-    "judge2": "Ava Holzer",
-    "judge3": "Kelsey Martin"
+    "judge2": "Kelsey Martin",
+    "judge3": "Ava Holzer"
   },
   {
     "id": "51",
@@ -1056,8 +1056,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "A Functional Relationship between PrPC and the Molecular Circadian Clock",
-    "judge1": "Rahmi Lee",
-    "judge2": "Angela Bosco-Lauth",
+    "judge1": "Angela Bosco-Lauth",
+    "judge2": "Charlie Talbot",
     "judge3": null
   },
   {
@@ -1072,7 +1072,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Spermikines: Can spermatozoa synthesize cytokines upon immune stimulation?",
-    "judge1": "Elena Lian",
+    "judge1": "Marika Klosowski",
     "judge2": "Rachel Maison",
     "judge3": null
   },
@@ -1089,7 +1089,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Neuronal Assessment of Mule Deer Fawns in CWD Endemic Regions",
     "judge1": "Susan Bailey",
-    "judge2": "Christopher Vaaga",
+    "judge2": "Phillida Charley",
     "judge3": null
   },
   {
@@ -1104,8 +1104,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Presence of FFAR2 Receptor and Acetate Distribution in Stallion Semen",
-    "judge1": "Alysa Kasen",
-    "judge2": "Sheryl Magzamen",
+    "judge1": "Zaid Abdo",
+    "judge2": "Nathaniel Denkers",
     "judge3": null
   },
   {
@@ -1120,8 +1120,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Circadian regulation of endometrial receptivity in a sheep organoid model",
-    "judge1": "Alysa Kasen",
-    "judge2": "Rick McCosh",
+    "judge1": "Rick McCosh",
+    "judge2": "Kathryn Wotman",
     "judge3": null
   },
   {
@@ -1135,10 +1135,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Development and Refinement of an Ovine Model of Achilles Tendinopathy, A Pilot Study",
-    "judge1": "Alysa Kasen",
-    "judge2": "Elena Lian",
-    "judge3": null
+    "title": "Development and Refinement of an Ovine Model of Achilles Tendinopathy",
+    "judge1": "A Pilot Study",
+    "judge2": "Marika Klosowski",
+    "judge3": "Tracy Webb"
   },
   {
     "id": "1B-2",
@@ -1169,8 +1169,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "Determining the temporal distribution of prions shed in nasal secretions of white-tailed deer inoculated with Nordic CWD",
     "judge1": "Alan Schenkel",
-    "judge2": "Jebrail Dempsey",
-    "judge3": "Ava Holzer"
+    "judge2": "Ava Holzer",
+    "judge3": "Jebrail Dempsey"
   },
   {
     "id": "U15",
@@ -1185,8 +1185,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "Valproic Acid Increases GD2 Expression in Multiple Canine Osteosarcoma and Melanoma Cell Lines through Epigenetic Remodeling",
     "judge1": "Emily Perkins",
-    "judge2": "Charli Geer",
-    "judge3": "Megan Hager"
+    "judge2": "Megan Hager",
+    "judge3": "Charli Geer"
   },
   {
     "id": "U16",
@@ -1200,9 +1200,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Characterizing the association between the prion protein and circadian rhythms in transgenic mice",
-    "judge1": "Kapahi Kawai-Puaa",
-    "judge2": "Placeholder 1",
-    "judge3": "Rosa Quiroz"
+    "judge1": "Rosa Quiroz",
+    "judge2": "Chase Wagner",
+    "judge3": "Kapahi Kawai-Puaa"
   },
   {
     "id": "57",
@@ -1216,8 +1216,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Orthobunyavirus L-N protein interactions limit reassortment",
-    "judge1": "Kristin Zersen",
-    "judge2": "Rachel Maison",
+    "judge1": "Traci Kinkel",
+    "judge2": "Kristin Zersen",
     "judge3": null
   },
   {
@@ -1232,8 +1232,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Coated Detonation Nanodiamonds for Radionuclide Removal from Aqueous Systems",
-    "judge1": "Rick McCosh",
-    "judge2": "Gary Mason",
+    "judge1": "Chisom Arinze",
+    "judge2": "Suad Elmegerhi",
     "judge3": null
   },
   {
@@ -1248,7 +1248,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Expansion of Scientist Spotlights in the Online Graduate Classroom",
-    "judge1": "Christian Sewor",
+    "judge1": "Angela Bosco-Lauth",
     "judge2": "Phillida Charley",
     "judge3": null
   },
@@ -1279,10 +1279,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Establishing the clinical utility of erythropoietin concentrations in healthy brachycephalic and non-brachycephalic dogs at 1,535 meters altitude",
-    "judge1": "Mo Salman",
-    "judge2": "Catriona MacPhail",
-    "judge3": null
+    "title": "Establishing the clinical utility of erythropoietin concentrations in healthy brachycephalic and non-brachycephalic dogs at 1",
+    "judge1": "535 meters altitude",
+    "judge2": "Katie Seabaugh",
+    "judge3": "Jenny Sones"
   },
   {
     "id": "U17",
@@ -1297,8 +1297,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "Proteomic characterization of Mycobacterium mungi: a novel pathogen in the Mycobacterium tuberculosis complex",
     "judge1": "Michelle Savran",
-    "judge2": "Amy MacNeill",
-    "judge3": "Diana Lowe"
+    "judge2": "Diana Lowe",
+    "judge3": "Amy MacNeill"
   },
   {
     "id": "U18",
@@ -1312,9 +1312,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "The DNA Fiber Assay: An insight into accurate DNA replication",
-    "judge1": "Rosa Quiroz",
-    "judge2": "Elizabeth Esdaile",
-    "judge3": "Megan Hager"
+    "judge1": "Megan Hager",
+    "judge2": "Rosa Quiroz",
+    "judge3": "Elizabeth Esdaile"
   },
   {
     "id": "2B-2",
@@ -1393,7 +1393,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "1:45 - 3:45",
     "title": "In vitro modeling of an estrous cycle using immortalized ovine arcuate kisspeptin cells",
     "judge1": "Ahmed Gad",
-    "judge2": "Kristin Zersen",
+    "judge2": "Rahmi Lee",
     "judge3": null
   },
   {
@@ -1408,7 +1408,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "CSUs Veterinary Clients are Climate-Engaged and Seek Resources to Safeguard Pet Health from Environmental Hazards",
-    "judge1": "Christian Sewor",
+    "judge1": "Sheryl Magzamen",
     "judge2": "Gary Mason",
     "judge3": null
   },
@@ -1424,8 +1424,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Microbial Signatures Set Screwworms Apart from Decomposers",
-    "judge1": "Zohaib Ali",
-    "judge2": "Sami Case",
+    "judge1": "Sami Case",
+    "judge2": "Kristen Davenport",
     "judge3": null
   },
   {
@@ -1440,7 +1440,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Optimization of Electroporation Parameters and Target Sequence for CRISPR-Cas9-Mediated Keap1 Gene Editing in Bovine Embryos",
-    "judge1": "Zaid Abdo",
+    "judge1": "Sareen Fiaz",
     "judge2": "Jason Lombard",
     "judge3": null
   },
@@ -1456,9 +1456,25 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Microglia activation mediates juvenile manganese-induced neurotoxicity in a dual-hit H1N1 murine infection model",
-    "judge1": "Kathryn Wotman",
-    "judge2": "Gilbert John",
+    "judge1": "Zaid Abdo",
+    "judge2": "Christian Sewor",
     "judge3": null
+  },
+  {
+    "id": "U20",
+    "firstName": "Carolyn",
+    "lastName": "Dobkins",
+    "email": "carolyn.dobkins@colostate.edu",
+    "classification": "Undergraduate Student",
+    "researchStage": "Early",
+    "researchType": "Translational Research",
+    "department": "",
+    "presentationType": "Undergrad Poster",
+    "presentationTime": "10:15 - 11:15",
+    "title": "Investigating Chronic Wasting Disease in a Cervid Fibroblast Model",
+    "judge1": "Chase Wagner",
+    "judge2": "Santiago Galindo Gonzlez",
+    "judge3": "Ana Valeria Castro Romero"
   },
   {
     "id": "U21",
@@ -1472,9 +1488,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Pulsed Electromagnetic Field Therapy Mitigates Endometrial Inflammation Associated with Persistent Breeding-Induced Endometritis in Horses",
-    "judge1": "Reese Sprister",
-    "judge2": "Placeholder 1",
-    "judge3": "Krystle Reagan"
+    "judge1": "Krystle Reagan",
+    "judge2": "Reese Sprister",
+    "judge3": "Ana Valeria Castro Romero"
   },
   {
     "id": "U22",
@@ -1504,8 +1520,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Exploring associations of age-related comorbidities and canine cognitive dysfunction in Colorado's Biomarker Research in Aging Dogs (BIORAD) study",
-    "judge1": "Imke Steffan",
-    "judge2": "Ahmed Gad",
+    "judge1": "Michelle Staros",
+    "judge2": "Carol Wilusz",
     "judge3": null
   },
   {
@@ -1520,8 +1536,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Towards radium removal from saline waste waters using MnO2-PAN resin",
-    "judge1": "Kapahi Kawai-Puaa",
-    "judge2": "Brandi Dunn",
+    "judge1": "Brandi Dunn",
+    "judge2": "Kapahi Kawai-Puaa",
     "judge3": "Erin Simpkins"
   },
   {
@@ -1536,8 +1552,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Equine digital perfusion patterns at various hoof capsule palmar angles with venography and tekscan",
-    "judge1": "Katie Seabaugh",
-    "judge2": "Keara Boss",
+    "judge1": "Keara Boss",
+    "judge2": "Mo Salman",
     "judge3": null
   },
   {
@@ -1552,8 +1568,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Pathogenesis and Transmission Potential of H5N1 in Killdeer",
-    "judge1": "Chisom Arinze",
-    "judge2": "Traci Kinkel",
+    "judge1": "Traci Kinkel",
+    "judge2": "Christopher Vaaga",
     "judge3": null
   },
   {
@@ -1585,7 +1601,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "1:45 - 3:45",
     "title": "Assessment of methocarbamol to lessen re-obstruction rates in male cats with first time urethral obstruction",
     "judge1": "Chelsea Burden",
-    "judge2": "Katie Bisazza",
+    "judge2": "Jenn Hatzel",
     "judge3": null
   },
   {
@@ -1601,8 +1617,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "?-catenin haploinsufficiency is sufficient to alter behaviors and glutamatergic synapses in mice",
     "judge1": "Gamze Badakul",
-    "judge2": "Ashley Potter",
-    "judge3": "Ashley Higgins"
+    "judge2": "Ashley Higgins",
+    "judge3": "Ashley Potter"
   },
   {
     "id": "U25",
@@ -1616,9 +1632,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Production and use of immunoglobulin Y antibodies as a prophylactic and therapeutic tool",
-    "judge1": "Michelle Galvan",
-    "judge2": "Kapahi Kawai-Puaa",
-    "judge3": "Kate Tyner"
+    "judge1": "Kate Tyner",
+    "judge2": "Michelle Galvan",
+    "judge3": "Kapahi Kawai-Puaa"
   },
   {
     "id": "71",
@@ -1632,7 +1648,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Investigating CBD and Trazodone as Therapeutic Modulators of ?-Amyloid Toxicity in Caenorhabditis elegans",
-    "judge1": "Imke Steffan",
+    "judge1": "Sareen Fiaz",
     "judge2": "Elena Lian",
     "judge3": null
   },
@@ -1681,7 +1697,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Manipulating the CD4 T cell population to investigate cellular dysfunction in a model of tuberculosis and vitamin A deficiency comorbidity",
     "judge1": "Gilbert John",
-    "judge2": "Tracy Webb",
+    "judge2": "Kristin Zersen",
     "judge3": null
   },
   {
@@ -1696,8 +1712,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Neurons in the brainstem that express neuropeptide Y are sufficient to suppress luteinizing hormone pulses in mice.",
-    "judge1": "Bridget Patten",
-    "judge2": "Nathaniel Denkers",
+    "judge1": "Nathaniel Denkers",
+    "judge2": "Bridgit Patten",
     "judge3": null
   },
   {
@@ -1712,8 +1728,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Characterizing optically stimulated luminescence dosimeters - a dive into the nitty gritty details",
-    "judge1": "Suad Elmegerhi",
-    "judge2": "Marika Klowsowski",
+    "judge1": "Zohaib Ali",
+    "judge2": "Daniel Regan",
     "judge3": null
   },
   {
@@ -1728,8 +1744,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Effects of Parenteral Immune Stimulation with Vaccines and Non-Specific TLR Agonists on Pulmonary Immune Responses in Pre-Weaned Calves",
-    "judge1": "Jenny Sones",
-    "judge2": "Giovanni Tremolada",
+    "judge1": "Catriona MacPhail",
+    "judge2": "Riley Thompson-Brandhagen",
     "judge3": null
   },
   {
@@ -1745,8 +1761,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "Treatment of murine melanoma model with an oncolytic myxoma virus",
     "judge1": "Jacob Smoot",
-    "judge2": "Adam Schuller",
-    "judge3": "Grace Matsey"
+    "judge2": "Grace Matsey",
+    "judge3": "Adam Schuller"
   },
   {
     "id": "U28",
@@ -1776,9 +1792,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Novel Method of Blood Pathogen Reduction Via UV Light and Riboflavin for Treatment of Whole Blood",
-    "judge1": "Placeholder 1",
-    "judge2": "Madison Johnson",
-    "judge3": "Ellison Black"
+    "judge1": "Madison Johnson",
+    "judge2": "Chase Wagner",
+    "judge3": "Committee Member 1"
   },
   {
     "id": "U30",
@@ -1808,8 +1824,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Clinical Evaluation of B7-H3-CXCR2 CAR-T Cell Therapy in Dogs with Metastatic Osteosarcoma",
-    "judge1": "Giovanni Tremolada",
-    "judge2": "Mo Salman",
+    "judge1": "Katie Seabaugh",
+    "judge2": "Giovanni Tremolada",
     "judge3": null
   },
   {
@@ -1824,8 +1840,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Quality of generative artificial intelligence study guides in an online histology course",
-    "judge1": "Santiago Galindo Gonzlez",
-    "judge2": "RoxAnn Karkhoff-Schweizer",
+    "judge1": "RoxAnn Karkhoff-Schweizer",
+    "judge2": "Santiago Galindo Gonzlez",
     "judge3": "Michelle Staros"
   },
   {
@@ -1839,10 +1855,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Heavy Metal Exposure, Microbiome Composition, and Cognitive Aging in Dogs from Colorado Private Well Communities",
-    "judge1": "Susan Lana",
-    "judge2": "Treana Mayer",
-    "judge3": null
+    "title": "Heavy Metal Exposure",
+    "judge1": "Microbiome Composition",
+    "judge2": "and Cognitive Aging in Dogs from Colorado Private Well Communities",
+    "judge3": "Susan Lana"
   },
   {
     "id": "2A-3",
@@ -1872,7 +1888,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Co-infection with two alpha-synuclein strains reveals novel synergistic interactions",
-    "judge1": "Sami Case",
+    "judge1": "Committee Member 2",
     "judge2": "Michelle Staros",
     "judge3": null
   },
@@ -1888,8 +1904,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Mouse behavioral seizures and the use of machine learning models for their detection and analysis",
-    "judge1": "Traci Kinkel",
-    "judge2": "Samantha Courtney",
+    "judge1": "Nathaniel Denkers",
+    "judge2": "Alysa Kasen",
     "judge3": null
   },
   {
@@ -1903,10 +1919,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
-    "title": "Re-emergence of St. Louis encephalitis virus in Colorado, 2025.",
-    "judge1": "Levi Flom",
-    "judge2": "Ashley Higgins",
-    "judge3": "Farzana Hossain"
+    "title": "Re-emergence of St. Louis encephalitis virus in Colorado",
+    "judge1": "2025.",
+    "judge2": "Levi Flom",
+    "judge3": "Ashley Higgins"
   },
   {
     "id": "81",
@@ -1919,10 +1935,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Gastrointestinal Parasitic Profile of 64 Outdoor Cats in Boulder County, Colorado in 2024 and 2025",
-    "judge1": "Dan Regan",
+    "title": "Gastrointestinal Parasitic Profile of 64 Outdoor Cats in Boulder County",
+    "judge1": "Colorado in 2024 and 2025",
     "judge2": "Julie Moreno",
-    "judge3": null
+    "judge3": "Daniel Regan"
   },
   {
     "id": "U33",
@@ -1936,9 +1952,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Assessing the Impact of Four-Week Oral Rapamycin Treatment on Anxiety and Memory in Mice",
-    "judge1": "Jacob Smoot",
-    "judge2": "Jason Martin",
-    "judge3": "Ellison Black"
+    "judge1": "Jason Martin",
+    "judge2": "Jacob Smoot",
+    "judge3": "Committee Member 1"
   },
   {
     "id": "82",
@@ -1984,8 +2000,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Chronic Wasting Disease demonstrated in fawns less than 2 months of age in Arkansas free-ranging white-tailed deer populations",
-    "judge1": "Kate Tyner",
-    "judge2": "Kevin Ayala",
+    "judge1": "Kevin Ayala",
+    "judge2": "Kate Tyner",
     "judge3": "Diana Lowe"
   },
   {
@@ -2000,8 +2016,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Pharmacokinetics of intramuscular and intravenous tranexamic acid in healthy dogs",
-    "judge1": "Jenny Sones",
-    "judge2": "Anna Bracken",
+    "judge1": "Anna Bracken",
+    "judge2": "Jenny Sones",
     "judge3": null
   },
   {
@@ -2016,8 +2032,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "The Learning Curve in Robotic-Assisted Pediatric Spine Deformity Surgery",
-    "judge1": "Imke Steffan",
-    "judge2": "Andres Obregon",
+    "judge1": "Andres Obregon",
+    "judge2": "Imke Steffan",
     "judge3": null
   },
   {
@@ -2032,9 +2048,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Investigating and Characterizing Half Crossover Cascades in Saccharomyces cerevisiae",
-    "judge1": "Ellison Black",
-    "judge2": "Madison Johnson",
-    "judge3": "Grace Matsey"
+    "judge1": "Madison Johnson",
+    "judge2": "Grace Matsey",
+    "judge3": "Committee Member 1"
   },
   {
     "id": "85",
@@ -2047,10 +2063,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Co-activation of selective nicotinic acetylcholine receptor subtypes is required to reverse hippocampal network dysfunction, fear memory loss, and amyloid pathology in Alzheimers disease",
-    "judge1": "Jason Lombard",
-    "judge2": "Sheryl Magzamen",
-    "judge3": null
+    "title": "Co-activation of selective nicotinic acetylcholine receptor subtypes is required to reverse hippocampal network dysfunction",
+    "judge1": "fear memory loss",
+    "judge2": "and amyloid pathology in Alzheimers disease",
+    "judge3": "Jason Lombard"
   },
   {
     "id": "86",
@@ -2064,8 +2080,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "The impacts of manganese exposure via drinking water on the gut microbiome of mice",
-    "judge1": "Rick McCosh",
-    "judge2": "Ahmed Gad",
+    "judge1": "Ahmed Gad",
+    "judge2": "Alysa Kasen",
     "judge3": null
   },
   {
@@ -2079,10 +2095,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Feed insecurity during puberty & RNA expression in the ovary, and pituitary of mice",
-    "judge1": "J Lucas Argueso",
-    "judge2": "Christopher Vaaga",
-    "judge3": null
+    "title": "Feed insecurity during puberty & RNA expression in the ovary",
+    "judge1": "and pituitary of mice",
+    "judge2": "Julie Moreno",
+    "judge3": "Christopher Vaaga"
   },
   {
     "id": "91",
@@ -2097,7 +2113,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Neurological consequences of chronic wildfire smoke exposure in mice",
     "judge1": "Sareen Fiaz",
-    "judge2": "Andres Obregon",
+    "judge2": "Charlie Talbot",
     "judge3": null
   },
   {
@@ -2111,10 +2127,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Examining the human health risks of private well water use in Boulder County, Colorado",
-    "judge1": "Renata Comeau",
-    "judge2": "Nathaniel Denkers",
-    "judge3": null
+    "title": "Examining the human health risks of private well water use in Boulder County",
+    "judge1": "Colorado",
+    "judge2": "Zohaib Ali",
+    "judge3": "Christopher Vaaga"
   },
   {
     "id": "U36",
@@ -2128,12 +2144,12 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Decoding GdpS/GdpP regulation of c-di-AMP in Staphylococcus aureus",
-    "judge1": "Taylor Crisologo",
-    "judge2": "Brandi Dunn",
-    "judge3": "Amy MacNeill"
+    "judge1": "Brandi Dunn",
+    "judge2": "Amy MacNeill",
+    "judge3": "Taylor Crisologo"
   },
   {
-    "id": "91",
+    "id": "88",
     "firstName": "Dallas K.",
     "lastName": "Lokey",
     "email": "Dallas.Lokey@colostate.edu",
@@ -2142,9 +2158,9 @@ export const PRESENTERS: Presenter[] = [
     "researchType": "Foundational Research",
     "department": "",
     "presentationType": "Poster",
-    "presentationTime": "11:30 - 1:30",
+    "presentationTime": "1:45 - 3:45",
     "title": "Evaluating immunogenicity of a VSV-EBOV-NiV G Nipah virus vaccine administered orally in two rodent models",
-    "judge1": "Sareen Fiaz",
+    "judge1": "J Lucas Argueso",
     "judge2": "Andres Obregon",
     "judge3": null
   },
@@ -2152,7 +2168,7 @@ export const PRESENTERS: Presenter[] = [
     "id": "92",
     "firstName": "Tiffini",
     "lastName": "Lovell",
-    "email": "lovelltn@colostate,edu",
+    "email": "lovelltn@colostate.edu",
     "classification": "PhD Student",
     "researchStage": "Early",
     "researchType": "Translational Research",
@@ -2160,8 +2176,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "The behavioral and cellular effects of psilocin on fentanyl seeking in male and female mice",
-    "judge1": "Carol Wilusz",
-    "judge2": "Sareen Fiaz",
+    "judge1": "Courtney Bouchet",
+    "judge2": "Kristen Davenport",
     "judge3": null
   },
   {
@@ -2176,8 +2192,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Establishing RusV Surveillance for Staggering Disease in Domestic Cats and Rodent Reservoirs in North America",
-    "judge1": "Suad Elmegerhi",
-    "judge2": "Rahmi Lee",
+    "judge1": "Rick McCosh",
+    "judge2": "Christopher Vaaga",
     "judge3": null
   },
   {
@@ -2192,8 +2208,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "A Survey and On-Farm Study of Organic Dairy Youngtock Health Management Practices",
-    "judge1": "Katie Bisazza",
-    "judge2": "Katie Seabaugh",
+    "judge1": "Jenn Hatzel",
+    "judge2": "Mo Salman",
     "judge3": null
   },
   {
@@ -2207,10 +2223,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Comprehensive Radiation Mapping of Colorado: Calibration and Differentiation of Gamma, Terrestrial, and Cosmic Radiation",
-    "judge1": "Angela Bosco-Lauth",
-    "judge2": "Tracy Webb",
-    "judge3": null
+    "title": "Comprehensive Radiation Mapping of Colorado: Calibration and Differentiation of Gamma",
+    "judge1": "Terrestrial",
+    "judge2": "and Cosmic Radiation",
+    "judge3": "Susan Bailey"
   },
   {
     "id": "97",
@@ -2224,8 +2240,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "The Skeeter Meter: Evaluating Public Behavior Change in Response to West Nile Virus Risk Alerts",
-    "judge1": "Jairo Palomares Velosa",
-    "judge2": "Riley Thompson-Brandhagen",
+    "judge1": "Carol Wilusz",
+    "judge2": "Kristin Zersen",
     "judge3": null
   },
   {
@@ -2240,8 +2256,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Investigating cell-intrinsic and extrinsic mechanisms of FAK-driven osteosarcoma metastasis.",
-    "judge1": "Elena Lian",
-    "judge2": "Luisa Nieto",
+    "judge1": "Sami Case",
+    "judge2": "Nathaniel Denkers",
     "judge3": null
   },
   {
@@ -2320,8 +2336,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Artificial Light at Night Impairs Stress Regulation and Recovery in Postoperative Equine ICU Patients",
-    "judge1": "Julie Moreno",
-    "judge2": "Bridget Patten",
+    "judge1": "Katie Bisazza",
+    "judge2": "Julie Moreno",
     "judge3": null
   },
   {
@@ -2336,8 +2352,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Uncovering patterns of infant mortality in vervet monkeys: a retrospective necropsy analysis",
-    "judge1": "Luisa Nieto",
-    "judge2": "Courtney Bouchet",
+    "judge1": "Courtney Bouchet",
+    "judge2": "Marika Klosowski",
     "judge3": null
   },
   {
@@ -2352,8 +2368,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "The effect of extracorporeal shock wave therapy on cytokine and prostaglandin concentrations within synovial fluid following intra-articular injection with platelet-rich plasma",
-    "judge1": "Sarah Raabis",
-    "judge2": "Dan Regan",
+    "judge1": "Catriona MacPhail",
+    "judge2": "Sarah Raabis",
     "judge3": null
   },
   {
@@ -2416,9 +2432,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Long Term Social and Health Effects of the Fukushima Disaster",
-    "judge1": "Santiago Galindo Gonzlez",
+    "judge1": "Adam Schuller",
     "judge2": "RoxAnn Karkhoff-Schweizer",
-    "judge3": "Adam Schuller"
+    "judge3": "Santiago Galindo Gonzlez"
   },
   {
     "id": "1B-4",
@@ -2464,7 +2480,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Retrospective Analysis of Survival and Adverse Effects Associated with Stereotactic Body Radiation Therapy in 12 Dogs with Hepatocellular Carcinoma",
-    "judge1": "Sarah Raabis",
+    "judge1": "Jason Lombard",
     "judge2": "Charlie Talbot",
     "judge3": null
   },
@@ -2480,9 +2496,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Scientist Highlights in the Classroom: Relationship between Scientist Relatability and Student Feelings of Belonging in STEM",
-    "judge1": "Santiago Galindo Gonzlez",
-    "judge2": "RoxAnn Karkhoff-Schweizer",
-    "judge3": "Tatianna Travieso"
+    "judge1": "Adam Schuller",
+    "judge2": "Tatianna Travieso",
+    "judge3": "RoxAnn Karkhoff-Schweizer"
   },
   {
     "id": "106",
@@ -2496,8 +2512,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Optimizing client education for home prepared veterinary diets: a pilot study comparing video vs. written instructional formats",
-    "judge1": "Katie Seabaugh",
-    "judge2": "Susan Lana",
+    "judge1": "Susan Lana",
+    "judge2": "Mo Salman",
     "judge3": null
   },
   {
@@ -2528,7 +2544,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Evaluating the impact of the T6SS virulence factor on Salmonella Dublin colonization in vitro",
-    "judge1": "Kristen Davenport",
+    "judge1": "Gary Mason",
     "judge2": "Kathryn Wotman",
     "judge3": null
   },
@@ -2545,8 +2561,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "Investigation of MnO2 coated detonation nanodiamonds for preconcentration of alkaline earth elements from aqueous systems",
     "judge1": "Jason Martin",
-    "judge2": "Charli Geer",
-    "judge3": "Megan Hager"
+    "judge2": "Megan Hager",
+    "judge3": "Charli Geer"
   },
   {
     "id": "1B-5",
@@ -2577,8 +2593,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "The Role of Ceramide Synthase in the Dengue Virus Life Cycle",
     "judge1": "Kalani Williams",
-    "judge2": "Michelle Staros",
-    "judge3": "Grace Matsey"
+    "judge2": "Grace Matsey",
+    "judge3": "Michelle Staros"
   },
   {
     "id": "U42",
@@ -2592,9 +2608,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Semaglutide Attenuates Macrophage and Primary Mixed Glia Mediated Inflammatory Response in an In Vitro Murine Model",
-    "judge1": "Elizabeth Esdaile",
-    "judge2": "Natalie Wickenkamp",
-    "judge3": "Adam Schuller"
+    "judge1": "Natalie Wickenkamp",
+    "judge2": "Elizabeth Esdaile",
+    "judge3": "Ana Valeria Castro Romero"
   },
   {
     "id": "1B-6",
@@ -2607,10 +2623,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Oral",
     "presentationTime": "11:30 - 1:30",
-    "title": "Metabolic, Transcriptomic, Functional, and Histological Signatures of Inflammation After ACL Rupture in a Translational Model of PTOA",
-    "judge1": "Kelly Debie",
-    "judge2": "Luke Montrose",
-    "judge3": null
+    "title": "Metabolic",
+    "judge1": "Transcriptomic",
+    "judge2": "Functional",
+    "judge3": "and Histological Signatures of Inflammation After ACL Rupture in a Translational Model of PTOA"
   },
   {
     "id": "2A-5",
@@ -2656,8 +2672,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Companion Animal Toy Toxicity",
-    "judge1": "Fiona Hollinshead",
-    "judge2": "Renata Comeau",
+    "judge1": "J Lucas Argueso",
+    "judge2": "Luke Schwerdtfeger",
     "judge3": null
   },
   {
@@ -2672,7 +2688,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Sterilizing chicken embryos with busulfan injections to create surrogate hosts for primordial germ cells?",
-    "judge1": "Riley Thompson-Brandhagen",
+    "judge1": "Committee Member 2",
     "judge2": "Kristin Zersen",
     "judge3": null
   },
@@ -2688,8 +2704,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Surface Polysaccharides Drive Biofilm Formation and Pathogenesis of Burkholderia pseudomallei",
-    "judge1": "Julie Moreno",
-    "judge2": "Angela Bosco-Lauth",
+    "judge1": "Chisom Arinze",
+    "judge2": "Sami Case",
     "judge3": null
   },
   {
@@ -2704,8 +2720,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Elucidating the carryover impact of antioxidant supplementation during oocyte maturation under heat stress on pre-implantation embryos developmental competence",
-    "judge1": "Samantha Courtney",
-    "judge2": "Susan Bailey",
+    "judge1": "Susan Bailey",
+    "judge2": "Samantha Courtney",
     "judge3": null
   },
   {
@@ -2736,8 +2752,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Dietary Flaxseed Promotes Gut Microbial Stability During Pharmacologically-Induced Estrogen Decline",
-    "judge1": "Imke Steffan",
-    "judge2": "Ahmed Gad",
+    "judge1": "Ahmed Gad",
+    "judge2": "Imke Steffan",
     "judge3": null
   },
   {
@@ -2753,7 +2769,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "The role of autism-related ?-catenin in prefrontal local circuits",
     "judge1": "Gilbert John",
-    "judge2": "Rachel Maison",
+    "judge2": "Elena Lian",
     "judge3": null
   },
   {
@@ -2784,8 +2800,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "The effect of intrauterine infusion of kerosene in the mare",
-    "judge1": "Giovanni Tremolada",
-    "judge2": "Anna Bracken",
+    "judge1": "Anna Bracken",
+    "judge2": "Giovanni Tremolada",
     "judge3": null
   },
   {
@@ -2800,8 +2816,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Analysis of Compounded Antiviral Formulations for the Treatment of Feline Infectious Peritonitis",
-    "judge1": "Treana Mayer",
-    "judge2": "Katie Bisazza",
+    "judge1": "Jenn Hatzel",
+    "judge2": "Treana Mayer",
     "judge3": null
   },
   {
@@ -2816,8 +2832,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Maternal obesity is associated with inflammation in embryos of the preeclamptic-like BPH/5 mouse.",
-    "judge1": "Carol Wilusz",
-    "judge2": "Andres Obregon",
+    "judge1": "Katie Bisazza",
+    "judge2": "Carol Wilusz",
     "judge3": null
   },
   {
@@ -2831,10 +2847,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Comparative evaluation of O-arm guided pedicle screw placement in ovine, caprine, and porcine spinal models",
-    "judge1": "Katie Seabaugh",
-    "judge2": "Julie Moreno",
-    "judge3": null
+    "title": "Comparative evaluation of O-arm guided pedicle screw placement in ovine",
+    "judge1": "caprine",
+    "judge2": "and porcine spinal models",
+    "judge3": "Mo Salman"
   },
   {
     "id": "123",
@@ -2848,7 +2864,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Understanding the role of innate immunity in the pulmonary pathogenesis of  Mycobacterium abscessus.",
-    "judge1": "Zaid Abdo",
+    "judge1": "Traci Kinkel",
     "judge2": "Gary Mason",
     "judge3": null
   },
@@ -2864,8 +2880,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Characterizing Effects of Highly Pathogenic Avian Influenza Virus using Dairy Cattle Biometric Data",
-    "judge1": "Treana Mayer",
-    "judge2": "Zohaib Ali",
+    "judge1": "Catriona MacPhail",
+    "judge2": "Treana Mayer",
     "judge3": null
   },
   {
@@ -2896,9 +2912,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Investigating dentate gyrus pathology associated with epileptogenesis in mice using the intrahippocampal kainate model of acquired TLE",
-    "judge1": "Kevin Ayala",
-    "judge2": "Kathleen Eddy",
-    "judge3": "Elizabeth Esdaile"
+    "judge1": "Kathleen Eddy",
+    "judge2": "Elizabeth Esdaile",
+    "judge3": "Kevin Ayala"
   },
   {
     "id": "1B-8",
@@ -2929,7 +2945,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "1:45 - 3:45",
     "title": "Bordetella bronchiseptica Respiratory Infection in Naked Mole-Rat (Heterocephalus glaber)",
     "judge1": "Susan Lana",
-    "judge2": "Charlie Talbot",
+    "judge2": "Sarah Raabis",
     "judge3": null
   },
   {
@@ -2943,10 +2959,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Intraocular pressures in free-ranging red-tailed hawks (Buteo jamaicensis), red-shouldered hawks (Buteo lineatus), and broad-winged hawks (Buteo platypterus) using rebound tonometry",
-    "judge1": "Dan Regan",
-    "judge2": "Sarah Raabis",
-    "judge3": null
+    "title": "Intraocular pressures in free-ranging red-tailed hawks (Buteo jamaicensis)",
+    "judge1": "red-shouldered hawks (Buteo lineatus)",
+    "judge2": "and broad-winged hawks (Buteo platypterus) using rebound tonometry",
+    "judge3": "Fiona Hollinshead"
   },
   {
     "id": "128",
@@ -2960,8 +2976,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Canine Cognitive Dysfunction Syndrome: Investigating Synaptic and Neurotransmitter Dysregulation",
-    "judge1": "Alysa Kasen",
-    "judge2": "Elena Lian",
+    "judge1": "Suad Elmegerhi",
+    "judge2": "Rahmi Lee",
     "judge3": null
   },
   {
@@ -3008,8 +3024,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Responses to injectable nanoparticle immunotherapy in horses with genital squamous cell carcinoma",
-    "judge1": "Catriona MacPhail",
-    "judge2": "Mo Salman",
+    "judge1": "Katie Seabaugh",
+    "judge2": "Michelle Staros",
     "judge3": null
   },
   {
@@ -3056,8 +3072,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Low-level quantitation of tritium in environmental samples",
-    "judge1": "Charlie Talbot",
-    "judge2": "Jason Lombard",
+    "judge1": "Zaid Abdo",
+    "judge2": "Marika Klosowski",
     "judge3": null
   },
   {
@@ -3088,7 +3104,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Years of life lost due to trauma in dogs and cats",
-    "judge1": "Mo Salman",
+    "judge1": "Katie Seabaugh",
     "judge2": "Jenny Sones",
     "judge3": null
   },
@@ -3103,10 +3119,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Oral",
     "presentationTime": "11:30 - 1:30",
-    "title": "Evaluating the pathogenicity of novel alpha-synuclein mutations through fibrilization kinetics, liposome membrane binding, and synaptic vesicle localization assays",
-    "judge1": "Stu Tobet",
-    "judge2": "Claudia Wiese",
-    "judge3": null
+    "title": "Evaluating the pathogenicity of novel alpha-synuclein mutations through fibrilization kinetics",
+    "judge1": "liposome membrane binding",
+    "judge2": "and synaptic vesicle localization assays",
+    "judge3": "Stu Tobet"
   },
   {
     "id": "134",
@@ -3121,7 +3137,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "1:45 - 3:45",
     "title": "Pro-inflammatory Cytokine Exposure Unexpectedly Increases Glycocalyx Expression by Canine Pulmonary Endothelial Cells",
     "judge1": "Chelsea Burden",
-    "judge2": "Dan Regan",
+    "judge2": "Jairo Palomares Velosa",
     "judge3": null
   },
   {
@@ -3137,7 +3153,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "11:30 - 1:30",
     "title": "Dairy Calf Management A Virtual Reality (VR) Experience Colorado County & State Fairs",
     "judge1": "Fiona Hollinshead",
-    "judge2": "Kathryn Wotman",
+    "judge2": null,
     "judge3": null
   },
   {
@@ -3184,8 +3200,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Immunophenotyping of canine cytotoxic T lymphocyte subsets",
-    "judge1": "Kristin Zersen",
-    "judge2": "Tracy Webb",
+    "judge1": "Rachel Maison",
+    "judge2": "Andres Obregon",
     "judge3": null
   },
   {
@@ -3216,8 +3232,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Safety and Tolerability of a DNA Protein Kinase Inhibitor as a Radiosensitizer for Canine Head and Neck Cancer",
-    "judge1": "Luisa Nieto",
-    "judge2": "Courtney Bouchet",
+    "judge1": "Elena Lian",
+    "judge2": "Committee Member 2",
     "judge3": null
   },
   {
@@ -3232,8 +3248,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Estimated Prevalence of Bartonella spp. DNA in Indonesia Shelter Cats",
-    "judge1": "Katie Bisazza",
-    "judge2": "Dan Regan",
+    "judge1": "Jenn Hatzel",
+    "judge2": "Catriona MacPhail",
     "judge3": null
   },
   {
@@ -3248,9 +3264,9 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Characterization of OGG1-Deficient V79 Cells Reveals Enhanced Sensitivity to Cisplatin a DNA Cross-Linking Agent",
-    "judge1": "Tatianna Travieso",
+    "judge1": "Morgan Miller",
     "judge2": "Charli Geer",
-    "judge3": "Morgan Miller"
+    "judge3": "Tatianna Travieso"
   },
   {
     "id": "U47",
@@ -3296,8 +3312,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "PAI-1 is secreted from tenocytes following TGF-?1 exposure and is present in tendon sheath synovial fluid",
-    "judge1": "Luke Schwerdtfeger",
-    "judge2": "Zaid Abdo",
+    "judge1": "Rick McCosh",
+    "judge2": "Daniel Regan",
     "judge3": null
   },
   {
@@ -3312,8 +3328,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Advancing lipid identification in M. tuberculosis through spectral modeling and in-silico fragmentation",
-    "judge1": "Renata Comeau",
-    "judge2": "Jason Lombard",
+    "judge1": "Suad Elmegerhi",
+    "judge2": "Imke Steffan",
     "judge3": null
   },
   {
@@ -3328,7 +3344,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Milk antibody presence and persistence against Highly Pathogenic Avian Influenza in dairy cows in Colorado",
-    "judge1": "Catriona MacPhail",
+    "judge1": "Katie Bisazza",
     "judge2": "Anna Bracken",
     "judge3": null
   },
@@ -3344,8 +3360,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Cidofovir for the treatment of persistent FHV-1 infections",
-    "judge1": "Bridget Patten",
-    "judge2": "Zohaib Ali",
+    "judge1": "Jairo Palomares Velosa",
+    "judge2": "Bridgit Patten",
     "judge3": null
   },
   {
@@ -3376,8 +3392,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Exploring the impact of a science communication training and mentorship program for undergraduate biomedical sciences students",
-    "judge1": "Christian Sewor",
-    "judge2": "Jairo Palomares Velosa",
+    "judge1": "Jairo Palomares Velosa",
+    "judge2": "Christian Sewor",
     "judge3": null
   },
   {
@@ -3408,8 +3424,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Save the Pangolins! Radioactive Deterrents for Pangolin Preservation",
-    "judge1": "Tracy Webb",
-    "judge2": "Sami Case",
+    "judge1": "Julie Moreno",
+    "judge2": "Committee Member 2",
     "judge3": null
   },
   {
@@ -3424,8 +3440,8 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
     "title": "Abdominal ultrasonographic and clinicopathological characteristics of non-effusive feline infectious peritonitis in cats pre and post treatment with antiviral drug (EIDD-2801)",
-    "judge1": "Charlie Talbot",
-    "judge2": "Fiona Hollinshead",
+    "judge1": "Rahmi Lee",
+    "judge2": "Tracy Webb",
     "judge3": null
   },
   {
@@ -3440,7 +3456,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
     "title": "Intracerebroventricular injection of neuropeptide Y suppresses luteinizing hormone pulses in mice",
-    "judge1": "Christopher Vaaga",
+    "judge1": "Samantha Courtney",
     "judge2": "Traci Kinkel",
     "judge3": null
   },
@@ -3464,13 +3480,14 @@ export const PRESENTERS: Presenter[] = [
 
 export const JUDGES: Judge[] = [
   {
-    "id": "marika-klowsowski",
-    "name": "Marika Klowsowski",
+    "id": "zohaib-ali",
+    "name": "Zohaib Ali",
     "assignedPresenters": [
       "1",
-      "18",
-      "29",
-      "75"
+      "31",
+      "75",
+      "89",
+      "107"
     ]
   },
   {
@@ -3478,21 +3495,10 @@ export const JUDGES: Judge[] = [
     "name": "Gilbert John",
     "assignedPresenters": [
       "1",
-      "66",
+      "25",
       "73",
       "117",
       "143"
-    ]
-  },
-  {
-    "id": "christopher-vaaga",
-    "name": "Christopher Vaaga",
-    "assignedPresenters": [
-      "2",
-      "22",
-      "53",
-      "87",
-      "131"
     ]
   },
   {
@@ -3502,13 +3508,24 @@ export const JUDGES: Judge[] = [
       "2",
       "10",
       "32",
-      "33",
-      "87"
+      "88",
+      "110"
     ]
   },
   {
-    "id": "mo-salman",
-    "name": "Mo Salman",
+    "id": "imke-steffan",
+    "name": "Imke Steffan",
+    "assignedPresenters": [
+      "2",
+      "40",
+      "84",
+      "116",
+      "140"
+    ]
+  },
+  {
+    "id": "katie-seabaugh",
+    "name": "Katie Seabaugh",
     "assignedPresenters": [
       "3",
       "59",
@@ -3523,20 +3540,9 @@ export const JUDGES: Judge[] = [
     "assignedPresenters": [
       "3",
       "47",
-      "76",
+      "59",
       "83",
       "133"
-    ]
-  },
-  {
-    "id": "giovanni-tremolada",
-    "name": "Giovanni Tremolada",
-    "assignedPresenters": [
-      "4",
-      "47",
-      "76",
-      "77",
-      "119"
     ]
   },
   {
@@ -3544,10 +3550,32 @@ export const JUDGES: Judge[] = [
     "name": "Kristen Davenport",
     "assignedPresenters": [
       "4",
-      "5",
-      "14",
+      "42",
+      "64",
       "82",
-      "109"
+      "92"
+    ]
+  },
+  {
+    "id": "catriona-macphail",
+    "name": "Catriona MacPhail",
+    "assignedPresenters": [
+      "4",
+      "76",
+      "114",
+      "124",
+      "138"
+    ]
+  },
+  {
+    "id": "fiona-hollinshead",
+    "name": "Fiona Hollinshead",
+    "assignedPresenters": [
+      "5",
+      "99",
+      "107",
+      "127",
+      "135"
     ]
   },
   {
@@ -3556,9 +3584,9 @@ export const JUDGES: Judge[] = [
     "assignedPresenters": [
       "5",
       "81",
+      "87",
       "101",
-      "112",
-      "122"
+      "145"
     ]
   },
   {
@@ -3568,19 +3596,30 @@ export const JUDGES: Judge[] = [
       "6",
       "8",
       "18",
-      "33",
-      "69"
+      "58",
+      "112"
     ]
   },
   {
-    "id": "traci-kinkel",
-    "name": "Traci Kinkel",
+    "id": "alysa-kasen",
+    "name": "Alysa Kasen",
     "assignedPresenters": [
       "6",
-      "24",
-      "69",
+      "30",
+      "46",
       "80",
-      "131"
+      "86"
+    ]
+  },
+  {
+    "id": "katie-bisazza",
+    "name": "Katie Bisazza",
+    "assignedPresenters": [
+      "7",
+      "45",
+      "101",
+      "121",
+      "141"
     ]
   },
   {
@@ -3588,32 +3627,20 @@ export const JUDGES: Judge[] = [
     "name": "Kathryn Wotman",
     "assignedPresenters": [
       "7",
-      "66",
+      "55",
       "99",
-      "109",
-      "135"
+      "109"
     ]
   },
   {
-    "id": "sarah-raabis",
-    "name": "Sarah Raabis",
-    "assignedPresenters": [
-      "7",
-      "72",
-      "114",
-      "105",
-      "127"
-    ]
-  },
-  {
-    "id": "samantha-courtney",
-    "name": "Samantha Courtney",
+    "id": "luke-schwerdtfeger",
+    "name": "Luke Schwerdtfeger",
     "assignedPresenters": [
       "8",
-      "16",
-      "61",
-      "80",
-      "113"
+      "24",
+      "42",
+      "60",
+      "110"
     ]
   },
   {
@@ -3640,7 +3667,6 @@ export const JUDGES: Judge[] = [
       "1A-4",
       "1A-5",
       "1A-6",
-      "1A-7",
       "1A-8"
     ]
   },
@@ -3649,21 +3675,21 @@ export const JUDGES: Judge[] = [
     "name": "Phillida Charley",
     "assignedPresenters": [
       "9",
-      "28",
-      "34",
+      "39",
+      "53",
       "11",
       "103"
     ]
   },
   {
-    "id": "jairo-palomares-velosa",
-    "name": "Jairo Palomares Velosa",
+    "id": "kristin-zersen",
+    "name": "Kristin Zersen",
     "assignedPresenters": [
       "9",
-      "28",
+      "57",
+      "73",
       "97",
-      "104",
-      "144"
+      "111"
     ]
   },
   {
@@ -3671,42 +3697,55 @@ export const JUDGES: Judge[] = [
     "name": "Rahmi Lee",
     "assignedPresenters": [
       "10",
-      "27",
-      "51",
-      "93"
+      "34",
+      "62",
+      "128",
+      "146"
     ]
   },
   {
-    "id": "zohaib-ali",
-    "name": "Zohaib Ali",
+    "id": "performance",
+    "name": "performance",
+    "assignedPresenters": [
+      "14"
+    ]
+  },
+  {
+    "id": "and-clinical-relevance-of-special-stains-in-veterinary-cytopathology",
+    "name": "and clinical relevance of special stains in veterinary cytopathology",
+    "assignedPresenters": [
+      "14"
+    ]
+  },
+  {
+    "id": "rachel-maison",
+    "name": "Rachel Maison",
     "assignedPresenters": [
       "14",
-      "64",
-      "107",
-      "124",
-      "142"
+      "20",
+      "52",
+      "136"
     ]
   },
   {
-    "id": "susan-bailey",
-    "name": "Susan Bailey",
+    "id": "zaid-abdo",
+    "name": "Zaid Abdo",
     "assignedPresenters": [
       "12",
-      "32",
-      "53",
-      "61",
-      "113"
+      "24",
+      "54",
+      "66",
+      "132"
     ]
   },
   {
-    "id": "renata-comeau",
-    "name": "Renata Comeau",
+    "id": "riley-thompson-brandhagen",
+    "name": "Riley Thompson-Brandhagen",
     "assignedPresenters": [
       "12",
-      "35",
-      "89",
-      "110",
-      "140"
+      "40",
+      "76",
+      "82"
     ]
   },
   {
@@ -3721,14 +3760,13 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "catriona-macphail",
-    "name": "Catriona MacPhail",
+    "id": "giovanni-tremolada",
+    "name": "Giovanni Tremolada",
     "assignedPresenters": [
       "13",
-      "19",
-      "59",
-      "129",
-      "141"
+      "47",
+      "77",
+      "119"
     ]
   },
   {
@@ -3741,6 +3779,15 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
+    "id": "jason-martin",
+    "name": "Jason Martin",
+    "assignedPresenters": [
+      "U01",
+      "U33",
+      "U40"
+    ]
+  },
+  {
     "id": "natalie-wickenkamp",
     "name": "Natalie Wickenkamp",
     "assignedPresenters": [
@@ -3750,12 +3797,10 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "jason-martin",
-    "name": "Jason Martin",
+    "id": "a-hallmark-of-the-alternative-lengthening-of-telomeres-(alt)-pathway",
+    "name": "a Hallmark of the Alternative Lengthening of Telomeres (ALT) Pathway",
     "assignedPresenters": [
-      "U01",
-      "U33",
-      "U40"
+      "1B-1"
     ]
   },
   {
@@ -3767,7 +3812,6 @@ export const JUDGES: Judge[] = [
       "1B-3",
       "1B-4",
       "1B-5",
-      "1B-6",
       "1B-7",
       "1B-8"
     ]
@@ -3781,18 +3825,8 @@ export const JUDGES: Judge[] = [
       "1B-3",
       "1B-4",
       "1B-5",
-      "1B-6",
       "1B-7",
       "1B-8"
-    ]
-  },
-  {
-    "id": "alan-schenkel",
-    "name": "Alan Schenkel",
-    "assignedPresenters": [
-      "U02",
-      "U14",
-      "U28"
     ]
   },
   {
@@ -3811,6 +3845,15 @@ export const JUDGES: Judge[] = [
       "U02",
       "U13",
       "U24"
+    ]
+  },
+  {
+    "id": "alan-schenkel",
+    "name": "Alan Schenkel",
+    "assignedPresenters": [
+      "U02",
+      "U14",
+      "U28"
     ]
   },
   {
@@ -3869,58 +3912,89 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "nathaniel-denkers",
-    "name": "Nathaniel Denkers",
+    "id": "elena-lian",
+    "name": "Elena Lian",
     "assignedPresenters": [
       "15",
-      "22",
-      "39",
-      "74",
-      "89"
+      "29",
+      "71",
+      "117",
+      "137"
     ]
   },
   {
-    "id": "luke-schwerdtfeger",
-    "name": "Luke Schwerdtfeger",
+    "id": "jason-lombard",
+    "name": "Jason Lombard",
     "assignedPresenters": [
       "15",
-      "24",
-      "41",
-      "60",
-      "139"
+      "33",
+      "65",
+      "85",
+      "105"
     ]
   },
   {
-    "id": "kristin-zersen",
-    "name": "Kristin Zersen",
+    "id": "suad-elmegerhi",
+    "name": "Suad Elmegerhi",
     "assignedPresenters": [
       "16",
-      "57",
-      "62",
-      "111",
+      "36",
+      "58",
+      "128",
+      "140"
+    ]
+  },
+  {
+    "id": "andres-obregon",
+    "name": "Andres Obregon",
+    "assignedPresenters": [
+      "16",
+      "36",
+      "84",
+      "88",
       "136"
     ]
   },
   {
-    "id": "rick-mccosh",
-    "name": "Rick McCosh",
+    "id": "courtney-bouchet",
+    "name": "Courtney Bouchet",
     "assignedPresenters": [
-      "20",
-      "45",
-      "55",
-      "58",
-      "86"
+      "18",
+      "38",
+      "60",
+      "92",
+      "102"
     ]
   },
   {
-    "id": "alysa-kasen",
-    "name": "Alysa Kasen",
+    "id": "angela-bosco-lauth",
+    "name": "Angela Bosco-Lauth",
+    "assignedPresenters": [
+      "19",
+      "29",
+      "51",
+      "11"
+    ]
+  },
+  {
+    "id": "sarah-raabis",
+    "name": "Sarah Raabis",
     "assignedPresenters": [
       "20",
-      "54",
-      "55",
-      "56",
-      "128"
+      "72",
+      "114",
+      "126"
+    ]
+  },
+  {
+    "id": "sareen-fiaz",
+    "name": "Sareen Fiaz",
+    "assignedPresenters": [
+      "21",
+      "33",
+      "65",
+      "71",
+      "91"
     ]
   },
   {
@@ -3929,21 +4003,30 @@ export const JUDGES: Judge[] = [
     "assignedPresenters": [
       "21",
       "43",
-      "46",
-      "92",
+      "67",
+      "97",
       "121"
     ]
   },
   {
-    "id": "sareen-fiaz",
-    "name": "Sareen Fiaz",
+    "id": "nathaniel-denkers",
+    "name": "Nathaniel Denkers",
     "assignedPresenters": [
-      "21",
-      "30",
+      "22",
+      "54",
+      "74",
+      "80",
+      "98"
+    ]
+  },
+  {
+    "id": "bridgit-patten",
+    "name": "Bridgit Patten",
+    "assignedPresenters": [
+      "22",
       "50",
-      "91",
-      "91",
-      "92"
+      "74",
+      "142"
     ]
   },
   {
@@ -3952,44 +4035,48 @@ export const JUDGES: Judge[] = [
     "assignedPresenters": [
       "23",
       "35",
-      "54",
-      "85"
+      "41",
+      "63"
     ]
   },
   {
-    "id": "sami-case",
-    "name": "Sami Case",
+    "id": "daniel-regan",
+    "name": "Daniel Regan",
     "assignedPresenters": [
       "23",
-      "31",
-      "64",
-      "79",
-      "145"
-    ]
-  },
-  {
-    "id": "suad-elmegerhi",
-    "name": "Suad Elmegerhi",
-    "assignedPresenters": [
-      "25",
-      "36",
       "75",
-      "93"
-    ]
-  },
-  {
-    "id": "zaid-abdo",
-    "name": "Zaid Abdo",
-    "assignedPresenters": [
-      "25",
-      "65",
-      "123",
+      "81",
       "139"
     ]
   },
   {
-    "id": "katie-bisazza",
-    "name": "Katie Bisazza",
+    "id": "traci-kinkel",
+    "name": "Traci Kinkel",
+    "assignedPresenters": [
+      "25",
+      "57",
+      "69",
+      "123",
+      "131"
+    ]
+  },
+  {
+    "id": "imaging",
+    "name": "imaging",
+    "assignedPresenters": [
+      "26"
+    ]
+  },
+  {
+    "id": "and-molecular-biomarkers-to-predict-osteoarthritis-severity-in-an-acute-experimentally-induced-equine-model",
+    "name": "and molecular biomarkers to predict osteoarthritis severity in an acute experimentally induced equine model",
+    "assignedPresenters": [
+      "26"
+    ]
+  },
+  {
+    "id": "jenn-hatzel",
+    "name": "Jenn Hatzel",
     "assignedPresenters": [
       "26",
       "70",
@@ -3999,57 +4086,68 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "susan-lana",
-    "name": "Susan Lana",
-    "assignedPresenters": [
-      "26",
-      "78",
-      "100",
-      "106",
-      "126"
-    ]
-  },
-  {
-    "id": "rachel-maison",
-    "name": "Rachel Maison",
+    "id": "samantha-courtney",
+    "name": "Samantha Courtney",
     "assignedPresenters": [
       "27",
-      "52",
-      "57",
-      "117"
+      "37",
+      "61",
+      "113",
+      "131"
     ]
   },
   {
-    "id": "angela-bosco-lauth",
-    "name": "Angela Bosco-Lauth",
+    "id": "rick-mccosh",
+    "name": "Rick McCosh",
     "assignedPresenters": [
-      "29",
+      "27",
+      "45",
+      "55",
+      "93",
+      "139"
+    ]
+  },
+  {
+    "id": "jairo-palomares-velosa",
+    "name": "Jairo Palomares Velosa",
+    "assignedPresenters": [
+      "28",
+      "104",
+      "134",
+      "142",
+      "144"
+    ]
+  },
+  {
+    "id": "christian-sewor",
+    "name": "Christian Sewor",
+    "assignedPresenters": [
+      "28",
+      "66",
+      "104",
+      "144"
+    ]
+  },
+  {
+    "id": "sami-case",
+    "name": "Sami Case",
+    "assignedPresenters": [
+      "30",
       "46",
-      "51",
-      "95",
+      "64",
+      "98",
       "112"
     ]
   },
   {
-    "id": "jason-lombard",
-    "name": "Jason Lombard",
-    "assignedPresenters": [
-      "30",
-      "65",
-      "85",
-      "132",
-      "140"
-    ]
-  },
-  {
-    "id": "riley-thompson-brandhagen",
-    "name": "Riley Thompson-Brandhagen",
+    "id": "committee-member-2",
+    "name": "Committee Member 2",
     "assignedPresenters": [
       "31",
-      "40",
-      "82",
-      "97",
-      "111"
+      "79",
+      "111",
+      "137",
+      "145"
     ]
   },
   {
@@ -4062,12 +4160,14 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "morgan-miller",
-    "name": "Morgan Miller",
+    "id": "ahmed-gad",
+    "name": "Ahmed Gad",
     "assignedPresenters": [
-      "U05",
-      "U37",
-      "U46"
+      "32",
+      "50",
+      "62",
+      "86",
+      "116"
     ]
   },
   {
@@ -4080,12 +4180,12 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "kalani-williams",
-    "name": "Kalani Williams",
+    "id": "morgan-miller",
+    "name": "Morgan Miller",
     "assignedPresenters": [
-      "U06",
-      "U30",
-      "U41"
+      "U05",
+      "U37",
+      "U46"
     ]
   },
   {
@@ -4107,30 +4207,29 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
+    "id": "kalani-williams",
+    "name": "Kalani Williams",
+    "assignedPresenters": [
+      "U06",
+      "U30",
+      "U41"
+    ]
+  },
+  {
+    "id": "colorado",
+    "name": "Colorado",
+    "assignedPresenters": [
+      "U07",
+      "89"
+    ]
+  },
+  {
     "id": "dawit-tesfaye",
     "name": "Dawit Tesfaye",
     "assignedPresenters": [
       "U07",
       "U12",
       "U43"
-    ]
-  },
-  {
-    "id": "ashley-potter",
-    "name": "Ashley Potter",
-    "assignedPresenters": [
-      "U07",
-      "U22",
-      "U24"
-    ]
-  },
-  {
-    "id": "kate-tyner",
-    "name": "Kate Tyner",
-    "assignedPresenters": [
-      "U08",
-      "U25",
-      "U34"
     ]
   },
   {
@@ -4152,36 +4251,37 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "christian-sewor",
-    "name": "Christian Sewor",
+    "id": "kate-tyner",
+    "name": "Kate Tyner",
     "assignedPresenters": [
-      "34",
-      "11",
-      "63",
-      "104",
-      "144"
+      "U08",
+      "U25",
+      "U34"
     ]
   },
   {
-    "id": "andres-obregon",
-    "name": "Andres Obregon",
+    "id": "engaging",
+    "name": "Engaging",
     "assignedPresenters": [
-      "36",
-      "45",
-      "84",
-      "91",
-      "91",
-      "121"
+      "34"
     ]
   },
   {
-    "id": "bridget-patten",
-    "name": "Bridget Patten",
+    "id": "educational-doses-of-sustainability:-the-creation-of-mini-modules-to-guide-further-sustainability-practices",
+    "name": "Educational Doses of Sustainability: The Creation of Mini Modules to Guide Further Sustainability Practices",
     "assignedPresenters": [
-      "37",
-      "74",
-      "101",
-      "142"
+      "34"
+    ]
+  },
+  {
+    "id": "susan-bailey",
+    "name": "Susan Bailey",
+    "assignedPresenters": [
+      "35",
+      "53",
+      "61",
+      "95",
+      "113"
     ]
   },
   {
@@ -4189,32 +4289,21 @@ export const JUDGES: Judge[] = [
     "name": "Charlie Talbot",
     "assignedPresenters": [
       "37",
-      "105",
-      "126",
-      "132",
-      "146"
-    ]
-  },
-  {
-    "id": "luisa-nieto",
-    "name": "Luisa Nieto",
-    "assignedPresenters": [
-      "38",
-      "42",
-      "98",
-      "102",
-      "137"
-    ]
-  },
-  {
-    "id": "courtney-bouchet",
-    "name": "Courtney Bouchet",
-    "assignedPresenters": [
-      "38",
       "43",
-      "60",
+      "51",
+      "91",
+      "105"
+    ]
+  },
+  {
+    "id": "marika-klosowski",
+    "name": "Marika Klosowski",
+    "assignedPresenters": [
+      "38",
+      "52",
+      "56",
       "102",
-      "137"
+      "132"
     ]
   },
   {
@@ -4222,12 +4311,20 @@ export const JUDGES: Judge[] = [
     "name": "Michelle Staros",
     "assignedPresenters": [
       "39",
-      "42",
+      "67",
       "U31",
       "79",
       "103",
       "U41",
+      "129",
       "U45"
+    ]
+  },
+  {
+    "id": "clade-2.3.4.4b)-in-domestic-cats",
+    "name": "clade 2.3.4.4b) in domestic cats",
+    "assignedPresenters": [
+      "1A-3"
     ]
   },
   {
@@ -4249,23 +4346,12 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "imke-steffan",
-    "name": "Imke Steffan",
-    "assignedPresenters": [
-      "40",
-      "67",
-      "71",
-      "84",
-      "116"
-    ]
-  },
-  {
     "id": "gary-mason",
     "name": "Gary Mason",
     "assignedPresenters": [
       "41",
-      "58",
       "63",
+      "109",
       "123",
       "143"
     ]
@@ -4304,10 +4390,23 @@ export const JUDGES: Judge[] = [
     "name": "Treana Mayer",
     "assignedPresenters": [
       "44",
-      "78",
       "120",
       "124",
       "96"
+    ]
+  },
+  {
+    "id": "oocyte-pick-up",
+    "name": "oocyte pick up",
+    "assignedPresenters": [
+      "48"
+    ]
+  },
+  {
+    "id": "and-variants-in-lep-and-lepr.",
+    "name": "and variants in LEP and LEPR.",
+    "assignedPresenters": [
+      "48"
     ]
   },
   {
@@ -4321,25 +4420,12 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "katie-seabaugh",
-    "name": "Katie Seabaugh",
+    "id": "jebrail-dempsey",
+    "name": "Jebrail Dempsey",
     "assignedPresenters": [
-      "48",
-      "68",
-      "94",
-      "106",
-      "122"
-    ]
-  },
-  {
-    "id": "ahmed-gad",
-    "name": "Ahmed Gad",
-    "assignedPresenters": [
-      "50",
-      "62",
-      "67",
-      "86",
-      "116"
+      "U12",
+      "U14",
+      "U22"
     ]
   },
   {
@@ -4347,17 +4433,7 @@ export const JUDGES: Judge[] = [
     "name": "Farzana Hossain",
     "assignedPresenters": [
       "U12",
-      "U28",
-      "U32"
-    ]
-  },
-  {
-    "id": "jebrail-dempsey",
-    "name": "Jebrail Dempsey",
-    "assignedPresenters": [
-      "U12",
-      "U14",
-      "U22"
+      "U28"
     ]
   },
   {
@@ -4370,23 +4446,19 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "elena-lian",
-    "name": "Elena Lian",
+    "id": "a-pilot-study",
+    "name": "A Pilot Study",
     "assignedPresenters": [
-      "52",
-      "56",
-      "71",
-      "98",
-      "128"
+      "56"
     ]
   },
   {
-    "id": "charli-geer",
-    "name": "Charli Geer",
+    "id": "tracy-webb",
+    "name": "Tracy Webb",
     "assignedPresenters": [
-      "U15",
-      "U40",
-      "U46"
+      "56",
+      "72",
+      "146"
     ]
   },
   {
@@ -4399,21 +4471,12 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "kapahi-kawai-puaa",
-    "name": "Kapahi Kawai-Puaa",
+    "id": "charli-geer",
+    "name": "Charli Geer",
     "assignedPresenters": [
-      "U16",
-      "U23",
-      "U25"
-    ]
-  },
-  {
-    "id": "placeholder-1",
-    "name": "Placeholder 1",
-    "assignedPresenters": [
-      "U16",
-      "U21",
-      "U29"
+      "U15",
+      "U40",
+      "U46"
     ]
   },
   {
@@ -4423,6 +4486,24 @@ export const JUDGES: Judge[] = [
       "U16",
       "U18",
       "U26"
+    ]
+  },
+  {
+    "id": "chase-wagner",
+    "name": "Chase Wagner",
+    "assignedPresenters": [
+      "U16",
+      "U20",
+      "U29"
+    ]
+  },
+  {
+    "id": "kapahi-kawai-puaa",
+    "name": "Kapahi Kawai-Puaa",
+    "assignedPresenters": [
+      "U16",
+      "U23",
+      "U25"
     ]
   },
   {
@@ -4454,12 +4535,10 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "amy-macneill",
-    "name": "Amy MacNeill",
+    "id": "535-meters-altitude",
+    "name": "535 meters altitude",
     "assignedPresenters": [
-      "U17",
-      "U36",
-      "U47"
+      "59"
     ]
   },
   {
@@ -4469,6 +4548,15 @@ export const JUDGES: Judge[] = [
       "U17",
       "U34",
       "U45"
+    ]
+  },
+  {
+    "id": "amy-macneill",
+    "name": "Amy MacNeill",
+    "assignedPresenters": [
+      "U17",
+      "U36",
+      "U47"
     ]
   },
   {
@@ -4499,6 +4587,32 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
+    "id": "santiago-galindo-gonzlez",
+    "name": "Santiago Galindo Gonzlez",
+    "assignedPresenters": [
+      "U20",
+      "U31",
+      "U38"
+    ]
+  },
+  {
+    "id": "ana-valeria-castro-romero",
+    "name": "Ana Valeria Castro Romero",
+    "assignedPresenters": [
+      "U20",
+      "U21",
+      "U42"
+    ]
+  },
+  {
+    "id": "ashley-potter",
+    "name": "Ashley Potter",
+    "assignedPresenters": [
+      "U22",
+      "U24"
+    ]
+  },
+  {
     "id": "erin-simpkins",
     "name": "Erin Simpkins",
     "assignedPresenters": [
@@ -4508,23 +4622,23 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "tracy-webb",
-    "name": "Tracy Webb",
+    "id": "mo-salman",
+    "name": "Mo Salman",
     "assignedPresenters": [
-      "72",
-      "73",
-      "95",
-      "136",
-      "145"
+      "68",
+      "94",
+      "106",
+      "122"
     ]
   },
   {
-    "id": "adam-schuller",
-    "name": "Adam Schuller",
+    "id": "christopher-vaaga",
+    "name": "Christopher Vaaga",
     "assignedPresenters": [
-      "U27",
-      "U38",
-      "U42"
+      "69",
+      "87",
+      "89",
+      "93"
     ]
   },
   {
@@ -4537,8 +4651,17 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "ellison-black",
-    "name": "Ellison Black",
+    "id": "adam-schuller",
+    "name": "Adam Schuller",
+    "assignedPresenters": [
+      "U27",
+      "U38",
+      "U39"
+    ]
+  },
+  {
+    "id": "committee-member-1",
+    "name": "Committee Member 1",
     "assignedPresenters": [
       "U29",
       "U33",
@@ -4555,15 +4678,6 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "santiago-galindo-gonzlez",
-    "name": "Santiago Galindo Gonzlez",
-    "assignedPresenters": [
-      "U31",
-      "U38",
-      "U39"
-    ]
-  },
-  {
     "id": "roxann-karkhoff-schweizer",
     "name": "RoxAnn Karkhoff-Schweizer",
     "assignedPresenters": [
@@ -4573,25 +4687,139 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "dan-regan",
-    "name": "Dan Regan",
+    "id": "microbiome-composition",
+    "name": "Microbiome Composition",
     "assignedPresenters": [
-      "81",
-      "114",
-      "127",
-      "134",
-      "138"
+      "78"
     ]
   },
   {
-    "id": "fiona-hollinshead",
-    "name": "Fiona Hollinshead",
+    "id": "and-cognitive-aging-in-dogs-from-colorado-private-well-communities",
+    "name": "and Cognitive Aging in Dogs from Colorado Private Well Communities",
     "assignedPresenters": [
-      "99",
-      "107",
-      "110",
-      "135",
-      "146"
+      "78"
+    ]
+  },
+  {
+    "id": "susan-lana",
+    "name": "Susan Lana",
+    "assignedPresenters": [
+      "78",
+      "100",
+      "106",
+      "126"
+    ]
+  },
+  {
+    "id": "2025.",
+    "name": "2025.",
+    "assignedPresenters": [
+      "U32"
+    ]
+  },
+  {
+    "id": "colorado-in-2024-and-2025",
+    "name": "Colorado in 2024 and 2025",
+    "assignedPresenters": [
+      "81"
+    ]
+  },
+  {
+    "id": "fear-memory-loss",
+    "name": "fear memory loss",
+    "assignedPresenters": [
+      "85"
+    ]
+  },
+  {
+    "id": "and-amyloid-pathology-in-alzheimers-disease",
+    "name": "and amyloid pathology in Alzheimers disease",
+    "assignedPresenters": [
+      "85"
+    ]
+  },
+  {
+    "id": "and-pituitary-of-mice",
+    "name": "and pituitary of mice",
+    "assignedPresenters": [
+      "87"
+    ]
+  },
+  {
+    "id": "terrestrial",
+    "name": "Terrestrial",
+    "assignedPresenters": [
+      "95"
+    ]
+  },
+  {
+    "id": "and-cosmic-radiation",
+    "name": "and Cosmic Radiation",
+    "assignedPresenters": [
+      "95"
+    ]
+  },
+  {
+    "id": "transcriptomic",
+    "name": "Transcriptomic",
+    "assignedPresenters": [
+      "1B-6"
+    ]
+  },
+  {
+    "id": "functional",
+    "name": "Functional",
+    "assignedPresenters": [
+      "1B-6"
+    ]
+  },
+  {
+    "id": "and-histological-signatures-of-inflammation-after-acl-rupture-in-a-translational-model-of-ptoa",
+    "name": "and Histological Signatures of Inflammation After ACL Rupture in a Translational Model of PTOA",
+    "assignedPresenters": [
+      "1B-6"
+    ]
+  },
+  {
+    "id": "caprine",
+    "name": "caprine",
+    "assignedPresenters": [
+      "122"
+    ]
+  },
+  {
+    "id": "and-porcine-spinal-models",
+    "name": "and porcine spinal models",
+    "assignedPresenters": [
+      "122"
+    ]
+  },
+  {
+    "id": "red-shouldered-hawks-(buteo-lineatus)",
+    "name": "red-shouldered hawks (Buteo lineatus)",
+    "assignedPresenters": [
+      "127"
+    ]
+  },
+  {
+    "id": "and-broad-winged-hawks-(buteo-platypterus)-using-rebound-tonometry",
+    "name": "and broad-winged hawks (Buteo platypterus) using rebound tonometry",
+    "assignedPresenters": [
+      "127"
+    ]
+  },
+  {
+    "id": "liposome-membrane-binding",
+    "name": "liposome membrane binding",
+    "assignedPresenters": [
+      "1A-7"
+    ]
+  },
+  {
+    "id": "and-synaptic-vesicle-localization-assays",
+    "name": "and synaptic vesicle localization assays",
+    "assignedPresenters": [
+      "1A-7"
     ]
   }
 ];
