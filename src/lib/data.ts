@@ -1,5 +1,5 @@
 // Auto-generated from judge_assignments.csv
-// Generated: 2026-01-23T00:44:43.313Z
+// Generated: 2026-01-23T01:01:02.862Z
 
 import { Presenter, Judge } from './types';
 
@@ -191,10 +191,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Evaluation of the use",
-    "judge1": "performance",
-    "judge2": "and clinical relevance of special stains in veterinary cytopathology",
-    "judge3": "Rachel Maison"
+    "title": "Evaluation of the use, performance, and clinical relevance of special stains in veterinary cytopathology",
+    "judge1": "Rachel Maison",
+    "judge2": "Sarah Raabis",
+    "judge3": null
   },
   {
     "id": "12",
@@ -255,10 +255,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Oral",
     "presentationTime": "11:30 - 1:30",
-    "title": "Telomeric RNA (TERRA) is Elevated in Canine Osteosarcoma",
-    "judge1": "a Hallmark of the Alternative Lengthening of Telomeres (ALT) Pathway",
-    "judge2": "Kelly Debie",
-    "judge3": "Luke Montrose"
+    "title": "Telomeric RNA (TERRA) is Elevated in Canine Osteosarcoma, a Hallmark of the Alternative Lengthening of Telomeres (ALT) Pathway",
+    "judge1": "Kelly Debie",
+    "judge2": "Luke Montrose",
+    "judge3": null
   },
   {
     "id": "U02",
@@ -479,10 +479,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Investigation of clinical",
-    "judge1": "imaging",
-    "judge2": "and molecular biomarkers to predict osteoarthritis severity in an acute experimentally induced equine model",
-    "judge3": "Jenn Hatzel"
+    "title": "Investigation of clinical, imaging, and molecular biomarkers to predict osteoarthritis severity in an acute experimentally induced equine model",
+    "judge1": "Jenn Hatzel",
+    "judge2": "Susan Lana",
+    "judge3": null
   },
   {
     "id": "27",
@@ -639,10 +639,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
-    "title": "Assessment of Harmful Algal Blooms in Urban Ponds of Fort Collins",
-    "judge1": "Colorado",
-    "judge2": "Seonil Kim",
-    "judge3": "Dawit Tesfaye"
+    "title": "Assessment of Harmful Algal Blooms in Urban Ponds of Fort Collins, Colorado",
+    "judge1": "Seonil Kim",
+    "judge2": "Dawit Tesfaye",
+    "judge3": "Ashley Potter"
   },
   {
     "id": "1A-2",
@@ -703,10 +703,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Short",
-    "judge1": "Engaging",
-    "judge2": "Educational Doses of Sustainability: The Creation of Mini Modules to Guide Further Sustainability Practices",
-    "judge3": "Rahmi Lee"
+    "title": "Short, Engaging, Educational Doses of Sustainability: The Creation of Mini Modules to Guide Further Sustainability Practices",
+    "judge1": "Rahmi Lee",
+    "judge2": "Christian Sewor",
+    "judge3": null
   },
   {
     "id": "35",
@@ -799,10 +799,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Oral",
     "presentationTime": "11:30 - 1:30",
-    "title": "Pathogenesis and transmission routes of highly pathogenic avian influenza (H5N1",
-    "judge1": "clade 2.3.4.4b) in domestic cats",
-    "judge2": "Stu Tobet",
-    "judge3": "Claudia Wiese"
+    "title": "Pathogenesis and transmission routes of highly pathogenic avian influenza (H5N1, clade 2.3.4.4b) in domestic cats",
+    "judge1": "Stu Tobet",
+    "judge2": "Claudia Wiese",
+    "judge3": null
   },
   {
     "id": "U10",
@@ -975,10 +975,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Association between circulating leptin levels and equine obesity measures",
-    "judge1": "oocyte pick up",
-    "judge2": "and variants in LEP and LEPR.",
-    "judge3": "Keara Boss"
+    "title": "Association between circulating leptin levels and equine obesity measures, oocyte pick up, and variants in LEP and LEPR.",
+    "judge1": "Keara Boss",
+    "judge2": "Mo Salman",
+    "judge3": null
   },
   {
     "id": "1A-4",
@@ -1135,10 +1135,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Development and Refinement of an Ovine Model of Achilles Tendinopathy",
-    "judge1": "A Pilot Study",
-    "judge2": "Marika Klosowski",
-    "judge3": "Tracy Webb"
+    "title": "Development and Refinement of an Ovine Model of Achilles Tendinopathy, A Pilot Study",
+    "judge1": "Marika Klosowski",
+    "judge2": "Tracy Webb",
+    "judge3": null
   },
   {
     "id": "1B-2",
@@ -1279,10 +1279,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Establishing the clinical utility of erythropoietin concentrations in healthy brachycephalic and non-brachycephalic dogs at 1",
-    "judge1": "535 meters altitude",
-    "judge2": "Katie Seabaugh",
-    "judge3": "Jenny Sones"
+    "title": "Establishing the clinical utility of erythropoietin concentrations in healthy brachycephalic and non-brachycephalic dogs at 1,535 meters altitude",
+    "judge1": "Katie Seabaugh",
+    "judge2": "Jenny Sones",
+    "judge3": null
   },
   {
     "id": "U17",
@@ -1855,10 +1855,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Heavy Metal Exposure",
-    "judge1": "Microbiome Composition",
-    "judge2": "and Cognitive Aging in Dogs from Colorado Private Well Communities",
-    "judge3": "Susan Lana"
+    "title": "Heavy Metal Exposure, Microbiome Composition, and Cognitive Aging in Dogs from Colorado Private Well Communities",
+    "judge1": "Susan Lana",
+    "judge2": "Treana Mayer",
+    "judge3": null
   },
   {
     "id": "2A-3",
@@ -1919,10 +1919,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
-    "title": "Re-emergence of St. Louis encephalitis virus in Colorado",
-    "judge1": "2025.",
-    "judge2": "Levi Flom",
-    "judge3": "Ashley Higgins"
+    "title": "Re-emergence of St. Louis encephalitis virus in Colorado, 2025.",
+    "judge1": "Levi Flom",
+    "judge2": "Ashley Higgins",
+    "judge3": "Farzana Hossain"
   },
   {
     "id": "81",
@@ -1935,10 +1935,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Gastrointestinal Parasitic Profile of 64 Outdoor Cats in Boulder County",
-    "judge1": "Colorado in 2024 and 2025",
-    "judge2": "Julie Moreno",
-    "judge3": "Daniel Regan"
+    "title": "Gastrointestinal Parasitic Profile of 64 Outdoor Cats in Boulder County, Colorado in 2024 and 2025",
+    "judge1": "Julie Moreno",
+    "judge2": "Daniel Regan",
+    "judge3": null
   },
   {
     "id": "U33",
@@ -2063,10 +2063,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Co-activation of selective nicotinic acetylcholine receptor subtypes is required to reverse hippocampal network dysfunction",
-    "judge1": "fear memory loss",
-    "judge2": "and amyloid pathology in Alzheimers disease",
-    "judge3": "Jason Lombard"
+    "title": "Co-activation of selective nicotinic acetylcholine receptor subtypes is required to reverse hippocampal network dysfunction, fear memory loss, and amyloid pathology in Alzheimers disease",
+    "judge1": "Jason Lombard",
+    "judge2": "Sheryl Magzamen",
+    "judge3": null
   },
   {
     "id": "86",
@@ -2095,10 +2095,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Feed insecurity during puberty & RNA expression in the ovary",
-    "judge1": "and pituitary of mice",
-    "judge2": "Julie Moreno",
-    "judge3": "Christopher Vaaga"
+    "title": "Feed insecurity during puberty & RNA expression in the ovary, and pituitary of mice",
+    "judge1": "Julie Moreno",
+    "judge2": "Christopher Vaaga",
+    "judge3": null
   },
   {
     "id": "91",
@@ -2127,10 +2127,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Examining the human health risks of private well water use in Boulder County",
-    "judge1": "Colorado",
-    "judge2": "Zohaib Ali",
-    "judge3": "Christopher Vaaga"
+    "title": "Examining the human health risks of private well water use in Boulder County, Colorado",
+    "judge1": "Zohaib Ali",
+    "judge2": "Christopher Vaaga",
+    "judge3": null
   },
   {
     "id": "U36",
@@ -2223,10 +2223,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Comprehensive Radiation Mapping of Colorado: Calibration and Differentiation of Gamma",
-    "judge1": "Terrestrial",
-    "judge2": "and Cosmic Radiation",
-    "judge3": "Susan Bailey"
+    "title": "Comprehensive Radiation Mapping of Colorado: Calibration and Differentiation of Gamma, Terrestrial, and Cosmic Radiation",
+    "judge1": "Susan Bailey",
+    "judge2": "Angela Bosco-Lauth",
+    "judge3": null
   },
   {
     "id": "97",
@@ -2623,10 +2623,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Oral",
     "presentationTime": "11:30 - 1:30",
-    "title": "Metabolic",
-    "judge1": "Transcriptomic",
-    "judge2": "Functional",
-    "judge3": "and Histological Signatures of Inflammation After ACL Rupture in a Translational Model of PTOA"
+    "title": "Metabolic, Transcriptomic, Functional, and Histological Signatures of Inflammation After ACL Rupture in a Translational Model of PTOA",
+    "judge1": "Kelly Debie",
+    "judge2": "Luke Montrose",
+    "judge3": null
   },
   {
     "id": "2A-5",
@@ -2847,10 +2847,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "1:45 - 3:45",
-    "title": "Comparative evaluation of O-arm guided pedicle screw placement in ovine",
-    "judge1": "caprine",
-    "judge2": "and porcine spinal models",
-    "judge3": "Mo Salman"
+    "title": "Comparative evaluation of O-arm guided pedicle screw placement in ovine, caprine, and porcine spinal models",
+    "judge1": "Mo Salman",
+    "judge2": "Tracy Webb",
+    "judge3": null
   },
   {
     "id": "123",
@@ -2959,10 +2959,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Poster",
     "presentationTime": "11:30 - 1:30",
-    "title": "Intraocular pressures in free-ranging red-tailed hawks (Buteo jamaicensis)",
-    "judge1": "red-shouldered hawks (Buteo lineatus)",
-    "judge2": "and broad-winged hawks (Buteo platypterus) using rebound tonometry",
-    "judge3": "Fiona Hollinshead"
+    "title": "Intraocular pressures in free-ranging red-tailed hawks (Buteo jamaicensis), red-shouldered hawks (Buteo lineatus), and broad-winged hawks (Buteo platypterus) using rebound tonometry",
+    "judge1": "Fiona Hollinshead",
+    "judge2": "Daniel Regan",
+    "judge3": null
   },
   {
     "id": "128",
@@ -3119,10 +3119,10 @@ export const PRESENTERS: Presenter[] = [
     "department": "",
     "presentationType": "Oral",
     "presentationTime": "11:30 - 1:30",
-    "title": "Evaluating the pathogenicity of novel alpha-synuclein mutations through fibrilization kinetics",
-    "judge1": "liposome membrane binding",
-    "judge2": "and synaptic vesicle localization assays",
-    "judge3": "Stu Tobet"
+    "title": "Evaluating the pathogenicity of novel alpha-synuclein mutations through fibrilization kinetics, liposome membrane binding, and synaptic vesicle localization assays",
+    "judge1": "Stu Tobet",
+    "judge2": "Claudia Wiese",
+    "judge3": null
   },
   {
     "id": "134",
@@ -3667,6 +3667,7 @@ export const JUDGES: Judge[] = [
       "1A-4",
       "1A-5",
       "1A-6",
+      "1A-7",
       "1A-8"
     ]
   },
@@ -3704,20 +3705,6 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "performance",
-    "name": "performance",
-    "assignedPresenters": [
-      "14"
-    ]
-  },
-  {
-    "id": "and-clinical-relevance-of-special-stains-in-veterinary-cytopathology",
-    "name": "and clinical relevance of special stains in veterinary cytopathology",
-    "assignedPresenters": [
-      "14"
-    ]
-  },
-  {
     "id": "rachel-maison",
     "name": "Rachel Maison",
     "assignedPresenters": [
@@ -3725,6 +3712,17 @@ export const JUDGES: Judge[] = [
       "20",
       "52",
       "136"
+    ]
+  },
+  {
+    "id": "sarah-raabis",
+    "name": "Sarah Raabis",
+    "assignedPresenters": [
+      "14",
+      "20",
+      "72",
+      "114",
+      "126"
     ]
   },
   {
@@ -3797,13 +3795,6 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "a-hallmark-of-the-alternative-lengthening-of-telomeres-(alt)-pathway",
-    "name": "a Hallmark of the Alternative Lengthening of Telomeres (ALT) Pathway",
-    "assignedPresenters": [
-      "1B-1"
-    ]
-  },
-  {
     "id": "kelly-debie",
     "name": "Kelly Debie",
     "assignedPresenters": [
@@ -3812,6 +3803,7 @@ export const JUDGES: Judge[] = [
       "1B-3",
       "1B-4",
       "1B-5",
+      "1B-6",
       "1B-7",
       "1B-8"
     ]
@@ -3825,6 +3817,7 @@ export const JUDGES: Judge[] = [
       "1B-3",
       "1B-4",
       "1B-5",
+      "1B-6",
       "1B-7",
       "1B-8"
     ]
@@ -3973,17 +3966,8 @@ export const JUDGES: Judge[] = [
       "19",
       "29",
       "51",
-      "11"
-    ]
-  },
-  {
-    "id": "sarah-raabis",
-    "name": "Sarah Raabis",
-    "assignedPresenters": [
-      "20",
-      "72",
-      "114",
-      "126"
+      "11",
+      "95"
     ]
   },
   {
@@ -4036,7 +4020,8 @@ export const JUDGES: Judge[] = [
       "23",
       "35",
       "41",
-      "63"
+      "63",
+      "85"
     ]
   },
   {
@@ -4046,6 +4031,7 @@ export const JUDGES: Judge[] = [
       "23",
       "75",
       "81",
+      "127",
       "139"
     ]
   },
@@ -4061,20 +4047,6 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "imaging",
-    "name": "imaging",
-    "assignedPresenters": [
-      "26"
-    ]
-  },
-  {
-    "id": "and-molecular-biomarkers-to-predict-osteoarthritis-severity-in-an-acute-experimentally-induced-equine-model",
-    "name": "and molecular biomarkers to predict osteoarthritis severity in an acute experimentally induced equine model",
-    "assignedPresenters": [
-      "26"
-    ]
-  },
-  {
     "id": "jenn-hatzel",
     "name": "Jenn Hatzel",
     "assignedPresenters": [
@@ -4083,6 +4055,17 @@ export const JUDGES: Judge[] = [
       "94",
       "120",
       "138"
+    ]
+  },
+  {
+    "id": "susan-lana",
+    "name": "Susan Lana",
+    "assignedPresenters": [
+      "26",
+      "78",
+      "100",
+      "106",
+      "126"
     ]
   },
   {
@@ -4123,6 +4106,7 @@ export const JUDGES: Judge[] = [
     "name": "Christian Sewor",
     "assignedPresenters": [
       "28",
+      "34",
       "66",
       "104",
       "144"
@@ -4216,20 +4200,21 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "colorado",
-    "name": "Colorado",
-    "assignedPresenters": [
-      "U07",
-      "89"
-    ]
-  },
-  {
     "id": "dawit-tesfaye",
     "name": "Dawit Tesfaye",
     "assignedPresenters": [
       "U07",
       "U12",
       "U43"
+    ]
+  },
+  {
+    "id": "ashley-potter",
+    "name": "Ashley Potter",
+    "assignedPresenters": [
+      "U07",
+      "U22",
+      "U24"
     ]
   },
   {
@@ -4257,20 +4242,6 @@ export const JUDGES: Judge[] = [
       "U08",
       "U25",
       "U34"
-    ]
-  },
-  {
-    "id": "engaging",
-    "name": "Engaging",
-    "assignedPresenters": [
-      "34"
-    ]
-  },
-  {
-    "id": "educational-doses-of-sustainability:-the-creation-of-mini-modules-to-guide-further-sustainability-practices",
-    "name": "Educational Doses of Sustainability: The Creation of Mini Modules to Guide Further Sustainability Practices",
-    "assignedPresenters": [
-      "34"
     ]
   },
   {
@@ -4318,13 +4289,6 @@ export const JUDGES: Judge[] = [
       "U41",
       "129",
       "U45"
-    ]
-  },
-  {
-    "id": "clade-2.3.4.4b)-in-domestic-cats",
-    "name": "clade 2.3.4.4b) in domestic cats",
-    "assignedPresenters": [
-      "1A-3"
     ]
   },
   {
@@ -4390,23 +4354,10 @@ export const JUDGES: Judge[] = [
     "name": "Treana Mayer",
     "assignedPresenters": [
       "44",
+      "78",
       "120",
       "124",
       "96"
-    ]
-  },
-  {
-    "id": "oocyte-pick-up",
-    "name": "oocyte pick up",
-    "assignedPresenters": [
-      "48"
-    ]
-  },
-  {
-    "id": "and-variants-in-lep-and-lepr.",
-    "name": "and variants in LEP and LEPR.",
-    "assignedPresenters": [
-      "48"
     ]
   },
   {
@@ -4417,6 +4368,17 @@ export const JUDGES: Judge[] = [
       "68",
       "100",
       "118"
+    ]
+  },
+  {
+    "id": "mo-salman",
+    "name": "Mo Salman",
+    "assignedPresenters": [
+      "48",
+      "68",
+      "94",
+      "106",
+      "122"
     ]
   },
   {
@@ -4433,7 +4395,8 @@ export const JUDGES: Judge[] = [
     "name": "Farzana Hossain",
     "assignedPresenters": [
       "U12",
-      "U28"
+      "U28",
+      "U32"
     ]
   },
   {
@@ -4446,18 +4409,12 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "a-pilot-study",
-    "name": "A Pilot Study",
-    "assignedPresenters": [
-      "56"
-    ]
-  },
-  {
     "id": "tracy-webb",
     "name": "Tracy Webb",
     "assignedPresenters": [
       "56",
       "72",
+      "122",
       "146"
     ]
   },
@@ -4535,13 +4492,6 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "535-meters-altitude",
-    "name": "535 meters altitude",
-    "assignedPresenters": [
-      "59"
-    ]
-  },
-  {
     "id": "diana-lowe",
     "name": "Diana Lowe",
     "assignedPresenters": [
@@ -4605,30 +4555,12 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "ashley-potter",
-    "name": "Ashley Potter",
-    "assignedPresenters": [
-      "U22",
-      "U24"
-    ]
-  },
-  {
     "id": "erin-simpkins",
     "name": "Erin Simpkins",
     "assignedPresenters": [
       "U23",
       "U45",
       "U47"
-    ]
-  },
-  {
-    "id": "mo-salman",
-    "name": "Mo Salman",
-    "assignedPresenters": [
-      "68",
-      "94",
-      "106",
-      "122"
     ]
   },
   {
@@ -4684,142 +4616,6 @@ export const JUDGES: Judge[] = [
       "U31",
       "U38",
       "U39"
-    ]
-  },
-  {
-    "id": "microbiome-composition",
-    "name": "Microbiome Composition",
-    "assignedPresenters": [
-      "78"
-    ]
-  },
-  {
-    "id": "and-cognitive-aging-in-dogs-from-colorado-private-well-communities",
-    "name": "and Cognitive Aging in Dogs from Colorado Private Well Communities",
-    "assignedPresenters": [
-      "78"
-    ]
-  },
-  {
-    "id": "susan-lana",
-    "name": "Susan Lana",
-    "assignedPresenters": [
-      "78",
-      "100",
-      "106",
-      "126"
-    ]
-  },
-  {
-    "id": "2025.",
-    "name": "2025.",
-    "assignedPresenters": [
-      "U32"
-    ]
-  },
-  {
-    "id": "colorado-in-2024-and-2025",
-    "name": "Colorado in 2024 and 2025",
-    "assignedPresenters": [
-      "81"
-    ]
-  },
-  {
-    "id": "fear-memory-loss",
-    "name": "fear memory loss",
-    "assignedPresenters": [
-      "85"
-    ]
-  },
-  {
-    "id": "and-amyloid-pathology-in-alzheimers-disease",
-    "name": "and amyloid pathology in Alzheimers disease",
-    "assignedPresenters": [
-      "85"
-    ]
-  },
-  {
-    "id": "and-pituitary-of-mice",
-    "name": "and pituitary of mice",
-    "assignedPresenters": [
-      "87"
-    ]
-  },
-  {
-    "id": "terrestrial",
-    "name": "Terrestrial",
-    "assignedPresenters": [
-      "95"
-    ]
-  },
-  {
-    "id": "and-cosmic-radiation",
-    "name": "and Cosmic Radiation",
-    "assignedPresenters": [
-      "95"
-    ]
-  },
-  {
-    "id": "transcriptomic",
-    "name": "Transcriptomic",
-    "assignedPresenters": [
-      "1B-6"
-    ]
-  },
-  {
-    "id": "functional",
-    "name": "Functional",
-    "assignedPresenters": [
-      "1B-6"
-    ]
-  },
-  {
-    "id": "and-histological-signatures-of-inflammation-after-acl-rupture-in-a-translational-model-of-ptoa",
-    "name": "and Histological Signatures of Inflammation After ACL Rupture in a Translational Model of PTOA",
-    "assignedPresenters": [
-      "1B-6"
-    ]
-  },
-  {
-    "id": "caprine",
-    "name": "caprine",
-    "assignedPresenters": [
-      "122"
-    ]
-  },
-  {
-    "id": "and-porcine-spinal-models",
-    "name": "and porcine spinal models",
-    "assignedPresenters": [
-      "122"
-    ]
-  },
-  {
-    "id": "red-shouldered-hawks-(buteo-lineatus)",
-    "name": "red-shouldered hawks (Buteo lineatus)",
-    "assignedPresenters": [
-      "127"
-    ]
-  },
-  {
-    "id": "and-broad-winged-hawks-(buteo-platypterus)-using-rebound-tonometry",
-    "name": "and broad-winged hawks (Buteo platypterus) using rebound tonometry",
-    "assignedPresenters": [
-      "127"
-    ]
-  },
-  {
-    "id": "liposome-membrane-binding",
-    "name": "liposome membrane binding",
-    "assignedPresenters": [
-      "1A-7"
-    ]
-  },
-  {
-    "id": "and-synaptic-vesicle-localization-assays",
-    "name": "and synaptic vesicle localization assays",
-    "assignedPresenters": [
-      "1A-7"
     ]
   }
 ];
