@@ -1,5 +1,5 @@
 // Auto-generated from judge_assignments.csv
-// Generated: 2026-01-23T01:22:06.575Z
+// Generated: 2026-01-23T18:41:30.735Z
 
 import { Presenter, Judge } from './types';
 
@@ -1200,7 +1200,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Characterizing the association between the prion protein and circadian rhythms in transgenic mice",
-    "judge1": "Rosa Quiroz",
+    "judge1": "Jeff Kemp",
     "judge2": "Chase Wagner",
     "judge3": "Kapahi Kawai-Puaa"
   },
@@ -1313,7 +1313,7 @@ export const PRESENTERS: Presenter[] = [
     "presentationTime": "10:15 - 11:15",
     "title": "The DNA Fiber Assay: An insight into accurate DNA replication",
     "judge1": "Megan Hager",
-    "judge2": "Rosa Quiroz",
+    "judge2": "Jeff Kemp",
     "judge3": "Elizabeth Esdaile"
   },
   {
@@ -1682,7 +1682,7 @@ export const PRESENTERS: Presenter[] = [
     "title": "Assessing the impact of Metacare supplementation on presistent breeding-induced endometritis",
     "judge1": "Reese Sprister",
     "judge2": "Michelle Galvan",
-    "judge3": "Rosa Quiroz"
+    "judge3": "Jeff Kemp"
   },
   {
     "id": "73",
@@ -4437,8 +4437,8 @@ export const JUDGES: Judge[] = [
     ]
   },
   {
-    "id": "rosa-quiroz",
-    "name": "Rosa Quiroz",
+    "id": "jeff-kemp",
+    "name": "Jeff Kemp",
     "assignedPresenters": [
       "U16",
       "U18",
