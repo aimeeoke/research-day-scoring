@@ -5,7 +5,7 @@ import { Upload, Download, RefreshCw, Users, Award, FileText, ChevronRight, Tras
 import { AdminGate } from '@/components/auth-gate';
 import { parsePresenterCSV } from '@/lib/csv-parser';
 import {
-  loadState,
+  loadStateFromCloud,
   savePresenters,
   saveJudges,
   downloadBackup,
@@ -14,6 +14,7 @@ import {
   getJudges,
   clearScores,
 } from '@/lib/storage';
+import { PRESENTERS } from '@/lib/data';
 import {
   getCategoryCompletionPercent,
   generateAllFinalScores,
@@ -30,12 +31,17 @@ function DashboardContent() {
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [lastRefresh, setLastRefresh] = useState<Date>(new Date());
 
-  const loadData = useCallback(() => {
-    const state = loadState();
-    setPresenters(state.presenters);
-    setScores(state.scores);
-    setIsLoading(false);
-    setLastRefresh(new Date());
+  const loadData = useCallback(async () => {
+    try {
+      setPresenters(PRESENTERS);
+      const state = await loadStateFromCloud();
+      setScores(state.scores);
+    } catch (error) {
+      console.error('Error loading data:', error);
+    } finally {
+      setIsLoading(false);
+      setLastRefresh(new Date());
+    }
   }, []);
 
   useEffect(() => {
