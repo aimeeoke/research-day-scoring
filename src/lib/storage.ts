@@ -57,9 +57,50 @@ export async function loadStateFromCloud(): Promise<ScoringState> {
   return {
     ...defaultState,
     scores: cloudScores,
-    feedback: [], // Feedback stays local for now
+    feedback: [],
     lastUpdated: new Date().toISOString(),
   };
+}
+
+// Save feedback to cloud database
+export async function saveFeedbackToCloud(feedback: Feedback): Promise<boolean> {
+  try {
+    const response = await fetch('/api/feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(feedback),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      console.error('Cloud feedback save error:', error);
+      return false;
+    }
+
+    console.log('Feedback saved to cloud successfully');
+    return true;
+  } catch (error) {
+    console.error('Failed to save feedback to cloud:', error);
+    return false;
+  }
+}
+
+// Load all feedback from cloud database
+export async function loadFeedbackFromCloud(): Promise<Feedback[]> {
+  try {
+    const response = await fetch('/api/feedback');
+
+    if (!response.ok) {
+      console.error('Cloud feedback load error:', response.statusText);
+      return [];
+    }
+
+    const data = await response.json();
+    return data.feedback || [];
+  } catch (error) {
+    console.error('Failed to load feedback from cloud:', error);
+    return [];
+  }
 }
 
 // =============================================================================
@@ -237,6 +278,13 @@ export function saveFeedback(feedback: Feedback): void {
   const state = loadState();
   state.feedback.push(feedback);
   saveState(state);
+
+  // Also save to cloud database (fire and forget - don't block UI)
+  saveFeedbackToCloud(feedback).then(success => {
+    if (!success) {
+      console.warn('Feedback saved locally but cloud sync failed.');
+    }
+  });
 }
 
 export function getFeedback(): Feedback[] {

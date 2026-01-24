@@ -9,7 +9,7 @@ import {
   LogOut,
   Send
 } from 'lucide-react';
-import { loadState, saveFeedback, getFeedbackForPresenter } from '@/lib/storage';
+import { loadState, saveFeedback, getFeedbackForPresenter, loadFeedbackFromCloud } from '@/lib/storage';
 import { getSelectedJudge, saveSelectedJudge, clearSelectedJudge } from '@/lib/auth';
 import { Presenter, Judge, Feedback } from '@/lib/types';
 import { formatPresenterName, generateId } from '@/lib/utils';
@@ -25,10 +25,21 @@ export default function CommentsPage() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const loadData = useCallback(() => {
+  const loadData = useCallback(async () => {
     const state = loadState();
     setPresenters(state.presenters);
-    setFeedback(state.feedback);
+
+    // Load feedback from cloud and merge with local
+    const cloudFeedback = await loadFeedbackFromCloud();
+    const localFeedback = state.feedback;
+
+    // Merge: use cloud as primary, add any local that aren't in cloud
+    const feedbackMap = new Map<string, typeof cloudFeedback[0]>();
+    cloudFeedback.forEach(f => feedbackMap.set(f.id, f));
+    localFeedback.forEach(f => {
+      if (!feedbackMap.has(f.id)) feedbackMap.set(f.id, f);
+    });
+    setFeedback(Array.from(feedbackMap.values()));
 
     // Extract unique judges from presenters
     const judgeMap = new Map<string, Judge>();
