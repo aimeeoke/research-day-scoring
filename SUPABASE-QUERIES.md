@@ -181,6 +181,46 @@ UNION ALL
 SELECT 'feedback' as table_name, COUNT(*) as row_count FROM feedback;
 ```
 
+### Find orphan scores (presenter IDs not matching real presenters)
+```sql
+-- List all unique presenter IDs to spot test/orphan data
+SELECT DISTINCT presenter_id, COUNT(*) as scores
+FROM scores
+GROUP BY presenter_id
+ORDER BY presenter_id;
+```
+
+### Find presenters with mixed no-show status
+```sql
+-- Presenters where one judge scored and another marked no-show
+SELECT
+  presenter_id,
+  COUNT(*) as total_scores,
+  SUM(CASE WHEN is_no_show = true THEN 1 ELSE 0 END) as no_show_count,
+  SUM(CASE WHEN is_no_show = false THEN 1 ELSE 0 END) as valid_count,
+  STRING_AGG(judge_name || ': ' || CASE WHEN is_no_show THEN 'NO-SHOW' ELSE 'scored' END, ', ') as breakdown
+FROM scores
+GROUP BY presenter_id
+HAVING SUM(CASE WHEN is_no_show = true THEN 1 ELSE 0 END) > 0
+AND SUM(CASE WHEN is_no_show = false THEN 1 ELSE 0 END) > 0
+ORDER BY presenter_id;
+```
+
+### Find presenters missing scores
+```sql
+-- Presenters with fewer than 2 valid scores (for oral/poster)
+SELECT
+  presenter_id,
+  COUNT(*) as total_scores,
+  SUM(CASE WHEN is_no_show = false THEN 1 ELSE 0 END) as valid_scores,
+  STRING_AGG(judge_name, ', ') as judges_who_scored
+FROM scores
+WHERE presenter_id NOT LIKE 'U%'
+GROUP BY presenter_id
+HAVING SUM(CASE WHEN is_no_show = false THEN 1 ELSE 0 END) < 2
+ORDER BY presenter_id;
+```
+
 ### Recent activity (last hour)
 ```sql
 SELECT 'scores' as type, presenter_id as id, judge_name, timestamp
