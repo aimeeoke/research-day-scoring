@@ -188,8 +188,11 @@ export const AWARD_CATEGORIES: AwardCategory[] = [
   { id: "poster-clin-early", name: "Veterinary Clinical Research, Early Stage, Poster", researchType: "Veterinary Clinical Research", researchStage: "Early", presentationType: "Poster", places: 3 },
   { id: "poster-ped", name: "Pedagogy Research, Poster", researchType: "Social Sciences/Pedagogy Research", researchStage: null, presentationType: "Poster", places: 3 },
 
-  // Undergraduate Posters (overall, no category breakdown)
-  { id: "undergrad-poster", name: "Undergraduate Poster", researchType: null, researchStage: null, presentationType: "Undergrad Poster", places: 3 },
+  // Undergraduate Posters (by research category)
+  { id: "undergrad-found", name: "Foundational Research, Undergrad Poster", researchType: "Foundational Research", researchStage: null, presentationType: "Undergrad Poster", places: 3 },
+  { id: "undergrad-trans", name: "Translational Research, Undergrad Poster", researchType: "Translational Research", researchStage: null, presentationType: "Undergrad Poster", places: 3 },
+  { id: "undergrad-clin", name: "Veterinary Clinical Research, Undergrad Poster", researchType: "Veterinary Clinical Research", researchStage: null, presentationType: "Undergrad Poster", places: 3 },
+  { id: "undergrad-ped", name: "Pedagogy Research, Undergrad Poster", researchType: "Social Sciences/Pedagogy Research", researchStage: null, presentationType: "Undergrad Poster", places: 3 },
 ];
 
 // =============================================================================
