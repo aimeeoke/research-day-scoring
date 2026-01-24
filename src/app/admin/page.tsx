@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Upload, Download, RefreshCw, Users, Award, FileText, ChevronRight, Trash2 } from 'lucide-react';
+import { Upload, Download, RefreshCw, Users, Award, FileText, ChevronRight } from 'lucide-react';
 import { AdminGate } from '@/components/auth-gate';
 import { parsePresenterCSV } from '@/lib/csv-parser';
 import {
@@ -9,10 +9,6 @@ import {
   savePresenters,
   saveJudges,
   downloadBackup,
-  getScores,
-  getPresenters,
-  getJudges,
-  clearScores,
 } from '@/lib/storage';
 import { PRESENTERS } from '@/lib/data';
 import {
@@ -305,38 +301,6 @@ function DashboardContent() {
             </label>
           </div>
 
-          {/* Admin Actions - Clear Scores */}
-          <div className={`rounded-lg p-4 ${totalScores > 0 ? 'bg-red-50 border border-red-200' : 'bg-gray-50 border border-gray-200'}`}>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div>
-                <h4 className={`text-sm font-medium ${totalScores > 0 ? 'text-red-800' : 'text-gray-600'}`}>
-                  Reset Testing Data
-                </h4>
-                <p className={`text-xs sm:text-sm mt-1 ${totalScores > 0 ? 'text-red-600' : 'text-gray-500'}`}>
-                  {totalScores > 0
-                    ? `Clear all ${totalScores} scores and feedback. Cannot be undone.`
-                    : 'No scores to clear.'}
-                </p>
-              </div>
-              <button
-                onClick={() => {
-                  if (totalScores > 0 && window.confirm(`Are you sure you want to delete all ${totalScores} scores? This cannot be undone.`)) {
-                    clearScores();
-                    loadData();
-                  }
-                }}
-                disabled={totalScores === 0}
-                className={`inline-flex items-center justify-center px-3 py-2 text-sm font-medium rounded-md ${
-                  totalScores > 0
-                    ? 'text-red-700 bg-white border border-red-300 hover:bg-red-100'
-                    : 'text-gray-400 bg-gray-100 border border-gray-200 cursor-not-allowed'
-                }`}
-              >
-                <Trash2 className="h-4 w-4 mr-2" />
-                Clear Scores
-              </button>
-            </div>
-          </div>
         </>
       )}
     </div>
