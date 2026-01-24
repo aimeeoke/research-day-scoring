@@ -3413,22 +3413,6 @@ export const PRESENTERS: Presenter[] = [
     "judge3": null
   },
   {
-    "id": "145",
-    "firstName": "Kristina",
-    "lastName": "Yepez",
-    "email": "kristina.yepez@colostate.edu",
-    "classification": "MS Student",
-    "researchStage": "Early",
-    "researchType": "Foundational Research",
-    "department": "Environmental & Radiological Health Sciences",
-    "presentationType": "Poster",
-    "presentationTime": "11:30 - 1:30",
-    "title": "Save the Pangolins! Radioactive Deterrents for Pangolin Preservation",
-    "judge1": "Julie Moreno",
-    "judge2": "Mark Zabel",
-    "judge3": null
-  },
-  {
     "id": "146",
     "firstName": "Paula",
     "lastName": "Yoon",
@@ -3585,8 +3569,7 @@ export const JUDGES: Judge[] = [
       "5",
       "81",
       "87",
-      "101",
-      "145"
+      "101"
     ]
   },
   {
@@ -4130,8 +4113,7 @@ export const JUDGES: Judge[] = [
       "31",
       "79",
       "111",
-      "137",
-      "145"
+      "137"
     ]
   },
   {
