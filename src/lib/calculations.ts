@@ -380,16 +380,22 @@ export function isCategoryComplete(
   scores: Score[]
 ): boolean {
   const categoryPresenters = getPresentersByCategory(presenters, category);
-  
+
   for (const presenter of categoryPresenters) {
     const presenterScores = scores.filter(s => s.presenterId === presenter.id);
+
+    // If presenter is a no-show (all their scores marked as no-show), skip them
+    if (presenterScores.length > 0 && presenterScores.every(s => s.isNoShow)) {
+      continue;
+    }
+
     const requiredJudges = presenter.presentationType === 'Undergrad Poster' ? 3 : 2;
-    
+
     if (presenterScores.filter(s => !s.isNoShow).length < requiredJudges) {
       return false;
     }
   }
-  
+
   return categoryPresenters.length > 0;
 }
 
@@ -403,20 +409,25 @@ export function getCategoryCompletionPercent(
 ): number {
   const categoryPresenters = getPresentersByCategory(presenters, category);
   if (categoryPresenters.length === 0) return 0;
-  
+
   let totalRequired = 0;
   let totalReceived = 0;
-  
+
   for (const presenter of categoryPresenters) {
+    const presenterScores = scores.filter(s => s.presenterId === presenter.id);
+
+    // If presenter is a no-show (all their scores marked as no-show), skip them entirely
+    if (presenterScores.length > 0 && presenterScores.every(s => s.isNoShow)) {
+      continue;
+    }
+
     const requiredJudges = presenter.presentationType === 'Undergrad Poster' ? 3 : 2;
     totalRequired += requiredJudges;
-    
-    const presenterScores = scores.filter(
-      s => s.presenterId === presenter.id && !s.isNoShow
-    );
-    totalReceived += Math.min(presenterScores.length, requiredJudges);
+
+    const validScores = presenterScores.filter(s => !s.isNoShow);
+    totalReceived += Math.min(validScores.length, requiredJudges);
   }
-  
+
   return totalRequired > 0 ? (totalReceived / totalRequired) * 100 : 0;
 }
 

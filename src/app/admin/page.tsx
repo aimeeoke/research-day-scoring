@@ -76,17 +76,26 @@ function DashboardContent() {
     const sessionPresenters = presenters.filter(p => p.presentationTime === sessionTime);
     let totalRequired = 0;
     let totalReceived = 0;
+    let noShowCount = 0;
 
     for (const presenter of sessionPresenters) {
+      const presenterScores = scores.filter(s => s.presenterId === presenter.id);
+
+      // If presenter is a no-show (all their scores marked as no-show), skip them
+      if (presenterScores.length > 0 && presenterScores.every(s => s.isNoShow)) {
+        noShowCount++;
+        continue;
+      }
+
       const requiredJudges = presenter.presentationType === 'Undergrad Poster' ? 3 : 2;
       totalRequired += requiredJudges;
-      const presenterScores = scores.filter(s => s.presenterId === presenter.id && !s.isNoShow);
-      totalReceived += Math.min(presenterScores.length, requiredJudges);
+      const validScores = presenterScores.filter(s => !s.isNoShow);
+      totalReceived += Math.min(validScores.length, requiredJudges);
     }
 
     const percent = totalRequired > 0 ? (totalReceived / totalRequired) * 100 : 0;
     return {
-      total: sessionPresenters.length,
+      total: sessionPresenters.length - noShowCount,
       scoresReceived: totalReceived,
       scoresRequired: totalRequired,
       percent,
