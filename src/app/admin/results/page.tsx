@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Trophy, Award, Download, RefreshCw, CheckCircle2, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { AdminGate } from '@/components/auth-gate';
-import { loadState } from '@/lib/storage';
+import { loadStateFromCloud } from '@/lib/storage';
+import { PRESENTERS } from '@/lib/data';
 import {
   generateAllFinalScores,
   getAllCategoryWinners,
@@ -20,11 +21,16 @@ function ResultsContent() {
   const [isLoading, setIsLoading] = useState(true);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
-  const loadData = useCallback(() => {
-    const state = loadState();
-    setPresenters(state.presenters);
-    setScores(state.scores);
-    setIsLoading(false);
+  const loadData = useCallback(async () => {
+    try {
+      setPresenters(PRESENTERS);
+      const state = await loadStateFromCloud();
+      setScores(state.scores);
+    } catch (error) {
+      console.error('Error loading data:', error);
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   useEffect(() => {

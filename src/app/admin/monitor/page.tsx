@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { RefreshCw, Clock, AlertCircle, CheckCircle2, Filter } from 'lucide-react';
 import { AdminGate } from '@/components/auth-gate';
-import { loadState } from '@/lib/storage';
+import { loadStateFromCloud } from '@/lib/storage';
+import { PRESENTERS } from '@/lib/data';
 import { Presenter, Score, SESSION_TIMES, SessionTime } from '@/lib/types';
 import { formatPresenterName } from '@/lib/utils';
 
@@ -23,12 +24,18 @@ function MonitorContent() {
   const [filterSession, setFilterSession] = useState<SessionTime | 'all'>('all');
   const [autoRefresh, setAutoRefresh] = useState(true);
 
-  const loadData = useCallback(() => {
-    const state = loadState();
-    setPresenters(state.presenters);
-    setScores(state.scores);
-    setIsLoading(false);
-    setLastRefresh(new Date());
+  const loadData = useCallback(async () => {
+    try {
+      // Load presenters from static data, scores from cloud
+      setPresenters(PRESENTERS);
+      const state = await loadStateFromCloud();
+      setScores(state.scores);
+    } catch (error) {
+      console.error('Error loading data:', error);
+    } finally {
+      setIsLoading(false);
+      setLastRefresh(new Date());
+    }
   }, []);
 
   useEffect(() => {

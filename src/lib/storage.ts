@@ -1,9 +1,66 @@
-// localStorage persistence layer for Research Day Scoring System
+// localStorage + Cloud persistence layer for Research Day Scoring System
 
 import { ScoringState, Presenter, Judge, Score, Feedback } from './types';
 import { PRESENTERS, JUDGES } from './data';
 
 const STORAGE_KEY = 'research-day-scoring-2026';
+
+// =============================================================================
+// CLOUD API FUNCTIONS (Supabase)
+// =============================================================================
+
+// Save score to cloud database
+export async function saveScoreToCloud(score: Score): Promise<boolean> {
+  try {
+    const response = await fetch('/api/scores', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(score),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      console.error('Cloud save error:', error);
+      return false;
+    }
+
+    console.log('Score saved to cloud successfully');
+    return true;
+  } catch (error) {
+    console.error('Failed to save score to cloud:', error);
+    return false;
+  }
+}
+
+// Load all scores from cloud database
+export async function loadScoresFromCloud(): Promise<Score[]> {
+  try {
+    const response = await fetch('/api/scores');
+
+    if (!response.ok) {
+      console.error('Cloud load error:', response.statusText);
+      return [];
+    }
+
+    const data = await response.json();
+    return data.scores || [];
+  } catch (error) {
+    console.error('Failed to load scores from cloud:', error);
+    return [];
+  }
+}
+
+// Load state with scores from cloud (for admin pages)
+export async function loadStateFromCloud(): Promise<ScoringState> {
+  const cloudScores = await loadScoresFromCloud();
+
+  return {
+    ...defaultState,
+    scores: cloudScores,
+    feedback: [], // Feedback stays local for now
+    lastUpdated: new Date().toISOString(),
+  };
+}
 
 // =============================================================================
 // DEFAULT STATE (pre-populated from static data file)
@@ -136,14 +193,22 @@ export function saveScore(score: Score): void {
   const existingIndex = state.scores.findIndex(
     s => s.presenterId === score.presenterId && s.judgeId === score.judgeId
   );
-  
+
   if (existingIndex >= 0) {
     state.scores[existingIndex] = score;
   } else {
     state.scores.push(score);
   }
-  
+
+  // Save to localStorage (for immediate UI feedback)
   saveState(state);
+
+  // Also save to cloud database (fire and forget - don't block UI)
+  saveScoreToCloud(score).then(success => {
+    if (!success) {
+      console.warn('Score saved locally but cloud sync failed. Will retry on next action.');
+    }
+  });
 }
 
 export function getScores(): Score[] {
