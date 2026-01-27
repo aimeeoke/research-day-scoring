@@ -11,8 +11,9 @@ import {
   getCategoryCompletionPercent,
   calculateDepartmentScores,
 } from '@/lib/calculations';
-import { AWARD_CATEGORIES, Presenter, Score, CategoryWinner, DepartmentScore } from '@/lib/types';
+import { AWARD_CATEGORIES, DEPARTMENTS, Presenter, Score, CategoryWinner, DepartmentScore } from '@/lib/types';
 import { formatPresenterName } from '@/lib/utils';
+import { getWinnerDetail } from '@/lib/winner-details';
 import Link from 'next/link';
 
 export default function PublicResultsPage() {
@@ -20,6 +21,7 @@ export default function PublicResultsPage() {
   const [scores, setScores] = useState<Score[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
+  const [viewMode, setViewMode] = useState<'category' | 'department'>('category');
 
   const loadData = useCallback(async () => {
     try {
@@ -96,6 +98,49 @@ export default function PublicResultsPage() {
     return place === 1 ? '🥇' : place === 2 ? '🥈' : '🥉';
   };
 
+  const renderWinnerCard = (winner: CategoryWinner, subtitle?: string) => {
+    const detail = getWinnerDetail(winner.presenter.lastName, winner.presenter.firstName);
+    const mentors = detail
+      ? [detail.mentor1, detail.mentor2].filter(Boolean).join(' & ')
+      : null;
+
+    return (
+      <div className="py-4">
+        <div className="flex items-start gap-3">
+          <span className="text-2xl">{getPlaceIcon(winner.place)}</span>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${getPlaceColor(winner.place)}`}>
+                {winner.place === 1 ? '1st' : winner.place === 2 ? '2nd' : '3rd'}
+              </span>
+              {detail && (
+                <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">
+                  {detail.level}
+                </span>
+              )}
+            </div>
+            <p className="font-medium text-gray-900 mt-1">
+              {formatPresenterName(winner.presenter.firstName, winner.presenter.lastName)}
+            </p>
+            <p className="text-sm text-gray-500 line-clamp-2">
+              {winner.presenter.title}
+            </p>
+            {mentors && (
+              <p className="text-xs text-gray-500 mt-1">
+                Mentor{detail!.mentor2 ? 's' : ''}: {mentors}
+              </p>
+            )}
+            {subtitle && (
+              <p className="text-xs text-gray-400 mt-1">
+                {subtitle}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const overallCompletion = categoryCompletion.reduce((acc, c) => acc + c.percent, 0) / categoryCompletion.length;
 
   return (
@@ -153,11 +198,102 @@ export default function PublicResultsPage() {
           )}
         </div>
 
-        {/* Category Winners */}
+        {/* View Toggle + Winners */}
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-gray-900">Category Winners</h3>
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-semibold text-gray-900">Winners</h3>
+            <div className="inline-flex rounded-lg border border-gray-300 bg-white">
+              <button
+                onClick={() => setViewMode('category')}
+                className={`px-3 py-1.5 text-sm font-medium rounded-l-lg transition-colors ${
+                  viewMode === 'category'
+                    ? 'bg-csu-green text-white'
+                    : 'text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                By Category
+              </button>
+              <button
+                onClick={() => setViewMode('department')}
+                className={`px-3 py-1.5 text-sm font-medium rounded-r-lg transition-colors ${
+                  viewMode === 'department'
+                    ? 'bg-csu-green text-white'
+                    : 'text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                By Department
+              </button>
+            </div>
+          </div>
 
-          {categoryCompletion.map(({ category, percent, winners }) => {
+          {viewMode === 'department' && (() => {
+            // Group all winners by department
+            const winnersByDept = new Map<string, { category: string; winner: CategoryWinner }[]>();
+            for (const dept of DEPARTMENTS) {
+              winnersByDept.set(dept, []);
+            }
+            categoryCompletion.forEach(({ category, winners }) => {
+              winners.forEach(winner => {
+                const dept = winner.presenter.department || 'Other';
+                const list = winnersByDept.get(dept) || [];
+                list.push({ category: category.name, winner });
+                winnersByDept.set(dept, list);
+              });
+            });
+
+            return (
+              <div className="space-y-4">
+                {Array.from(winnersByDept.entries()).map(([dept, entries]) => {
+                  const isExpanded = expandedCategories.has(`dept-${dept}`);
+                  return (
+                    <div key={dept} className="bg-white rounded-lg shadow-sm overflow-hidden">
+                      <button
+                        onClick={() => toggleCategory(`dept-${dept}`)}
+                        className="w-full px-4 sm:px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                      >
+                        <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                          <Award className={`h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 ${entries.length > 0 ? 'text-csu-green' : 'text-gray-400'}`} />
+                          <div className="text-left min-w-0">
+                            <h4 className="font-medium text-gray-900 text-sm sm:text-base">{dept}</h4>
+                            <span className="text-xs text-gray-500">
+                              {entries.length} winner{entries.length !== 1 ? 's' : ''}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 flex-shrink-0">
+                          {isExpanded ? (
+                            <ChevronUp className="h-5 w-5 text-gray-400" />
+                          ) : (
+                            <ChevronDown className="h-5 w-5 text-gray-400" />
+                          )}
+                        </div>
+                      </button>
+
+                      {isExpanded && (
+                        <div className="px-4 sm:px-6 pb-4 border-t border-gray-100">
+                          {entries.length === 0 ? (
+                            <p className="py-4 text-gray-500 text-center text-sm">
+                              No winners from this department.
+                            </p>
+                          ) : (
+                            <div className="divide-y divide-gray-100">
+                              {entries.map(({ category, winner }) => (
+                                <div key={`${winner.presenter.id}-${winner.place}-${category}`}>
+                                  {renderWinnerCard(winner, category)}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })()}
+
+          {viewMode === 'category' && categoryCompletion.map(({ category, percent, winners }) => {
             const isExpanded = expandedCategories.has(category.id);
             const isComplete = percent === 100;
 
@@ -213,28 +349,8 @@ export default function PublicResultsPage() {
                     ) : (
                       <div className="divide-y divide-gray-100">
                         {winners.map((winner) => (
-                          <div key={`${winner.presenter.id}-${winner.place}`} className="py-4">
-                            <div className="flex items-start gap-3">
-                              <span className="text-2xl">{getPlaceIcon(winner.place)}</span>
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-center gap-2 flex-wrap">
-                                  <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${getPlaceColor(winner.place)}`}>
-                                    {winner.place === 1 ? '1st' : winner.place === 2 ? '2nd' : '3rd'}
-                                  </span>
-                                </div>
-                                <p className="font-medium text-gray-900 mt-1">
-                                  {formatPresenterName(winner.presenter.firstName, winner.presenter.lastName)}
-                                </p>
-                                <p className="text-sm text-gray-500 line-clamp-2">
-                                  {winner.presenter.title}
-                                </p>
-                                {winner.presenter.department && (
-                                  <p className="text-xs text-gray-400 mt-1">
-                                    {winner.presenter.department}
-                                  </p>
-                                )}
-                              </div>
-                            </div>
+                          <div key={`${winner.presenter.id}-${winner.place}`}>
+                            {renderWinnerCard(winner, winner.presenter.department || undefined)}
                           </div>
                         ))}
                       </div>

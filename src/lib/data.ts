@@ -2428,7 +2428,7 @@ export const PRESENTERS: Presenter[] = [
     "classification": "Undergraduate Student",
     "researchStage": "Early",
     "researchType": "Social Sciences/Pedagogy Research",
-    "department": "Biomedical Sciences",
+    "department": "Environmental & Radiological Health Sciences",
     "presentationType": "Undergrad Poster",
     "presentationTime": "10:15 - 11:15",
     "title": "Long Term Social and Health Effects of the Fukushima Disaster",
