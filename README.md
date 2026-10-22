@@ -1,4 +1,12 @@
-# Research Day Scoring System
+# Research Day Scoring System (Archived)
+
+> **Status:** This repository is archived. Active development has moved to [cvmbs-research-day](https://github.com/aimeeoke/cvmbs-research-day). Scoring has not yet been migrated — when it is, the scoring logic in `src/lib/` and the data-manipulation scripts in `scripts/` are the material to port.
+>
+> This repo is no longer buildable (no `node_modules`, no Next.js). All source files are preserved as readable reference. The scripts in `scripts/` use only Node.js built-ins (`fs`, `path`) and can still be run with plain `node scripts/<name>.js`.
+
+---
+
+## Original README
 
 A real-time scoring application for CVMBS Research Day 2026, replacing the traditional spreadsheet-based workflow.
 
